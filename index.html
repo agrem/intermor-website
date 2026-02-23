@@ -34,7 +34,6 @@
 
     .app{ display:flex; min-height:100vh; }
 
-    /* Sidebar */
     .sidebar{
       width: 270px;
       padding: 18px;
@@ -125,7 +124,6 @@
       opacity: .92;
     }
 
-    /* Main */
     .main{
       flex: 1;
       padding: 22px 22px 30px;
@@ -173,13 +171,13 @@
       display:flex;
       align-items:flex-end;
       min-height: 360px;
-      max-width: 820px;
+      max-width: 860px;
     }
     .hero h1{
       margin:0 0 10px;
-      font-size: 42px;
-      line-height: 1.05;
-      letter-spacing: .4px;
+      font-size: 40px;
+      line-height: 1.08;
+      letter-spacing: .2px;
     }
     .hero p{
       margin:0 0 10px;
@@ -226,7 +224,6 @@
       border-color: rgba(77,163,255,.9);
     }
 
-    /* Sections */
     .section{ margin-top: 16px; padding: 18px; }
     .section h2{ margin: 0 0 10px; font-size: 22px; letter-spacing: .2px; }
 
@@ -341,18 +338,16 @@
       opacity: .98;
     }
 
-    /* Hide/show pages */
     .page{ display:none; }
     .page.active{ display:block; }
 
-    /* Responsive */
     @media (max-width: 980px){
       .sidebar{ width: 250px; }
       .grid3{ grid-template-columns: 1fr; }
       .split{ grid-template-columns: 1fr; }
       .beforeAfter{ grid-template-columns: 1fr; }
       .imgRow{ grid-template-columns: 1fr; }
-      .hero h1{ font-size: 34px; }
+      .hero h1{ font-size: 32px; }
       .hero .content{ max-width: unset; }
     }
     @media (max-width: 760px){
@@ -388,8 +383,8 @@
       </nav>
 
       <div class="sidebarFooter">
-        <div><b>INTERMOR</b></div>
-        <div style="margin-top:6px; opacity:.95;">Strona na GitHub Pages • domena intermor.net</div>
+        <div><b>kontakt@intermor.net</b></div>
+        <div style="margin-top:6px; opacity:.95;">+48 503 833 119</div>
       </div>
     </aside>
 
@@ -404,16 +399,16 @@
 
             <div class="content">
               <div>
-                <h1 id="slideTitle">Automatyka przemysłowa – porządek, niezawodność, bezpieczeństwo.</h1>
+                <h1 id="slideTitle">Automatyka przemysłowa i serwis.</h1>
                 <p id="slideText">
-                  Modernizacje sterowań, retrofit, serwis awarii oraz systemy bezpieczeństwa. Robimy to tak,
-                  żeby było czytelnie, serwisowalnie i bez niespodzianek.
+                  Robimy modernizacje sterowań, poprawki w szafach, uruchomienia i diagnostykę awarii.
+                  Zależy nam, żeby instalacja była czytelna i dała się potem normalnie serwisować.
                 </p>
                 <div class="tagRow">
-                  <span class="pill">✅ szafy sterownicze</span>
-                  <span class="pill">✅ retrofit PLC</span>
-                  <span class="pill">✅ safety / E-STOP</span>
-                  <span class="pill">✅ elektronika jachtowa</span>
+                  <span class="pill">szafy sterownicze</span>
+                  <span class="pill">retrofit PLC</span>
+                  <span class="pill">E-STOP / safety</span>
+                  <span class="pill">elektronika jachtowa</span>
                 </div>
               </div>
             </div>
@@ -426,29 +421,29 @@
             <div class="grid3">
               <div class="feat">
                 <b>Automatyka przemysłowa</b>
-                <p>Modernizacje sterowań, przebudowy szaf, uruchomienia, usuwanie awarii i poprawki po instalacjach „na skróty”.</p>
+                <p>Szafy sterownicze, przebudowy, uruchomienia, usuwanie awarii, wymiany aparatury, okablowanie i oznaczenia.</p>
               </div>
               <div class="feat">
                 <b>Retrofit / PLC</b>
-                <p>Wymiana starej aparatury, uporządkowanie okablowania, odświeżenie logiki sterowania, testy i dokumentacja.</p>
+                <p>Wymiana starego sterowania, uporządkowanie układu, poprawa logiki i testy. Tak, żeby działało i było do ogarnięcia.</p>
               </div>
               <div class="feat">
                 <b>Systemy bezpieczeństwa</b>
-                <p>Audyt i poprawa bezpieczeństwa: E-STOP, blokady, przekaźniki safety, czytelne oznaczenia i zalecenia serwisowe.</p>
+                <p>E-STOP, blokady, przekaźniki safety, poprawki po kontrolach / audytach. Bez teorii — praktycznie.</p>
               </div>
             </div>
           </div>
 
           <div class="card section">
-            <h2>Standard INTERMOR</h2>
+            <h2>Jak pracujemy</h2>
             <div class="split">
               <div class="feat">
-                <b>Diagnoza → rozwiązanie</b>
-                <p>Najpierw znajdujemy przyczynę, potem naprawiamy. Minimalizujemy ryzyko powrotu awarii.</p>
+                <b>Najpierw diagnoza</b>
+                <p>Nie lecimy od razu “wymienić wszystko”. Najpierw ustalamy co jest przyczyną i dopiero wtedy robimy robotę.</p>
               </div>
               <div class="feat">
-                <b>Porządek i dokumentacja</b>
-                <p>Estetyka instalacji to mniej błędów i szybszy serwis. Zostawiamy po sobie czytelny układ.</p>
+                <b>Porządek i opis</b>
+                <p>Oznaczenia, logiczne prowadzenie przewodów i czytelność. Dzięki temu później serwis trwa godziny, a nie dni.</p>
               </div>
             </div>
           </div>
@@ -461,41 +456,38 @@
 
             <div class="split">
               <div class="feat">
-                <b>Co robimy</b>
+                <b>Elektronika na zamówienie</b>
                 <p>
-                  Projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla jachtów i instalacji 12V/24V:
-                  moduły czujników, panele, integracje oraz rozwiązania „pod konkretną jednostkę”.
-                  Od koncepcji, przez prototyp, po montaż i serwis — z myślą o warunkach morskich (wilgoć, wibracje, zakłócenia).
+                  Robimy elektronikę pod konkretną jednostkę: instalacje 12V/24V, czujniki, panele sterowania, integracje.
+                  Najpierw ustalamy wymagania, potem robimy prototyp i dopiero finalną wersję.
                 </p>
               </div>
 
               <div class="feat">
-                <b>Nasz system alarmowy (modułowy)</b>
+                <b>System alarmowy (modułowy)</b>
                 <p>
-                  Mamy w sprzedaży <b>modułowy system alarmowy na jachty</b>, który konfigurujemy pod klienta:
-                  zalanie (zęza), dym, otwarcie, napięcie akumulatorów, temperatura, itp.
-                  Priorytet: niezawodność i możliwość rozbudowy.
+                  Mamy własny, modułowy system alarmowy do jachtów. Można go skonfigurować pod potrzeby:
+                  zalanie (zęza), dym, otwarcie, napięcie akumulatorów, temperatura itd.
                 </p>
 
                 <div class="imgRow">
                   <div class="imgCard">
                     <div class="img" style="background-image:url('https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2000&q=70');"></div>
                     <div class="overlay"></div>
-                    <div class="cap"><b>Jacht / instalacja</b><br>placeholder – podmienimy na Twoje zdjęcia</div>
+                    <div class="cap"><b>Jacht / instalacja</b><br>placeholder — podmienimy na Twoje zdjęcia</div>
                   </div>
                   <div class="imgCard">
                     <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
                     <div class="overlay"></div>
-                    <div class="cap"><b>Moduły elektroniki</b><br>placeholder – docelowo zdjęcia Twojego systemu</div>
+                    <div class="cap"><b>Moduły elektroniki</b><br>placeholder — zdjęcia Twojego systemu</div>
                   </div>
                 </div>
-
               </div>
             </div>
 
             <div class="feat" style="margin-top:12px;">
-              <b>Proces współpracy</b>
-              <p>1) wymagania → 2) koncepcja → 3) prototyp → 4) testy → 5) wdrożenie → 6) wsparcie i serwis.</p>
+              <b>Proces</b>
+              <p>Wymagania → koncepcja → prototyp → testy → wdrożenie → serwis.</p>
             </div>
           </div>
         </section>
@@ -505,12 +497,12 @@
           <div class="card section">
             <h2>Realizacje</h2>
             <p style="opacity:.98; line-height:1.7; margin:0 0 12px;">
-              Szablon „przed / po” + krótki opis. Jak dasz foty, podmienimy tła i wpiszemy konkrety (czas, zakres, efekt).
+              Poniżej są przykładowe wpisy “przed / po”. Jak będziesz miał swoje foty, wstawimy je i dopiszemy konkretne efekty.
             </p>
 
             <div class="case" style="margin-top:12px;">
               <div class="caseHeader">
-                <b>Szafa sterownicza – porządkowanie i modernizacja</b>
+                <b>Szafa sterownicza — porządkowanie i modernizacja</b>
                 <small>przykład</small>
               </div>
               <div class="beforeAfter">
@@ -525,12 +517,12 @@
                   <div class="phLabel">PO</div>
                 </div>
               </div>
-              <p>Wymiana aparatury, porządek okablowania, oznaczenia, testy i dokumentacja powykonawcza.</p>
+              <p>Wymiana aparatury, uporządkowanie przewodów, oznaczenia, testy i dokumentacja.</p>
             </div>
 
             <div class="case" style="margin-top:12px;">
               <div class="caseHeader">
-                <b>Retrofit PLC – wymiana i reorganizacja sterowania</b>
+                <b>Retrofit PLC — wymiana i reorganizacja sterowania</b>
                 <small>przykład</small>
               </div>
               <div class="beforeAfter">
@@ -545,7 +537,7 @@
                   <div class="phLabel">PO</div>
                 </div>
               </div>
-              <p>Odświeżenie logiki sterowania, poprawa serwisowalności, testy, uruchomienie i zabezpieczenia.</p>
+              <p>Uporządkowanie układu, poprawa serwisowalności, testy i uruchomienie.</p>
             </div>
           </div>
         </section>
@@ -558,18 +550,17 @@
               <div class="feat">
                 <b>INTERMOR</b>
                 <p>
-                  tel.: +48 600 000 000<br>
+                  tel.: +48 503 833 119<br>
                   e-mail: kontakt@intermor.net<br>
-                  lokalizacja: Szczecin / Zachodniopomorskie<br>
-                  dojazd: PL / DE (wg ustaleń)
+                  <br>
+                  (lokalizację dopiszemy jak będziesz chciał)
                 </p>
               </div>
               <div class="feat">
-                <b>Godziny</b>
+                <b>Informacje</b>
                 <p>
-                  Pon–Pt: 8:00–18:00<br>
-                  Awaryjnie: do ustalenia<br><br>
-                  (Dane tymczasowe — podmienimy na docelowe)
+                  Jeśli nie odbieram, zostaw SMS — oddzwonię.<br>
+                  Najlepiej w wiadomości napisać: co to za obiekt / miasto / problem.
                 </p>
               </div>
             </div>
@@ -585,32 +576,27 @@
   </div>
 
   <script>
-    // Slajdy: celowo dobrane tematycznie (szafa / PLC / jacht / security).
-    // Jak później wrzucisz własne foty do repo (np. /assets/hero1.jpg) – podmieniasz tylko "img".
+    // Slajdy tematyczne: szafa / PLC / jacht / bezpieczeństwo.
     const slides = [
       {
-        // Szafa sterownicza / automatyka przemysłowa
         img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=70",
-        title: "Automatyka przemysłowa: szafy, uruchomienia, serwis.",
-        text: "Modernizacje sterowań, poprawki, diagnostyka awarii i porządek wykonania — tak, żeby dało się to serwisować."
+        title: "Automatyka przemysłowa: szafy i serwis.",
+        text: "Modernizacje, poprawki, diagnostyka awarii. Czytelnie zrobione i łatwe do późniejszego serwisu."
       },
       {
-        // Retrofit / PLC
         img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2400&q=70",
-        title: "Retrofit i PLC: wymiana, reorganizacja, testy.",
-        text: "Odświeżenie sterowania bez chaosu: logika, okablowanie, zabezpieczenia i dokumentacja powykonawcza."
+        title: "Retrofit PLC: wymiana i uporządkowanie.",
+        text: "Odświeżenie sterowania, logika, okablowanie, testy. Bez chaosu i bez losowych rozwiązań."
       },
       {
-        // Jacht
         img: "https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2400&q=70",
-        title: "Elektronika jachtowa: rozwiązania na zamówienie.",
-        text: "Projektujemy elektronikę pod konkretną jednostkę i rozwijamy modułowy system alarmowy na jachty."
+        title: "Elektronika jachtowa na zamówienie.",
+        text: "Rozwiązania pod konkretny jacht: czujniki, panele, integracje. Plus nasz modułowy system alarmowy."
       },
       {
-        // Security / monitoring / control room
         img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2400&q=70",
-        title: "Systemy bezpieczeństwa: audyt i modernizacja.",
-        text: "E-STOP, blokady, safety oraz uporządkowanie instalacji — bezpieczeństwo, które ma sens w praktyce."
+        title: "Systemy bezpieczeństwa (safety).",
+        text: "E-STOP, blokady, przekaźniki safety, poprawki po audytach. Praktycznie i sensownie."
       }
     ];
 
