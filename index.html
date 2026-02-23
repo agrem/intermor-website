@@ -16,8 +16,7 @@
       --border2: rgba(77,163,255,.22);
       --accent:#4da3ff;
 
-      --text:#ffffff;         /* tylko biały tekst */
-      --text2:#ffffff;        /* utrzymujemy biały nawet dla “muted” */
+      --text:#ffffff; /* tylko biały tekst */
       --shadow: 0 14px 44px rgba(0,0,0,.45);
       --radius: 18px;
     }
@@ -36,10 +35,7 @@
     a{ color: var(--text); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .app{
-      display:flex;
-      min-height:100vh;
-    }
+    .app{ display:flex; min-height:100vh; }
 
     /* Sidebar */
     .sidebar{
@@ -170,7 +166,7 @@
       inset:0;
       background-size: cover;
       background-position: center;
-      filter: blur(2.5px) saturate(1.05);
+      filter: blur(2.8px) saturate(1.05);
       transform: scale(1.06);
       opacity: 1;
       transition: opacity .9s ease;
@@ -179,8 +175,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(5,7,16,.78), rgba(5,7,16,.35) 55%, rgba(5,7,16,.70)),
-        linear-gradient(180deg, rgba(5,7,16,.45), rgba(5,7,16,.85));
+        linear-gradient(90deg, rgba(5,7,16,.82), rgba(5,7,16,.35) 55%, rgba(5,7,16,.78)),
+        linear-gradient(180deg, rgba(5,7,16,.40), rgba(5,7,16,.90));
     }
     .hero .content{
       position: relative;
@@ -198,16 +194,17 @@
       letter-spacing: .4px;
     }
     .hero p{
-      margin:0 0 14px;
+      margin:0 0 10px;
       font-size: 16px;
       line-height: 1.7;
-      opacity: .97; /* nadal białe */
+      opacity: .98;
     }
+
     .tagRow{
       display:flex;
       gap: 10px;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 12px;
     }
     .pill{
       display:inline-flex;
@@ -219,24 +216,6 @@
       background: rgba(17,23,42,.50);
       font-size: 12px;
       opacity: .96;
-    }
-    .ctaRow{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    .btn{
-      display:inline-block;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(17,23,42,.55);
-      font-weight: 750;
-    }
-    .btn.primary{
-      border-color: rgba(77,163,255,.55);
-      background: rgba(77,163,255,.22);
     }
 
     .heroRight{
@@ -287,20 +266,20 @@
     }
 
     /* Sections */
-    .section{
-      margin-top: 18px;
-      padding: 18px;
-    }
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: .2px;
-    }
+    .section{ margin-top: 16px; padding: 18px; }
+    .section h2{ margin: 0 0 10px; font-size: 22px; letter-spacing: .2px; }
+
     .grid3{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
     .feat{
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(17,23,42,.40);
@@ -308,13 +287,7 @@
       padding: 14px;
     }
     .feat b{ display:block; margin-bottom: 8px; }
-    .feat p{ margin:0; opacity:.97; line-height:1.6; font-size: 14px; }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+    .feat p{ margin:0; opacity:.98; line-height:1.65; font-size: 14px; }
 
     /* Realizacje */
     .case{
@@ -352,7 +325,7 @@
     .ph::after{
       content:"";
       position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,7,16,.08), rgba(5,7,16,.35));
+      background: linear-gradient(180deg, rgba(5,7,16,.06), rgba(5,7,16,.38));
     }
     .phLabel{
       position:absolute;
@@ -365,7 +338,44 @@
       border-radius: 999px;
       z-index: 2;
     }
-    .case p{ margin: 0; opacity:.97; line-height:1.6; font-size: 14px; }
+    .case p{ margin: 0; opacity:.98; line-height:1.65; font-size: 14px; }
+
+    /* Yacht images */
+    .imgRow{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .imgCard{
+      height: 190px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+      background: rgba(10,14,28,.9);
+    }
+    .imgCard .img{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(1.3px) saturate(1.02);
+      transform: scale(1.03);
+      opacity: .95;
+    }
+    .imgCard .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,16,.25), rgba(5,7,16,.78));
+    }
+    .imgCard .cap{
+      position:absolute;
+      left: 12px;
+      bottom: 12px;
+      right: 12px;
+      font-size: 13px;
+      line-height: 1.35;
+      opacity: .98;
+    }
 
     /* Hide/show pages */
     .page{ display:none; }
@@ -378,6 +388,7 @@
       .grid3{ grid-template-columns: 1fr; }
       .split{ grid-template-columns: 1fr; }
       .beforeAfter{ grid-template-columns: 1fr; }
+      .imgRow{ grid-template-columns: 1fr; }
       .hero h1{ font-size: 34px; }
     }
     @media (max-width: 760px){
@@ -439,22 +450,17 @@
 
             <div class="content">
               <div>
-                <h1 id="slideTitle">Nowoczesne sterowanie. Pewne bezpieczeństwo.</h1>
+                <h1 id="slideTitle">Sterowanie, które działa. Bezpieczeństwo, które ma sens.</h1>
                 <p id="slideText">
                   Projektujemy, modernizujemy i serwisujemy systemy sterowania oraz elektronikę – od zakładów
-                  przemysłowych po rozwiązania specjalne. Estetyka wykonania + dokumentacja + szybka diagnostyka.
+                  przemysłowych po rozwiązania specjalne. Porządek wykonania + dokumentacja + szybka diagnostyka.
                 </p>
 
                 <div class="tagRow">
                   <span class="pill">✅ szybka diagnostyka</span>
-                  <span class="pill">✅ porządek w szafach</span>
-                  <span class="pill">✅ dokumentacja powykonawcza</span>
+                  <span class="pill">✅ estetyka instalacji</span>
+                  <span class="pill">✅ dokumentacja</span>
                   <span class="pill">✅ safety / E-STOP</span>
-                </div>
-
-                <div class="ctaRow">
-                  <a class="btn primary" href="#contact" onclick="setPage('contact')">Kontakt</a>
-                  <a class="btn" href="#projects" onclick="setPage('projects')">Zobacz realizacje</a>
                 </div>
               </div>
 
@@ -464,7 +470,7 @@
                   <span>Modernizacje sterowań, retrofit, naprawy i usprawnienia bez zbędnych przestojów.</span>
                 </div>
                 <div class="miniCard">
-                  <b>Elektronika & systemy specjalne</b>
+                  <b>Elektronika i systemy specjalne</b>
                   <span>Projekt i wykonanie elektroniki pod klienta: prototyp → wdrożenie → serwis.</span>
                 </div>
                 <div class="miniCard">
@@ -477,7 +483,7 @@
             <div class="dots" id="dots"></div>
           </div>
 
-          <div class="card section" style="margin-top:16px;">
+          <div class="card section">
             <h2>Co robimy w INTERMOR</h2>
             <div class="grid3">
               <div class="feat">
@@ -486,25 +492,25 @@
               </div>
               <div class="feat">
                 <b>Modernizacje i retrofit</b>
-                <p>Wymiany aparatury, porządek okablowania, przebudowy szaf i układów sterowania, aktualizacje bezpieczeństwa.</p>
+                <p>Wymiany aparatury, przebudowy szaf, porządek okablowania oraz poprawa bezpieczeństwa instalacji.</p>
               </div>
               <div class="feat">
                 <b>Projekt i dokumentacja</b>
-                <p>Schematy, opisy, listy materiałowe, dokumentacja powykonawcza — tak, żeby to było serwisowalne.</p>
+                <p>Schematy, opisy, listy materiałowe, dokumentacja powykonawcza — żeby było serwisowalne.</p>
               </div>
             </div>
           </div>
 
           <div class="card section">
-            <h2>Dlaczego klienci wybierają INTERMOR</h2>
+            <h2>Jak pracujemy</h2>
             <div class="split">
               <div class="feat">
-                <b>Inżynierskie podejście</b>
-                <p>Nie „na skróty” — tylko rozwiązanie problemu u źródła, z myślą o przyszłym serwisie.</p>
+                <b>Inżyniersko, bez zgadywania</b>
+                <p>Najpierw diagnoza, potem rozwiązanie. Minimalizujemy ryzyko powrotu awarii.</p>
               </div>
               <div class="feat">
-                <b>Estetyka i porządek</b>
-                <p>Szafa sterownicza ma wyglądać i działać jak trzeba. Porządek = mniej awarii.</p>
+                <b>Porządek = niezawodność</b>
+                <p>Estetyka wykonania to nie „ładnie”, tylko mniej błędów, łatwiejszy serwis i szybsze naprawy.</p>
               </div>
             </div>
           </div>
@@ -514,31 +520,44 @@
         <section class="page" id="page-yacht">
           <div class="card section">
             <h2>Elektronika jachtowa</h2>
-            <p style="opacity:.97; line-height:1.7; margin:0 0 12px;">
-              W INTERMOR projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla klientów (custom),
-              dopasowaną do konkretnego jachtu, instalacji i oczekiwań armatora.
-              Od prototypu po finalny montaż oraz serwis.
-            </p>
 
-            <div class="grid3">
+            <div class="split">
               <div class="feat">
-                <b>Elektronika na zamówienie</b>
-                <p>Panele sterowania, moduły czujników, integracje, retrofit istniejących instalacji.</p>
+                <b>Co robimy</b>
+                <p>
+                  Projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla jachtów i instalacji 12V/24V.
+                  Tworzymy rozwiązania dopasowane do konkretnego układu, wymagań armatora oraz warunków pracy (wilgoć, wibracje, zakłócenia).
+                  Od koncepcji, przez prototyp, po montaż i serwis.
+                </p>
               </div>
+
               <div class="feat">
-                <b>System alarmowy na jachty</b>
-                <p>Mamy w sprzedaży gotowy <b>system alarmowy</b> (modułowy), który możemy skonfigurować pod Twoje potrzeby.</p>
-              </div>
-              <div class="feat">
-                <b>Bezpieczeństwo i niezawodność</b>
-                <p>Priorytet: odporność na warunki morskie, wibracje, zakłócenia i prosty serwis.</p>
+                <b>Nasz system alarmowy (modułowy)</b>
+                <p>
+                  W sprzedaży mamy <b>modułowy system alarmowy na jachty</b>. Możemy go skonfigurować i rozbudować pod Twoje potrzeby:
+                  czujniki zalania, dymu, otwarcia, napięcia akumulatorów, temperatury, itp. Docelowo: prosty serwis i możliwość rozbudowy.
+                </p>
+
+                <div class="imgRow">
+                  <div class="imgCard">
+                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
+                    <div class="overlay"></div>
+                    <div class="cap"><b>Moduły & okablowanie</b><br>placeholder — podmienimy na Twoje zdjęcia produktu</div>
+                  </div>
+                  <div class="imgCard">
+                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=2000&q=70');"></div>
+                    <div class="overlay"></div>
+                    <div class="cap"><b>Panel / jednostka centralna</b><br>placeholder — podmienimy na foty “front/back”</div>
+                  </div>
+                </div>
+
               </div>
             </div>
 
             <div class="feat" style="margin-top:12px;">
-              <b>Jak wygląda współpraca?</b>
+              <b>Proces współpracy</b>
               <p>
-                1) rozmowa + wymagania → 2) koncepcja i wycena → 3) prototyp → 4) testy → 5) wdrożenie i serwis.
+                1) wymagania → 2) koncepcja → 3) prototyp → 4) testy → 5) wdrożenie → 6) wsparcie i serwis.
               </p>
             </div>
           </div>
@@ -548,9 +567,8 @@
         <section class="page" id="page-projects">
           <div class="card section">
             <h2>Realizacje</h2>
-            <p style="opacity:.97; line-height:1.7; margin:0 0 12px;">
-              Poniżej szablon „przed / po”. Jak dasz swoje zdjęcia, podmienimy placeholdery i zrobimy z tego
-              mocne case study.
+            <p style="opacity:.98; line-height:1.7; margin:0 0 12px;">
+              Szablon „przed / po”. Jak podeślesz swoje foty, wsadzimy je tutaj i dopiszemy konkretne liczby (czas, zakres, efekt).
             </p>
 
             <div class="case" style="margin-top:12px;">
@@ -562,10 +580,7 @@
                 <div class="ph"><div class="phLabel">PRZED</div></div>
                 <div class="ph"><div class="phLabel">PO</div></div>
               </div>
-              <p>
-                Krótki opis: uporządkowanie okablowania, wymiana aparatury, dodanie zabezpieczeń,
-                opis przewodów + dokumentacja powykonawcza.
-              </p>
+              <p>Porządek okablowania, wymiana aparatury, dodanie zabezpieczeń, opis przewodów + dokumentacja.</p>
             </div>
 
             <div class="case" style="margin-top:12px;">
@@ -577,10 +592,7 @@
                 <div class="ph"><div class="phLabel">PRZED</div></div>
                 <div class="ph"><div class="phLabel">PO</div></div>
               </div>
-              <p>
-                Krótki opis: poprawa bezpieczeństwa (E-STOP), przebudowa sterowania, testy i uruchomienie,
-                zalecenia serwisowe.
-              </p>
+              <p>Przebudowa sterowania, testy i uruchomienie, poprawa bezpieczeństwa (E-STOP), zalecenia serwisowe.</p>
             </div>
 
             <div class="case" style="margin-top:12px;">
@@ -592,10 +604,7 @@
                 <div class="ph"><div class="phLabel">PROTOTYP</div></div>
                 <div class="ph"><div class="phLabel">WDROŻENIE</div></div>
               </div>
-              <p>
-                Krótki opis: zaprojektowanie modułu pod klienta, testy w środowisku docelowym,
-                finalna wersja i wsparcie serwisowe.
-              </p>
+              <p>Projekt modułu pod klienta, testy w środowisku docelowym, finalna wersja + wsparcie.</p>
             </div>
           </div>
         </section>
@@ -616,15 +625,13 @@
               </div>
 
               <div class="feat">
-                <b>Szybka wiadomość</b>
-                <p style="margin-bottom:10px;">
-                  Kliknij i napisz maila (na razie to podgląd):
+                <b>Godziny</b>
+                <p>
+                  Pon–Pt: 8:00–18:00<br>
+                  Awaryjnie: do ustalenia<br>
+                  <br>
+                  (Dane tymczasowe — podmienimy na docelowe)
                 </p>
-                <a class="btn primary" href="mailto:kontakt@intermor.net?subject=Zapytanie%20INTERMOR&body=Dzie%C5%84%20dobry%2C%0A%0AChcia%C5%82bym%20zapyta%C4%87%20o...%0A%0APozdrawiam">
-                  Napisz e-mail
-                </a>
-                <div style="height:10px;"></div>
-                <a class="btn" href="#home" onclick="setPage('home')">Wróć na stronę główną</a>
               </div>
             </div>
 
@@ -640,28 +647,28 @@
 
   <script>
     // --- SLIDER (auto) ---
-    // Placeholder zdjęcia: podmień na swoje, jak je podeślesz.
-    // Możesz wkleić tu linki do plików, które wrzucisz do repo (np. /assets/hero1.jpg).
+    // Podmień na swoje zdjęcia później (możesz też wrzucić pliki do repo i dać np. /assets/hero1.jpg)
+    // Wybrałem tła bardziej “industrial / tech / control room”.
     const slides = [
       {
-        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=70",
-        title: "Nowoczesne sterowanie. Pewne bezpieczeństwo.",
-        text: "Automatyka, elektronika i systemy bezpieczeństwa — projekt, modernizacja i serwis. Estetyka + dokumentacja + szybka diagnostyka."
+        img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=2400&q=70",
+        title: "Sterowanie, które działa. Bezpieczeństwo, które ma sens.",
+        text: "Automatyka przemysłowa, elektronika i safety — od diagnozy po modernizację. Porządek wykonania i dokumentacja."
       },
       {
-        img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=2200&q=70",
-        title: "Retrofit bez przestojów, porządek w szafie.",
-        text: "Wymiany aparatury, przebudowy sterowań, poprawki po awariach. Zostawiamy po sobie porządek i opis."
+        img: "https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=2400&q=70",
+        title: "Modernizacje i retrofit bez zgadywania.",
+        text: "Wymiany aparatury, przebudowy szaf, usprawnienia instalacji. Zostawiamy po sobie porządek i serwisowalność."
       },
       {
-        img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2200&q=70",
-        title: "Rozwiązania specjalne — od prototypu po wdrożenie.",
-        text: "Elektronika na zamówienie, systemy czujników, integracje. Inżynierskie podejście i serwisowalność."
+        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=70",
+        title: "Szybka diagnostyka = mniej przestojów.",
+        text: "Naprawy, uruchomienia i poprawki awarii. Szukamy przyczyny problemu, nie tylko skutku."
       },
       {
-        img: "https://images.unsplash.com/photo-1520975958225-2d3d5b1b7b0a?auto=format&fit=crop&w=2200&q=70",
-        title: "Elektronika jachtowa: alarmy i moduły pod klienta.",
-        text: "Projektujemy i produkujemy elektronikę na zamówienie, mamy też gotowy system alarmowy na jachty."
+        img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2400&q=70",
+        title: "Elektronika jachtowa: rozwiązania pod klienta.",
+        text: "Projektujemy elektronikę na zamówienie i rozwijamy modułowy system alarmowy na jachty."
       }
     ];
 
@@ -689,8 +696,6 @@
 
     function applySlide(instant=false){
       const s = slides[current];
-
-      // proste fade
       bg.style.opacity = "0";
       setTimeout(() => {
         bg.style.backgroundImage = `url('${s.img}')`;
@@ -728,12 +733,6 @@
       setActiveNav(page);
     }
 
-    function setPage(page){
-      if(!pages.includes(page)) page = "home";
-      window.location.hash = page;
-      showPage(page);
-    }
-
     function onHash(){
       const h = (window.location.hash || "#home").replace("#","");
       showPage(pages.includes(h) ? h : "home");
@@ -746,8 +745,6 @@
     restartTimer();
     window.addEventListener("hashchange", onHash);
     onHash();
-    // expose for inline onclick
-    window.setPage = setPage;
   </script>
 </body>
 </html>
