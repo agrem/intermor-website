@@ -4,19 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>INTERMOR – Automatyka • Elektronika • Systemy bezpieczeństwa</title>
-  <meta name="description" content="INTERMOR – automatyka przemysłowa, elektronika, systemy bezpieczeństwa oraz elektronika jachtowa." />
+  <meta name="description" content="INTERMOR – automatyka przemysłowa, retrofit, elektronika jachtowa i systemy bezpieczeństwa." />
 
   <style>
     :root{
       --bg0:#050710;
       --bg1:#0b0f1a;
       --panel: rgba(17, 23, 42, 0.78);
-      --panel2: rgba(17, 23, 42, 0.60);
       --border: rgba(255,255,255,.10);
       --border2: rgba(77,163,255,.22);
-      --accent:#4da3ff;
-
-      --text:#ffffff; /* tylko biały tekst */
+      --text:#ffffff;
       --shadow: 0 14px 44px rgba(0,0,0,.45);
       --radius: 18px;
     }
@@ -62,8 +59,7 @@
     }
 
     .brandMark{
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       border-radius: 12px;
       background: radial-gradient(circle at 30% 30%, rgba(77,163,255,.95), rgba(77,163,255,.20) 60%, rgba(255,255,255,.08) 100%);
       border: 1px solid rgba(255,255,255,.10);
@@ -114,10 +110,7 @@
       background: rgba(77,163,255,.14);
       opacity: 1;
     }
-    .nav small{
-      font-size: 12px;
-      opacity: .92;
-    }
+    .nav small{ font-size: 12px; opacity: .92; }
 
     .sidebarFooter{
       position:absolute;
@@ -138,11 +131,7 @@
       padding: 22px 22px 30px;
       min-width: 0;
     }
-
-    .container{
-      max-width: 1180px;
-      margin: 0 auto;
-    }
+    .container{ max-width: 1180px; margin: 0 auto; }
 
     .card{
       border: 1px solid var(--border2);
@@ -175,17 +164,16 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(5,7,16,.82), rgba(5,7,16,.35) 55%, rgba(5,7,16,.78)),
-        linear-gradient(180deg, rgba(5,7,16,.40), rgba(5,7,16,.90));
+        linear-gradient(90deg, rgba(5,7,16,.84), rgba(5,7,16,.35) 55%, rgba(5,7,16,.84)),
+        linear-gradient(180deg, rgba(5,7,16,.35), rgba(5,7,16,.92));
     }
     .hero .content{
       position: relative;
       padding: 30px 28px;
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items: end;
+      display:flex;
+      align-items:flex-end;
       min-height: 360px;
+      max-width: 820px;
     }
     .hero h1{
       margin:0 0 10px;
@@ -218,32 +206,6 @@
       opacity: .96;
     }
 
-    .heroRight{
-      align-self: stretch;
-      display:flex;
-      flex-direction:column;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-    .miniCard{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(17,23,42,.42);
-      border-radius: 16px;
-      padding: 14px;
-    }
-    .miniCard b{
-      display:block;
-      margin-bottom: 6px;
-      font-size: 14px;
-      letter-spacing: .2px;
-    }
-    .miniCard span{
-      font-size: 12px;
-      opacity: .95;
-      line-height: 1.45;
-      display:block;
-    }
-
     .dots{
       position:absolute;
       left: 22px;
@@ -253,8 +215,7 @@
       z-index: 3;
     }
     .dot{
-      width: 9px;
-      height: 9px;
+      width: 9px; height: 9px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.25);
       background: rgba(255,255,255,.12);
@@ -314,18 +275,22 @@
     .ph{
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.12);
-      background:
-        linear-gradient(135deg, rgba(77,163,255,.20), rgba(255,255,255,.05)),
-        radial-gradient(800px 200px at 20% 20%, rgba(77,163,255,.18), transparent 60%),
-        rgba(10,14,28,.9);
-      height: 150px;
+      height: 160px;
       position:relative;
       overflow:hidden;
+      background: rgba(10,14,28,.9);
     }
-    .ph::after{
-      content:"";
+    .ph .img{
       position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,7,16,.06), rgba(5,7,16,.38));
+      background-size: cover;
+      background-position: center;
+      filter: blur(1.2px) saturate(1.02);
+      transform: scale(1.03);
+      opacity: .95;
+    }
+    .ph .overlay{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,16,.22), rgba(5,7,16,.82));
     }
     .phLabel{
       position:absolute;
@@ -338,7 +303,6 @@
       border-radius: 999px;
       z-index: 2;
     }
-    .case p{ margin: 0; opacity:.98; line-height:1.65; font-size: 14px; }
 
     /* Yacht images */
     .imgRow{
@@ -348,7 +312,7 @@
       margin-top: 12px;
     }
     .imgCard{
-      height: 190px;
+      height: 210px;
       border-radius: 16px;
       border: 1px solid rgba(255,255,255,.12);
       overflow:hidden;
@@ -359,13 +323,13 @@
       position:absolute; inset:0;
       background-size: cover;
       background-position: center;
-      filter: blur(1.3px) saturate(1.02);
+      filter: blur(1.2px) saturate(1.02);
       transform: scale(1.03);
       opacity: .95;
     }
     .imgCard .overlay{
       position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,7,16,.25), rgba(5,7,16,.78));
+      background: linear-gradient(180deg, rgba(5,7,16,.18), rgba(5,7,16,.86));
     }
     .imgCard .cap{
       position:absolute;
@@ -384,12 +348,12 @@
     /* Responsive */
     @media (max-width: 980px){
       .sidebar{ width: 250px; }
-      .hero .content{ grid-template-columns: 1fr; }
       .grid3{ grid-template-columns: 1fr; }
       .split{ grid-template-columns: 1fr; }
       .beforeAfter{ grid-template-columns: 1fr; }
       .imgRow{ grid-template-columns: 1fr; }
       .hero h1{ font-size: 34px; }
+      .hero .content{ max-width: unset; }
     }
     @media (max-width: 760px){
       .app{ flex-direction:column; }
@@ -417,25 +381,15 @@
       </div>
 
       <nav class="nav" id="nav">
-        <a href="#home" data-page="home" class="active">
-          <span>Strona główna</span><small>Start</small>
-        </a>
-        <a href="#yacht" data-page="yacht">
-          <span>Elektronika jachtowa</span><small>Yacht</small>
-        </a>
-        <a href="#projects" data-page="projects">
-          <span>Realizacje</span><small>Case</small>
-        </a>
-        <a href="#contact" data-page="contact">
-          <span>Kontakt</span><small>Call</small>
-        </a>
+        <a href="#home" data-page="home" class="active"><span>Strona główna</span><small>Start</small></a>
+        <a href="#yacht" data-page="yacht"><span>Elektronika jachtowa</span><small>Yacht</small></a>
+        <a href="#projects" data-page="projects"><span>Realizacje</span><small>Case</small></a>
+        <a href="#contact" data-page="contact"><span>Kontakt</span><small>Call</small></a>
       </nav>
 
       <div class="sidebarFooter">
         <div><b>INTERMOR</b></div>
-        <div style="margin-top:6px; opacity:.95;">
-          Strona na GitHub Pages • domena intermor.net
-        </div>
+        <div style="margin-top:6px; opacity:.95;">Strona na GitHub Pages • domena intermor.net</div>
       </div>
     </aside>
 
@@ -444,38 +398,22 @@
 
         <!-- STRONA GŁÓWNA -->
         <section class="page active" id="page-home">
-          <div class="hero" id="hero">
+          <div class="hero">
             <div class="slideBg" id="slideBg"></div>
             <div class="shade"></div>
 
             <div class="content">
               <div>
-                <h1 id="slideTitle">Sterowanie, które działa. Bezpieczeństwo, które ma sens.</h1>
+                <h1 id="slideTitle">Automatyka przemysłowa – porządek, niezawodność, bezpieczeństwo.</h1>
                 <p id="slideText">
-                  Projektujemy, modernizujemy i serwisujemy systemy sterowania oraz elektronikę – od zakładów
-                  przemysłowych po rozwiązania specjalne. Porządek wykonania + dokumentacja + szybka diagnostyka.
+                  Modernizacje sterowań, retrofit, serwis awarii oraz systemy bezpieczeństwa. Robimy to tak,
+                  żeby było czytelnie, serwisowalnie i bez niespodzianek.
                 </p>
-
                 <div class="tagRow">
-                  <span class="pill">✅ szybka diagnostyka</span>
-                  <span class="pill">✅ estetyka instalacji</span>
-                  <span class="pill">✅ dokumentacja</span>
+                  <span class="pill">✅ szafy sterownicze</span>
+                  <span class="pill">✅ retrofit PLC</span>
                   <span class="pill">✅ safety / E-STOP</span>
-                </div>
-              </div>
-
-              <div class="heroRight">
-                <div class="miniCard">
-                  <b>Automatyka przemysłowa</b>
-                  <span>Modernizacje sterowań, retrofit, naprawy i usprawnienia bez zbędnych przestojów.</span>
-                </div>
-                <div class="miniCard">
-                  <b>Elektronika i systemy specjalne</b>
-                  <span>Projekt i wykonanie elektroniki pod klienta: prototyp → wdrożenie → serwis.</span>
-                </div>
-                <div class="miniCard">
-                  <b>Bezpieczeństwo</b>
-                  <span>Audyt, poprawki, przebudowa E-STOP / blokad / przekaźników bezpieczeństwa.</span>
+                  <span class="pill">✅ elektronika jachtowa</span>
                 </div>
               </div>
             </div>
@@ -484,33 +422,33 @@
           </div>
 
           <div class="card section">
-            <h2>Co robimy w INTERMOR</h2>
+            <h2>Zakres usług</h2>
             <div class="grid3">
               <div class="feat">
-                <b>Serwis i diagnostyka</b>
-                <p>Awaryjne uruchomienia, diagnostyka błędów, poprawki instalacji, usuwanie przyczyn przestojów.</p>
+                <b>Automatyka przemysłowa</b>
+                <p>Modernizacje sterowań, przebudowy szaf, uruchomienia, usuwanie awarii i poprawki po instalacjach „na skróty”.</p>
               </div>
               <div class="feat">
-                <b>Modernizacje i retrofit</b>
-                <p>Wymiany aparatury, przebudowy szaf, porządek okablowania oraz poprawa bezpieczeństwa instalacji.</p>
+                <b>Retrofit / PLC</b>
+                <p>Wymiana starej aparatury, uporządkowanie okablowania, odświeżenie logiki sterowania, testy i dokumentacja.</p>
               </div>
               <div class="feat">
-                <b>Projekt i dokumentacja</b>
-                <p>Schematy, opisy, listy materiałowe, dokumentacja powykonawcza — żeby było serwisowalne.</p>
+                <b>Systemy bezpieczeństwa</b>
+                <p>Audyt i poprawa bezpieczeństwa: E-STOP, blokady, przekaźniki safety, czytelne oznaczenia i zalecenia serwisowe.</p>
               </div>
             </div>
           </div>
 
           <div class="card section">
-            <h2>Jak pracujemy</h2>
+            <h2>Standard INTERMOR</h2>
             <div class="split">
               <div class="feat">
-                <b>Inżyniersko, bez zgadywania</b>
-                <p>Najpierw diagnoza, potem rozwiązanie. Minimalizujemy ryzyko powrotu awarii.</p>
+                <b>Diagnoza → rozwiązanie</b>
+                <p>Najpierw znajdujemy przyczynę, potem naprawiamy. Minimalizujemy ryzyko powrotu awarii.</p>
               </div>
               <div class="feat">
-                <b>Porządek = niezawodność</b>
-                <p>Estetyka wykonania to nie „ładnie”, tylko mniej błędów, łatwiejszy serwis i szybsze naprawy.</p>
+                <b>Porządek i dokumentacja</b>
+                <p>Estetyka instalacji to mniej błędów i szybszy serwis. Zostawiamy po sobie czytelny układ.</p>
               </div>
             </div>
           </div>
@@ -525,29 +463,30 @@
               <div class="feat">
                 <b>Co robimy</b>
                 <p>
-                  Projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla jachtów i instalacji 12V/24V.
-                  Tworzymy rozwiązania dopasowane do konkretnego układu, wymagań armatora oraz warunków pracy (wilgoć, wibracje, zakłócenia).
-                  Od koncepcji, przez prototyp, po montaż i serwis.
+                  Projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla jachtów i instalacji 12V/24V:
+                  moduły czujników, panele, integracje oraz rozwiązania „pod konkretną jednostkę”.
+                  Od koncepcji, przez prototyp, po montaż i serwis — z myślą o warunkach morskich (wilgoć, wibracje, zakłócenia).
                 </p>
               </div>
 
               <div class="feat">
                 <b>Nasz system alarmowy (modułowy)</b>
                 <p>
-                  W sprzedaży mamy <b>modułowy system alarmowy na jachty</b>. Możemy go skonfigurować i rozbudować pod Twoje potrzeby:
-                  czujniki zalania, dymu, otwarcia, napięcia akumulatorów, temperatury, itp. Docelowo: prosty serwis i możliwość rozbudowy.
+                  Mamy w sprzedaży <b>modułowy system alarmowy na jachty</b>, który konfigurujemy pod klienta:
+                  zalanie (zęza), dym, otwarcie, napięcie akumulatorów, temperatura, itp.
+                  Priorytet: niezawodność i możliwość rozbudowy.
                 </p>
 
                 <div class="imgRow">
                   <div class="imgCard">
-                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
+                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2000&q=70');"></div>
                     <div class="overlay"></div>
-                    <div class="cap"><b>Moduły & okablowanie</b><br>placeholder — podmienimy na Twoje zdjęcia produktu</div>
+                    <div class="cap"><b>Jacht / instalacja</b><br>placeholder – podmienimy na Twoje zdjęcia</div>
                   </div>
                   <div class="imgCard">
-                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=2000&q=70');"></div>
+                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
                     <div class="overlay"></div>
-                    <div class="cap"><b>Panel / jednostka centralna</b><br>placeholder — podmienimy na foty “front/back”</div>
+                    <div class="cap"><b>Moduły elektroniki</b><br>placeholder – docelowo zdjęcia Twojego systemu</div>
                   </div>
                 </div>
 
@@ -556,9 +495,7 @@
 
             <div class="feat" style="margin-top:12px;">
               <b>Proces współpracy</b>
-              <p>
-                1) wymagania → 2) koncepcja → 3) prototyp → 4) testy → 5) wdrożenie → 6) wsparcie i serwis.
-              </p>
+              <p>1) wymagania → 2) koncepcja → 3) prototyp → 4) testy → 5) wdrożenie → 6) wsparcie i serwis.</p>
             </div>
           </div>
         </section>
@@ -568,43 +505,47 @@
           <div class="card section">
             <h2>Realizacje</h2>
             <p style="opacity:.98; line-height:1.7; margin:0 0 12px;">
-              Szablon „przed / po”. Jak podeślesz swoje foty, wsadzimy je tutaj i dopiszemy konkretne liczby (czas, zakres, efekt).
+              Szablon „przed / po” + krótki opis. Jak dasz foty, podmienimy tła i wpiszemy konkrety (czas, zakres, efekt).
             </p>
 
             <div class="case" style="margin-top:12px;">
               <div class="caseHeader">
-                <b>Modernizacja sterowania – przykład</b>
-                <small>czas: 1–2 dni</small>
+                <b>Szafa sterownicza – porządkowanie i modernizacja</b>
+                <small>przykład</small>
               </div>
               <div class="beforeAfter">
-                <div class="ph"><div class="phLabel">PRZED</div></div>
-                <div class="ph"><div class="phLabel">PO</div></div>
+                <div class="ph">
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="overlay"></div>
+                  <div class="phLabel">PRZED</div>
+                </div>
+                <div class="ph">
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="overlay"></div>
+                  <div class="phLabel">PO</div>
+                </div>
               </div>
-              <p>Porządek okablowania, wymiana aparatury, dodanie zabezpieczeń, opis przewodów + dokumentacja.</p>
+              <p>Wymiana aparatury, porządek okablowania, oznaczenia, testy i dokumentacja powykonawcza.</p>
             </div>
 
             <div class="case" style="margin-top:12px;">
               <div class="caseHeader">
-                <b>Retrofit maszyny – przykład</b>
-                <small>czas: 2–4 dni</small>
+                <b>Retrofit PLC – wymiana i reorganizacja sterowania</b>
+                <small>przykład</small>
               </div>
               <div class="beforeAfter">
-                <div class="ph"><div class="phLabel">PRZED</div></div>
-                <div class="ph"><div class="phLabel">PO</div></div>
+                <div class="ph">
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="overlay"></div>
+                  <div class="phLabel">PRZED</div>
+                </div>
+                <div class="ph">
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="overlay"></div>
+                  <div class="phLabel">PO</div>
+                </div>
               </div>
-              <p>Przebudowa sterowania, testy i uruchomienie, poprawa bezpieczeństwa (E-STOP), zalecenia serwisowe.</p>
-            </div>
-
-            <div class="case" style="margin-top:12px;">
-              <div class="caseHeader">
-                <b>Elektronika specjalna – przykład</b>
-                <small>prototyp → wdrożenie</small>
-              </div>
-              <div class="beforeAfter">
-                <div class="ph"><div class="phLabel">PROTOTYP</div></div>
-                <div class="ph"><div class="phLabel">WDROŻENIE</div></div>
-              </div>
-              <p>Projekt modułu pod klienta, testy w środowisku docelowym, finalna wersja + wsparcie.</p>
+              <p>Odświeżenie logiki sterowania, poprawa serwisowalności, testy, uruchomienie i zabezpieczenia.</p>
             </div>
           </div>
         </section>
@@ -623,13 +564,11 @@
                   dojazd: PL / DE (wg ustaleń)
                 </p>
               </div>
-
               <div class="feat">
                 <b>Godziny</b>
                 <p>
                   Pon–Pt: 8:00–18:00<br>
-                  Awaryjnie: do ustalenia<br>
-                  <br>
+                  Awaryjnie: do ustalenia<br><br>
                   (Dane tymczasowe — podmienimy na docelowe)
                 </p>
               </div>
@@ -646,29 +585,32 @@
   </div>
 
   <script>
-    // --- SLIDER (auto) ---
-    // Podmień na swoje zdjęcia później (możesz też wrzucić pliki do repo i dać np. /assets/hero1.jpg)
-    // Wybrałem tła bardziej “industrial / tech / control room”.
+    // Slajdy: celowo dobrane tematycznie (szafa / PLC / jacht / security).
+    // Jak później wrzucisz własne foty do repo (np. /assets/hero1.jpg) – podmieniasz tylko "img".
     const slides = [
       {
-        img: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=2400&q=70",
-        title: "Sterowanie, które działa. Bezpieczeństwo, które ma sens.",
-        text: "Automatyka przemysłowa, elektronika i safety — od diagnozy po modernizację. Porządek wykonania i dokumentacja."
-      },
-      {
-        img: "https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=2400&q=70",
-        title: "Modernizacje i retrofit bez zgadywania.",
-        text: "Wymiany aparatury, przebudowy szaf, usprawnienia instalacji. Zostawiamy po sobie porządek i serwisowalność."
-      },
-      {
+        // Szafa sterownicza / automatyka przemysłowa
         img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=70",
-        title: "Szybka diagnostyka = mniej przestojów.",
-        text: "Naprawy, uruchomienia i poprawki awarii. Szukamy przyczyny problemu, nie tylko skutku."
+        title: "Automatyka przemysłowa: szafy, uruchomienia, serwis.",
+        text: "Modernizacje sterowań, poprawki, diagnostyka awarii i porządek wykonania — tak, żeby dało się to serwisować."
       },
       {
+        // Retrofit / PLC
         img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2400&q=70",
-        title: "Elektronika jachtowa: rozwiązania pod klienta.",
-        text: "Projektujemy elektronikę na zamówienie i rozwijamy modułowy system alarmowy na jachty."
+        title: "Retrofit i PLC: wymiana, reorganizacja, testy.",
+        text: "Odświeżenie sterowania bez chaosu: logika, okablowanie, zabezpieczenia i dokumentacja powykonawcza."
+      },
+      {
+        // Jacht
+        img: "https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2400&q=70",
+        title: "Elektronika jachtowa: rozwiązania na zamówienie.",
+        text: "Projektujemy elektronikę pod konkretną jednostkę i rozwijamy modułowy system alarmowy na jachty."
+      },
+      {
+        // Security / monitoring / control room
+        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2400&q=70",
+        title: "Systemy bezpieczeństwa: audyt i modernizacja.",
+        text: "E-STOP, blokady, safety oraz uporządkowanie instalacji — bezpieczeństwo, które ma sens w praktyce."
       }
     ];
 
@@ -716,7 +658,7 @@
       timer = setInterval(nextSlide, 6500);
     }
 
-    // --- NAV / PAGES ---
+    // NAV / pages
     const pages = ["home","yacht","projects","contact"];
 
     function setActiveNav(page){
