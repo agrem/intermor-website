@@ -1,81 +1,753 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INTERMOR – Automatyka przemysłowa</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: white;
-    text-align: center;
-}
-header {
-    padding: 80px 20px;
-}
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-p {
-    font-size: 20px;
-    color: #cbd5e1;
-}
-section {
-    padding: 60px 20px;
-}
-.card {
-    background: #1e293b;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 600px;
-    border-radius: 12px;
-}
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    background: #3b82f6;
-    color: white;
-    cursor: pointer;
-}
-footer {
-    padding: 40px;
-    font-size: 14px;
-    color: #94a3b8;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INTERMOR – Automatyka • Elektronika • Systemy bezpieczeństwa</title>
+  <meta name="description" content="INTERMOR – automatyka przemysłowa, elektronika, systemy bezpieczeństwa oraz elektronika jachtowa." />
+
+  <style>
+    :root{
+      --bg0:#050710;
+      --bg1:#0b0f1a;
+      --panel: rgba(17, 23, 42, 0.78);
+      --panel2: rgba(17, 23, 42, 0.60);
+      --border: rgba(255,255,255,.10);
+      --border2: rgba(77,163,255,.22);
+      --accent:#4da3ff;
+
+      --text:#ffffff;         /* tylko biały tekst */
+      --text2:#ffffff;        /* utrzymujemy biały nawet dla “muted” */
+      --shadow: 0 14px 44px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 700px at 30% -20%, rgba(77,163,255,.18), transparent 60%),
+                  radial-gradient(900px 600px at 110% 20%, rgba(77,163,255,.12), transparent 60%),
+                  linear-gradient(180deg, var(--bg1), var(--bg0));
+      color: var(--text);
+    }
+
+    a{ color: var(--text); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .app{
+      display:flex;
+      min-height:100vh;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      width: 270px;
+      padding: 18px;
+      border-right: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(10,14,28,.85), rgba(5,7,16,.88));
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom: 18px;
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: rgba(17,23,42,.55);
+    }
+
+    .brandMark{
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, rgba(77,163,255,.95), rgba(77,163,255,.20) 60%, rgba(255,255,255,.08) 100%);
+      border: 1px solid rgba(255,255,255,.10);
+      flex: 0 0 auto;
+    }
+
+    .brandText b{
+      display:block;
+      letter-spacing: 1px;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .brandText span{
+      display:block;
+      font-size: 12px;
+      opacity: .92;
+      margin-top: 3px;
+      line-height: 1.25;
+    }
+
+    .nav{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .nav a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(17,23,42,.45);
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      opacity: .95;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .nav a:hover{
+      transform: translateY(-1px);
+      border-color: rgba(77,163,255,.35);
+      background: rgba(17,23,42,.58);
+      opacity: 1;
+    }
+    .nav a.active{
+      border-color: rgba(77,163,255,.55);
+      background: rgba(77,163,255,.14);
+      opacity: 1;
+    }
+    .nav small{
+      font-size: 12px;
+      opacity: .92;
+    }
+
+    .sidebarFooter{
+      position:absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(17,23,42,.35);
+      font-size: 12px;
+      opacity: .92;
+    }
+
+    /* Main */
+    .main{
+      flex: 1;
+      padding: 22px 22px 30px;
+      min-width: 0;
+    }
+
+    .container{
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .card{
+      border: 1px solid var(--border2);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Hero / slider */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(77,163,255,.28);
+      box-shadow: var(--shadow);
+      min-height: 360px;
+    }
+    .hero .slideBg{
+      position:absolute;
+      inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(2.5px) saturate(1.05);
+      transform: scale(1.06);
+      opacity: 1;
+      transition: opacity .9s ease;
+    }
+    .hero .shade{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(5,7,16,.78), rgba(5,7,16,.35) 55%, rgba(5,7,16,.70)),
+        linear-gradient(180deg, rgba(5,7,16,.45), rgba(5,7,16,.85));
+    }
+    .hero .content{
+      position: relative;
+      padding: 30px 28px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: end;
+      min-height: 360px;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: 42px;
+      line-height: 1.05;
+      letter-spacing: .4px;
+    }
+    .hero p{
+      margin:0 0 14px;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: .97; /* nadal białe */
+    }
+    .tagRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(17,23,42,.50);
+      font-size: 12px;
+      opacity: .96;
+    }
+    .ctaRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(17,23,42,.55);
+      font-weight: 750;
+    }
+    .btn.primary{
+      border-color: rgba(77,163,255,.55);
+      background: rgba(77,163,255,.22);
+    }
+
+    .heroRight{
+      align-self: stretch;
+      display:flex;
+      flex-direction:column;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .miniCard{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(17,23,42,.42);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .miniCard b{
+      display:block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .miniCard span{
+      font-size: 12px;
+      opacity: .95;
+      line-height: 1.45;
+      display:block;
+    }
+
+    .dots{
+      position:absolute;
+      left: 22px;
+      bottom: 16px;
+      display:flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .dot{
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.12);
+      cursor: pointer;
+    }
+    .dot.active{
+      background: rgba(77,163,255,.65);
+      border-color: rgba(77,163,255,.9);
+    }
+
+    /* Sections */
+    .section{
+      margin-top: 18px;
+      padding: 18px;
+    }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: .2px;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .feat{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(17,23,42,.40);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .feat b{ display:block; margin-bottom: 8px; }
+    .feat p{ margin:0; opacity:.97; line-height:1.6; font-size: 14px; }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Realizacje */
+    .case{
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(17,23,42,.40);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .caseHeader{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .caseHeader b{ font-size: 16px; }
+    .caseHeader small{ opacity:.95; }
+    .beforeAfter{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 10px 0 10px;
+    }
+    .ph{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(135deg, rgba(77,163,255,.20), rgba(255,255,255,.05)),
+        radial-gradient(800px 200px at 20% 20%, rgba(77,163,255,.18), transparent 60%),
+        rgba(10,14,28,.9);
+      height: 150px;
+      position:relative;
+      overflow:hidden;
+    }
+    .ph::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,16,.08), rgba(5,7,16,.35));
+    }
+    .phLabel{
+      position:absolute;
+      left: 10px;
+      bottom: 10px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(17,23,42,.55);
+      padding: 6px 8px;
+      border-radius: 999px;
+      z-index: 2;
+    }
+    .case p{ margin: 0; opacity:.97; line-height:1.6; font-size: 14px; }
+
+    /* Hide/show pages */
+    .page{ display:none; }
+    .page.active{ display:block; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .sidebar{ width: 250px; }
+      .hero .content{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .split{ grid-template-columns: 1fr; }
+      .beforeAfter{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 34px; }
+    }
+    @media (max-width: 760px){
+      .app{ flex-direction:column; }
+      .sidebar{
+        position: relative;
+        height: auto;
+        width: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .sidebarFooter{ position:relative; bottom:auto; left:auto; right:auto; margin-top: 12px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <b>INTERMOR</b>
+          <span>Automatyka • Elektronika • Bezpieczeństwo</span>
+        </div>
+      </div>
 
-<header>
-<h1>INTERMOR</h1>
-<p>Automatyka przemysłowa • Elektronika • Systemy bezpieczeństwa</p>
-</header>
+      <nav class="nav" id="nav">
+        <a href="#home" data-page="home" class="active">
+          <span>Strona główna</span><small>Start</small>
+        </a>
+        <a href="#yacht" data-page="yacht">
+          <span>Elektronika jachtowa</span><small>Yacht</small>
+        </a>
+        <a href="#projects" data-page="projects">
+          <span>Realizacje</span><small>Case</small>
+        </a>
+        <a href="#contact" data-page="contact">
+          <span>Kontakt</span><small>Call</small>
+        </a>
+      </nav>
 
-<section>
-<div class="card">
-<h2>Oferta</h2>
-<p>Modernizacja sterowań, serwis maszyn, porządek w szafach, bezpieczeństwo instalacji.</p>
-</div>
+      <div class="sidebarFooter">
+        <div><b>INTERMOR</b></div>
+        <div style="margin-top:6px; opacity:.95;">
+          Strona na GitHub Pages • domena intermor.net
+        </div>
+      </div>
+    </aside>
 
-<div class="card">
-<h2>Kontakt</h2>
-<p>tel. +48 XXX XXX XXX</p>
-<p>kontakt@intermor.net</p>
-</div>
+    <main class="main">
+      <div class="container">
 
-<button onclick="window.location.href='mailto:kontakt@intermor.net'">
-Napisz do nas
-</button>
-</section>
+        <!-- STRONA GŁÓWNA -->
+        <section class="page active" id="page-home">
+          <div class="hero" id="hero">
+            <div class="slideBg" id="slideBg"></div>
+            <div class="shade"></div>
 
-<footer>
-© 2026 INTERMOR – intermor.net
-</footer>
+            <div class="content">
+              <div>
+                <h1 id="slideTitle">Nowoczesne sterowanie. Pewne bezpieczeństwo.</h1>
+                <p id="slideText">
+                  Projektujemy, modernizujemy i serwisujemy systemy sterowania oraz elektronikę – od zakładów
+                  przemysłowych po rozwiązania specjalne. Estetyka wykonania + dokumentacja + szybka diagnostyka.
+                </p>
 
+                <div class="tagRow">
+                  <span class="pill">✅ szybka diagnostyka</span>
+                  <span class="pill">✅ porządek w szafach</span>
+                  <span class="pill">✅ dokumentacja powykonawcza</span>
+                  <span class="pill">✅ safety / E-STOP</span>
+                </div>
+
+                <div class="ctaRow">
+                  <a class="btn primary" href="#contact" onclick="setPage('contact')">Kontakt</a>
+                  <a class="btn" href="#projects" onclick="setPage('projects')">Zobacz realizacje</a>
+                </div>
+              </div>
+
+              <div class="heroRight">
+                <div class="miniCard">
+                  <b>Automatyka przemysłowa</b>
+                  <span>Modernizacje sterowań, retrofit, naprawy i usprawnienia bez zbędnych przestojów.</span>
+                </div>
+                <div class="miniCard">
+                  <b>Elektronika & systemy specjalne</b>
+                  <span>Projekt i wykonanie elektroniki pod klienta: prototyp → wdrożenie → serwis.</span>
+                </div>
+                <div class="miniCard">
+                  <b>Bezpieczeństwo</b>
+                  <span>Audyt, poprawki, przebudowa E-STOP / blokad / przekaźników bezpieczeństwa.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dots" id="dots"></div>
+          </div>
+
+          <div class="card section" style="margin-top:16px;">
+            <h2>Co robimy w INTERMOR</h2>
+            <div class="grid3">
+              <div class="feat">
+                <b>Serwis i diagnostyka</b>
+                <p>Awaryjne uruchomienia, diagnostyka błędów, poprawki instalacji, usuwanie przyczyn przestojów.</p>
+              </div>
+              <div class="feat">
+                <b>Modernizacje i retrofit</b>
+                <p>Wymiany aparatury, porządek okablowania, przebudowy szaf i układów sterowania, aktualizacje bezpieczeństwa.</p>
+              </div>
+              <div class="feat">
+                <b>Projekt i dokumentacja</b>
+                <p>Schematy, opisy, listy materiałowe, dokumentacja powykonawcza — tak, żeby to było serwisowalne.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card section">
+            <h2>Dlaczego klienci wybierają INTERMOR</h2>
+            <div class="split">
+              <div class="feat">
+                <b>Inżynierskie podejście</b>
+                <p>Nie „na skróty” — tylko rozwiązanie problemu u źródła, z myślą o przyszłym serwisie.</p>
+              </div>
+              <div class="feat">
+                <b>Estetyka i porządek</b>
+                <p>Szafa sterownicza ma wyglądać i działać jak trzeba. Porządek = mniej awarii.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ELEKTRONIKA JACHTOWA -->
+        <section class="page" id="page-yacht">
+          <div class="card section">
+            <h2>Elektronika jachtowa</h2>
+            <p style="opacity:.97; line-height:1.7; margin:0 0 12px;">
+              W INTERMOR projektujemy i produkujemy <b>elektronikę na zamówienie</b> dla klientów (custom),
+              dopasowaną do konkretnego jachtu, instalacji i oczekiwań armatora.
+              Od prototypu po finalny montaż oraz serwis.
+            </p>
+
+            <div class="grid3">
+              <div class="feat">
+                <b>Elektronika na zamówienie</b>
+                <p>Panele sterowania, moduły czujników, integracje, retrofit istniejących instalacji.</p>
+              </div>
+              <div class="feat">
+                <b>System alarmowy na jachty</b>
+                <p>Mamy w sprzedaży gotowy <b>system alarmowy</b> (modułowy), który możemy skonfigurować pod Twoje potrzeby.</p>
+              </div>
+              <div class="feat">
+                <b>Bezpieczeństwo i niezawodność</b>
+                <p>Priorytet: odporność na warunki morskie, wibracje, zakłócenia i prosty serwis.</p>
+              </div>
+            </div>
+
+            <div class="feat" style="margin-top:12px;">
+              <b>Jak wygląda współpraca?</b>
+              <p>
+                1) rozmowa + wymagania → 2) koncepcja i wycena → 3) prototyp → 4) testy → 5) wdrożenie i serwis.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- REALIZACJE -->
+        <section class="page" id="page-projects">
+          <div class="card section">
+            <h2>Realizacje</h2>
+            <p style="opacity:.97; line-height:1.7; margin:0 0 12px;">
+              Poniżej szablon „przed / po”. Jak dasz swoje zdjęcia, podmienimy placeholdery i zrobimy z tego
+              mocne case study.
+            </p>
+
+            <div class="case" style="margin-top:12px;">
+              <div class="caseHeader">
+                <b>Modernizacja sterowania – przykład</b>
+                <small>czas: 1–2 dni</small>
+              </div>
+              <div class="beforeAfter">
+                <div class="ph"><div class="phLabel">PRZED</div></div>
+                <div class="ph"><div class="phLabel">PO</div></div>
+              </div>
+              <p>
+                Krótki opis: uporządkowanie okablowania, wymiana aparatury, dodanie zabezpieczeń,
+                opis przewodów + dokumentacja powykonawcza.
+              </p>
+            </div>
+
+            <div class="case" style="margin-top:12px;">
+              <div class="caseHeader">
+                <b>Retrofit maszyny – przykład</b>
+                <small>czas: 2–4 dni</small>
+              </div>
+              <div class="beforeAfter">
+                <div class="ph"><div class="phLabel">PRZED</div></div>
+                <div class="ph"><div class="phLabel">PO</div></div>
+              </div>
+              <p>
+                Krótki opis: poprawa bezpieczeństwa (E-STOP), przebudowa sterowania, testy i uruchomienie,
+                zalecenia serwisowe.
+              </p>
+            </div>
+
+            <div class="case" style="margin-top:12px;">
+              <div class="caseHeader">
+                <b>Elektronika specjalna – przykład</b>
+                <small>prototyp → wdrożenie</small>
+              </div>
+              <div class="beforeAfter">
+                <div class="ph"><div class="phLabel">PROTOTYP</div></div>
+                <div class="ph"><div class="phLabel">WDROŻENIE</div></div>
+              </div>
+              <p>
+                Krótki opis: zaprojektowanie modułu pod klienta, testy w środowisku docelowym,
+                finalna wersja i wsparcie serwisowe.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- KONTAKT -->
+        <section class="page" id="page-contact">
+          <div class="card section">
+            <h2>Kontakt</h2>
+            <div class="split">
+              <div class="feat">
+                <b>INTERMOR</b>
+                <p>
+                  tel.: +48 600 000 000<br>
+                  e-mail: kontakt@intermor.net<br>
+                  lokalizacja: Szczecin / Zachodniopomorskie<br>
+                  dojazd: PL / DE (wg ustaleń)
+                </p>
+              </div>
+
+              <div class="feat">
+                <b>Szybka wiadomość</b>
+                <p style="margin-bottom:10px;">
+                  Kliknij i napisz maila (na razie to podgląd):
+                </p>
+                <a class="btn primary" href="mailto:kontakt@intermor.net?subject=Zapytanie%20INTERMOR&body=Dzie%C5%84%20dobry%2C%0A%0AChcia%C5%82bym%20zapyta%C4%87%20o...%0A%0APozdrawiam">
+                  Napisz e-mail
+                </a>
+                <div style="height:10px;"></div>
+                <a class="btn" href="#home" onclick="setPage('home')">Wróć na stronę główną</a>
+              </div>
+            </div>
+
+            <div style="margin-top:14px; opacity:.95; font-size:12px;">
+              © <span id="y"></span> INTERMOR • intermor.net
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // --- SLIDER (auto) ---
+    // Placeholder zdjęcia: podmień na swoje, jak je podeślesz.
+    // Możesz wkleić tu linki do plików, które wrzucisz do repo (np. /assets/hero1.jpg).
+    const slides = [
+      {
+        img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2200&q=70",
+        title: "Nowoczesne sterowanie. Pewne bezpieczeństwo.",
+        text: "Automatyka, elektronika i systemy bezpieczeństwa — projekt, modernizacja i serwis. Estetyka + dokumentacja + szybka diagnostyka."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=2200&q=70",
+        title: "Retrofit bez przestojów, porządek w szafie.",
+        text: "Wymiany aparatury, przebudowy sterowań, poprawki po awariach. Zostawiamy po sobie porządek i opis."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2200&q=70",
+        title: "Rozwiązania specjalne — od prototypu po wdrożenie.",
+        text: "Elektronika na zamówienie, systemy czujników, integracje. Inżynierskie podejście i serwisowalność."
+      },
+      {
+        img: "https://images.unsplash.com/photo-1520975958225-2d3d5b1b7b0a?auto=format&fit=crop&w=2200&q=70",
+        title: "Elektronika jachtowa: alarmy i moduły pod klienta.",
+        text: "Projektujemy i produkujemy elektronikę na zamówienie, mamy też gotowy system alarmowy na jachty."
+      }
+    ];
+
+    let current = 0;
+    let timer = null;
+
+    const bg = document.getElementById("slideBg");
+    const titleEl = document.getElementById("slideTitle");
+    const textEl = document.getElementById("slideText");
+    const dots = document.getElementById("dots");
+
+    function renderDots(){
+      dots.innerHTML = "";
+      slides.forEach((_, i) => {
+        const d = document.createElement("div");
+        d.className = "dot" + (i === current ? " active" : "");
+        d.addEventListener("click", () => {
+          current = i;
+          applySlide(true);
+          restartTimer();
+        });
+        dots.appendChild(d);
+      });
+    }
+
+    function applySlide(instant=false){
+      const s = slides[current];
+
+      // proste fade
+      bg.style.opacity = "0";
+      setTimeout(() => {
+        bg.style.backgroundImage = `url('${s.img}')`;
+        titleEl.textContent = s.title;
+        textEl.textContent = s.text;
+        bg.style.opacity = "1";
+        renderDots();
+      }, instant ? 40 : 260);
+    }
+
+    function nextSlide(){
+      current = (current + 1) % slides.length;
+      applySlide(false);
+    }
+
+    function restartTimer(){
+      if(timer) clearInterval(timer);
+      timer = setInterval(nextSlide, 6500);
+    }
+
+    // --- NAV / PAGES ---
+    const pages = ["home","yacht","projects","contact"];
+
+    function setActiveNav(page){
+      document.querySelectorAll(".nav a").forEach(a => {
+        a.classList.toggle("active", a.dataset.page === page);
+      });
+    }
+
+    function showPage(page){
+      pages.forEach(p => {
+        const el = document.getElementById(`page-${p}`);
+        if(el) el.classList.toggle("active", p === page);
+      });
+      setActiveNav(page);
+    }
+
+    function setPage(page){
+      if(!pages.includes(page)) page = "home";
+      window.location.hash = page;
+      showPage(page);
+    }
+
+    function onHash(){
+      const h = (window.location.hash || "#home").replace("#","");
+      showPage(pages.includes(h) ? h : "home");
+    }
+
+    // init
+    document.getElementById("y").textContent = new Date().getFullYear();
+    renderDots();
+    applySlide(true);
+    restartTimer();
+    window.addEventListener("hashchange", onHash);
+    onHash();
+    // expose for inline onclick
+    window.setPage = setPage;
+  </script>
 </body>
 </html>
