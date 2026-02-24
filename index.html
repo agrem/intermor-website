@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://intermor.net/">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>INTERMOR – Automatyka • Elektronika • Systemy bezpieczeństwa</title>
   <meta name="description" content="INTERMOR – automatyka przemysłowa, retrofit PLC, elektronika jachtowa i systemy bezpieczeństwa." />
-  <link rel="icon" type="image/png" href="/assets/logo.png">
+
   <style>
     :root{
       --bg0:#050710;
@@ -51,21 +49,21 @@
     /* Logo box: smukły */
     .brand{
       display:flex;
-      justify-content:center;  /* wyśrodkowanie */
+      justify-content:center;
       align-items:center;
       margin-bottom: 14px;
-      padding: 10px 12px;      /* mniej “klocka” */
+      padding: 10px 12px;
       border: 1px solid var(--border2);
       border-radius: var(--radius);
-      background: rgba(17,23,42,.35); /* lżej */
-      box-shadow: none;        /* bez ciężaru */
+      background: rgba(17,23,42,.35);
+      box-shadow: none;
     }
 
     .brandLogo{
-      width: 125px;           /* smuklej */
+      width: 125px;
       height: auto;
       display:block;
-      filter: none;           /* bez drop-shadow */
+      filter: none;
       opacity: .98;
     }
 
@@ -118,7 +116,7 @@
     /* MAIN */
     .main{
       flex: 1;
-      padding: 22px 0 30px; /* 0 po bokach, żeby hero mógł być full-width */
+      padding: 22px 0 30px;
       min-width: 0;
     }
     .container{
@@ -147,7 +145,6 @@
       width: 100%;
     }
 
-    /* Na desktop: prawdziwe full-bleed */
     .heroInner{
       position: relative;
       overflow:hidden;
@@ -157,7 +154,6 @@
       border-bottom: 1px solid rgba(77,163,255,.22);
     }
 
-    /* Na mniejszych ekranach dajemy delikatny “oddech” */
     @media (max-width: 1000px){
       .heroInner{
         margin: 0 22px;
@@ -493,9 +489,9 @@
 
                 <div class="imgRow">
                   <div class="imgCard">
-                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2000&q=70');"></div>
+                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518397387277-7843d318c5d3?auto=format&fit=crop&w=2000&q=70');"></div>
                     <div class="overlay"></div>
-                    <div class="cap"><b>Jacht / instalacja</b><br>placeholder — podmienimy na Twoje zdjęcia</div>
+                    <div class="cap"><b>Jacht / instalacja 12V</b><br>placeholder — podmienimy na Twoje zdjęcia</div>
                   </div>
                   <div class="imgCard">
                     <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
@@ -550,12 +546,12 @@
               </div>
               <div class="beforeAfter">
                 <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=70');"></div>
                   <div class="overlay"></div>
                   <div class="phLabel">PRZED</div>
                 </div>
                 <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1600&q=70');"></div>
+                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=1600&q=70');"></div>
                   <div class="overlay"></div>
                   <div class="phLabel">PO</div>
                 </div>
@@ -600,25 +596,29 @@
   </div>
 
   <script>
-    // Slider
+    // Slider: PODMIENIONE zdjęcia NA TEMAT (szafa / PLC / jacht / safety)
     const slides = [
       {
+        // Szafa sterownicza / automatyka
         img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=70",
         title: "Automatyka przemysłowa: szafy i serwis.",
         text: "Modernizacje, poprawki, diagnostyka awarii. Czytelnie zrobione i łatwe do późniejszego serwisu."
       },
       {
-        img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2400&q=70",
+        // PLC / retrofit / przemysł
+        img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2400&q=70",
         title: "Retrofit PLC: wymiana i uporządkowanie.",
         text: "Odświeżenie sterowania, logika, okablowanie, testy. Bez chaosu i bez losowych rozwiązań."
       },
       {
-        img: "https://images.unsplash.com/photo-1544551763-ced1e3c2d3d3?auto=format&fit=crop&w=2400&q=70",
+        // Jacht / marine
+        img: "https://images.unsplash.com/photo-1518397387277-7843d318c5d3?auto=format&fit=crop&w=2400&q=70",
         title: "Elektronika jachtowa na zamówienie.",
         text: "Rozwiązania pod konkretny jacht: czujniki, panele, integracje. Plus modułowy system alarmowy."
       },
       {
-        img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2400&q=70",
+        // Safety / bezpieczeństwo (industrial)
+        img: "https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=2400&q=70",
         title: "Systemy bezpieczeństwa (safety).",
         text: "E-STOP, blokady, przekaźniki safety, poprawki po audytach. Praktycznie i sensownie."
       }
