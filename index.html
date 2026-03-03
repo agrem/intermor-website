@@ -2,729 +2,180 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>INTERMOR – Automatyka • Elektronika • Systemy bezpieczeństwa</title>
-  <meta name="description" content="INTERMOR – automatyka przemysłowa, retrofit PLC, elektronika jachtowa i systemy bezpieczeństwa." />
-
-  <style>
-    :root{
-      --bg0:#050710;
-      --bg1:#0b0f1a;
-      --panel: rgba(17, 23, 42, 0.78);
-      --border: rgba(255,255,255,.10);
-      --border2: rgba(77,163,255,.22);
-      --text:#ffffff;
-      --shadow: 0 14px 44px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(1200px 700px at 30% -20%, rgba(77,163,255,.18), transparent 60%),
-        radial-gradient(900px 600px at 110% 20%, rgba(77,163,255,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
-      color: var(--text);
-    }
-
-    a{ color: var(--text); text-decoration:none; }
-
-    .app{ display:flex; min-height:100vh; }
-
-    /* SIDEBAR */
-    .sidebar{
-      width: 280px;
-      padding: 18px;
-      border-right: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(10,14,28,.90), rgba(5,7,16,.92));
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      backdrop-filter: blur(8px);
-    }
-
-    /* Logo box: smukły */
-    .brand{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      margin-bottom: 14px;
-      padding: 10px 12px;
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      background: rgba(17,23,42,.35);
-      box-shadow: none;
-    }
-
-    .brandLogo{
-      width: 125px;
-      height: auto;
-      display:block;
-      filter: none;
-      opacity: .98;
-    }
-
-    .nav{
-      display:flex;
-      flex-direction:column;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .nav a{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(17,23,42,.45);
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      opacity: .95;
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .nav a:hover{
-      transform: translateY(-1px);
-      border-color: rgba(77,163,255,.35);
-      background: rgba(17,23,42,.58);
-      opacity: 1;
-    }
-    .nav a.active{
-      border-color: rgba(77,163,255,.55);
-      background: rgba(77,163,255,.14);
-      opacity: 1;
-    }
-    .nav small{ font-size: 12px; opacity: .92; }
-
-    .sidebarFooter{
-      position:absolute;
-      bottom: 18px;
-      left: 18px;
-      right: 18px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(17,23,42,.35);
-      font-size: 12px;
-      line-height: 1.45;
-      opacity: .95;
-    }
-
-    /* MAIN */
-    .main{
-      flex: 1;
-      padding: 22px 0 30px;
-      min-width: 0;
-    }
-    .container{
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 22px;
-    }
-
-    .card{
-      border: 1px solid var(--border2);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-
-    /* FULL WIDTH HERO */
-    .fullWidth{
-      width: 100%;
-    }
-
-    .hero{
-      position: relative;
-      overflow: hidden;
-      min-height: 420px;
-      width: 100%;
-    }
-
-    .heroInner{
-      position: relative;
-      overflow:hidden;
-      min-height: 420px;
-      width: 100%;
-      border-top: 1px solid rgba(77,163,255,.22);
-      border-bottom: 1px solid rgba(77,163,255,.22);
-    }
-
-    @media (max-width: 1000px){
-      .heroInner{
-        margin: 0 22px;
-        border-radius: 22px;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(77,163,255,.28);
-      }
-    }
-
-    .hero .slideBg{
-      position:absolute;
-      inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: blur(2.8px) saturate(1.05);
-      transform: scale(1.06);
-      opacity: 1;
-      transition: opacity .9s ease;
-    }
-    .hero .shade{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg, rgba(5,7,16,.86), rgba(5,7,16,.36) 55%, rgba(5,7,16,.88)),
-        linear-gradient(180deg, rgba(5,7,16,.30), rgba(5,7,16,.92));
-    }
-    .hero .content{
-      position: relative;
-      padding: 34px 28px;
-      display:flex;
-      align-items:flex-end;
-      min-height: 420px;
-      max-width: 860px;
-    }
-    .hero h1{
-      margin:0 0 10px;
-      font-size: 44px;
-      line-height: 1.05;
-      letter-spacing: .2px;
-    }
-    .hero p{
-      margin:0 0 10px;
-      font-size: 16px;
-      line-height: 1.7;
-      opacity: .98;
-    }
-
-    .tagRow{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.13);
-      background: rgba(17,23,42,.50);
-      font-size: 12px;
-      opacity: .96;
-    }
-
-    .dots{
-      position:absolute;
-      left: 22px;
-      bottom: 16px;
-      display:flex;
-      gap: 8px;
-      z-index: 3;
-    }
-    .dot{
-      width: 9px; height: 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.25);
-      background: rgba(255,255,255,.12);
-      cursor: pointer;
-    }
-    .dot.active{
-      background: rgba(77,163,255,.65);
-      border-color: rgba(77,163,255,.9);
-    }
-
-    .section{ margin-top: 16px; padding: 18px; }
-    .section h2{ margin: 0 0 10px; font-size: 22px; letter-spacing: .2px; }
-
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .feat{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(17,23,42,.40);
-      border-radius: 16px;
-      padding: 14px;
-    }
-    .feat b{ display:block; margin-bottom: 8px; }
-    .feat p{ margin:0; opacity:.98; line-height:1.65; font-size: 14px; }
-
-    /* Realizacje */
-    .case{
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(17,23,42,.40);
-      border-radius: 16px;
-      padding: 14px;
-    }
-    .caseHeader{
-      display:flex;
-      align-items:baseline;
-      justify-content:space-between;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .caseHeader b{ font-size: 16px; }
-    .caseHeader small{ opacity:.95; }
-
-    .beforeAfter{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin: 10px 0 10px;
-    }
-    .ph{
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      height: 160px;
-      position:relative;
-      overflow:hidden;
-      background: rgba(10,14,28,.9);
-    }
-    .ph .img{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: blur(1.2px) saturate(1.02);
-      transform: scale(1.03);
-      opacity: .95;
-    }
-    .ph .overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,7,16,.20), rgba(5,7,16,.84));
-    }
-    .phLabel{
-      position:absolute;
-      left: 10px;
-      bottom: 10px;
-      font-size: 12px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(17,23,42,.55);
-      padding: 6px 8px;
-      border-radius: 999px;
-      z-index: 2;
-    }
-
-    /* Yacht images */
-    .imgRow{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .imgCard{
-      height: 210px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      overflow:hidden;
-      position:relative;
-      background: rgba(10,14,28,.9);
-    }
-    .imgCard .img{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: blur(1.2px) saturate(1.02);
-      transform: scale(1.03);
-      opacity: .95;
-    }
-    .imgCard .overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(5,7,16,.18), rgba(5,7,16,.86));
-    }
-    .imgCard .cap{
-      position:absolute;
-      left: 12px;
-      bottom: 12px;
-      right: 12px;
-      font-size: 13px;
-      line-height: 1.35;
-      opacity: .98;
-    }
-
-    .page{ display:none; }
-    .page.active{ display:block; }
-
-    @media (max-width: 980px){
-      .sidebar{ width: 260px; }
-      .grid3{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .beforeAfter{ grid-template-columns: 1fr; }
-      .imgRow{ grid-template-columns: 1fr; }
-      .hero h1{ font-size: 34px; }
-      .hero .content{ max-width: unset; }
-    }
-    @media (max-width: 760px){
-      .app{ flex-direction:column; }
-      .sidebar{
-        position: relative;
-        height: auto;
-        width: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-      }
-      .sidebarFooter{ position:relative; bottom:auto; left:auto; right:auto; margin-top: 12px; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>INTERMOR — Serwis elektroniki, automatyka, elektronika jachtowa</title>
+  <meta name="description" content="INTERMOR: serwis urządzeń elektrycznych i elektronicznych, modernizacja szaf automatyki, projektowanie automatyki oraz elektronika na zamówienie i serwis jachtów." />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <div class="app">
-    <aside class="sidebar">
-      <div class="brand">
-        <img class="brandLogo" src="/assets/logo.png" alt="INTERMOR logo">
-      </div>
-
-      <nav class="nav" id="nav">
-        <a href="/strona_glowna" data-page="strona_glowna" class="active"><span>Strona główna</span><small>Start</small></a>
-        <a href="/elektronika_jachtowa" data-page="elektronika_jachtowa"><span>Elektronika jachtowa</span><small>Yacht</small></a>
-        <a href="/realizacje" data-page="realizacje"><span>Realizacje</span><small>Case</small></a>
-        <a href="/kontakt" data-page="kontakt"><span>Kontakt</span><small>Call</small></a>
-      </nav>
-
-      <div class="sidebarFooter">
-        <div><b>kontakt@intermor.net</b></div>
-        <div style="margin-top:6px;">+48 503 833 119</div>
-        <div style="margin-top:10px; opacity:.90;">© 2026 INTERMOR • intermor.net</div>
-      </div>
-    </aside>
-
-    <main class="main">
-      <div class="fullWidth">
-        <!-- STRONA GŁÓWNA -->
-        <section class="page active" id="page-strona_glowna">
-          <div class="hero">
-            <div class="heroInner">
-              <div class="slideBg" id="slideBg"></div>
-              <div class="shade"></div>
-
-              <div class="content">
-                <div>
-                  <h1 id="slideTitle">Automatyka przemysłowa i serwis.</h1>
-                  <p id="slideText">
-                    Modernizacje sterowań, poprawki w szafach, uruchomienia i diagnostyka awarii.
-                    Robota ma być zrobiona tak, żeby ktoś mógł to normalnie serwisować.
-                  </p>
-
-                  <div class="tagRow">
-                    <span class="pill">szafy sterownicze</span>
-                    <span class="pill">retrofit PLC</span>
-                    <span class="pill">E-STOP / safety</span>
-                    <span class="pill">elektronika jachtowa</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="dots" id="dots"></div>
-            </div>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html" aria-label="INTERMOR - strona główna">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div class="title">
+            <strong>INTERMOR</strong>
+            <span>Elektronika • Automatyka • Jachty</span>
           </div>
+        </a>
 
-          <div class="container">
-            <div class="card section">
-              <h2>Zakres usług</h2>
-              <div class="grid3">
-                <div class="feat">
-                  <b>Automatyka przemysłowa</b>
-                  <p>Szafy sterownicze, przebudowy, uruchomienia, awarie, wymiany aparatury, okablowanie i oznaczenia.</p>
-                </div>
-                <div class="feat">
-                  <b>Retrofit / PLC</b>
-                  <p>Wymiana starego sterowania, uporządkowanie układu, poprawa logiki i testy. Bez chaosu.</p>
-                </div>
-                <div class="feat">
-                  <b>Systemy bezpieczeństwa</b>
-                  <p>E-STOP, blokady, przekaźniki safety, poprawki po audytach. Praktycznie, a nie “na papierze”.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card section">
-              <h2>Jak pracujemy</h2>
-              <div class="split">
-                <div class="feat">
-                  <b>Najpierw diagnoza</b>
-                  <p>Najpierw ustalamy przyczynę problemu, dopiero potem naprawa / modernizacja.</p>
-                </div>
-                <div class="feat">
-                  <b>Porządek i opis</b>
-                  <p>Oznaczenia, logiczne prowadzenie przewodów i czytelność — żeby serwis był szybki.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <nav class="menu" aria-label="Nawigacja">
+          <a data-nav href="index.html">Start</a>
+          <a data-nav href="uslugi.html">Usługi</a>
+          <a data-nav href="realizacje.html">Realizacje</a>
+          <a data-nav href="o-firmie.html">O firmie</a>
+          <a data-nav href="kontakt.html">Kontakt</a>
+        </nav>
       </div>
+    </div>
+  </header>
 
-      <!-- ELEKTRONIKA JACHTOWA -->
-      <section class="page" id="page-elektronika_jachtowa">
-        <div class="container">
-          <div class="card section">
-            <h2>Elektronika jachtowa</h2>
-
-            <div class="split">
-              <div class="feat">
-                <b>Elektronika na zamówienie</b>
-                <p>
-                  Elektronika pod konkretną jednostkę: instalacje 12V/24V, czujniki, panele sterowania, integracje.
-                  Ustalamy wymagania, robimy prototyp i dopiero finalną wersję.
-                </p>
-              </div>
-
-              <div class="feat">
-                <b>System alarmowy (modułowy)</b>
-                <p>
-                  Własny, modułowy system alarmowy do jachtów: zalanie, dym, napięcie, temperatura. Możliwość rozbudowy i konfiguracji pod klienta.
-                </p>
-
-                <div class="imgRow">
-                  <div class="imgCard">
-                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518397387277-7843d318c5d3?auto=format&fit=crop&w=2000&q=70');"></div>
-                    <div class="overlay"></div>
-                    <div class="cap"><b>Jacht / instalacja 12V</b><br>placeholder — podmienimy na Twoje zdjęcia</div>
-                  </div>
-                  <div class="imgCard">
-                    <div class="img" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2000&q=70');"></div>
-                    <div class="overlay"></div>
-                    <div class="cap"><b>Moduły elektroniki</b><br>placeholder — zdjęcia Twojego systemu</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="feat" style="margin-top:12px;">
-              <b>Proces</b>
-              <p>Wymagania → koncepcja → prototyp → testy → wdrożenie → serwis.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- REALIZACJE -->
-      <section class="page" id="page-realizacje">
-        <div class="container">
-          <div class="card section">
-            <h2>Realizacje</h2>
-            <p style="opacity:.98; line-height:1.7; margin:0 0 12px;">
-              Przykładowy układ “przed / po”. Jak wrzucisz swoje zdjęcia, podmienimy i dopiszemy konkretne efekty.
+  <main>
+    <section class="hero">
+      <div class="container grid">
+        <div class="card">
+          <div class="pad">
+            <div class="kicker">Serwis i inżynieria • Zachodniopomorskie + wyjazdy</div>
+            <h1 class="h1">Nowoczesna automatyka i elektronika — w solidnym, rzemieślniczym standardzie.</h1>
+            <p class="lead">
+              INTERMOR zajmuje się serwisem urządzeń elektrycznych i elektronicznych, modernizacją szaf automatyki,
+              projektowaniem systemów sterowania oraz elektroniką na zamówienie. Pracujemy również w branży jachtowej:
+              diagnostyka, naprawy, modernizacje instalacji i elektroniki pokładowej.
             </p>
 
-            <div class="case" style="margin-top:12px;">
-              <div class="caseHeader">
-                <b>Szafa sterownicza — porządkowanie i modernizacja</b>
-                <small>przykład</small>
-              </div>
-              <div class="beforeAfter">
-                <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1600&q=70');"></div>
-                  <div class="overlay"></div>
-                  <div class="phLabel">PRZED</div>
-                </div>
-                <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=70');"></div>
-                  <div class="overlay"></div>
-                  <div class="phLabel">PO</div>
-                </div>
-              </div>
-              <p>Wymiana aparatury, uporządkowanie przewodów, oznaczenia, testy i dokumentacja.</p>
+            <div class="badges" aria-label="Zakres">
+              <span class="badge accent">Serwis elektroniki</span>
+              <span class="badge">Szafy automatyki</span>
+              <span class="badge">Projektowanie układów</span>
+              <span class="badge green">Elektronika jachtowa</span>
+              <span class="badge">Dokumentacja</span>
+              <span class="badge">Pomiary</span>
             </div>
 
-            <div class="case" style="margin-top:12px;">
-              <div class="caseHeader">
-                <b>Retrofit PLC — wymiana i reorganizacja sterowania</b>
-                <small>przykład</small>
-              </div>
-              <div class="beforeAfter">
-                <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=70');"></div>
-                  <div class="overlay"></div>
-                  <div class="phLabel">PRZED</div>
-                </div>
-                <div class="ph">
-                  <div class="img" style="background-image:url('https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=1600&q=70');"></div>
-                  <div class="overlay"></div>
-                  <div class="phLabel">PO</div>
-                </div>
-              </div>
-              <p>Uporządkowanie układu, poprawa serwisowalności, testy i uruchomienie.</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- KONTAKT -->
-      <section class="page" id="page-kontakt">
-        <div class="container">
-          <div class="card section">
-            <h2>Kontakt</h2>
-            <div class="split">
-              <div class="feat">
-                <b>INTERMOR</b>
-                <p>
-                  tel.: +48 503 833 119<br>
-                  e-mail: kontakt@intermor.net
-                </p>
-              </div>
-              <div class="feat">
-                <b>Jak pisać / dzwonić</b>
-                <p>
-                  Jeśli nie odbieram, zostaw SMS — oddzwonię.<br>
-                  Najlepiej podać miasto + co nie działa / co chcesz zrobić.
-                </p>
-              </div>
-            </div>
-
-            <div style="margin-top:14px; opacity:.95; font-size:12px;">
-              © 2026 INTERMOR • intermor.net
+            <div class="ctaRow">
+              <a class="btn primary" href="kontakt.html"><span class="dot"></span>Zapytaj o wycenę</a>
+              <a class="btn" href="uslugi.html">Zobacz usługi</a>
+              <button class="btn" data-copy="+48503833119" data-label="Kopiuj numer">Kopiuj numer</button>
+              <button class="btn" data-copy="kontakt@intermor.net" data-label="Kopiuj email">Kopiuj email</button>
             </div>
           </div>
         </div>
-      </section>
 
-    </main>
-  </div>
+        <aside class="card">
+          <div class="pad">
+            <div class="h2">Kontakt szybki</div>
+            <div class="mini">
+              <div class="line"><b>Telefon</b> <a href="tel:+48503833119">+48 503 833 119</a></div>
+              <div class="line"><b>Email</b> <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></div>
+              <div class="line"><b>Profil pracy</b> <span>diagnostyka → naprawa → testy</span></div>
+              <div class="line"><b>Standard</b> <span>czytelnie, opisowo, bez ściemy</span></div>
+            </div>
+            <div class="hr"></div>
+            <p class="note">
+              Retro klimat strony jest celowy — ale wykonanie ma być współczesne:
+              szybka strona, przejrzysta oferta, konkretne informacje.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="h2">W czym pomagamy</div>
+        <div class="cols3">
+          <div class="feature">
+            <div class="label">
+              <span class="ico"><img src="logo.png" alt="" /></span>
+              Serwis urządzeń elektrycznych/elektronicznych
+            </div>
+            <p>Diagnoza usterek, naprawy na poziomie komponentów, wymiany złącz/okablowania, testy obciążeniowe i kontrola bezpieczeństwa.</p>
+          </div>
+
+          <div class="feature">
+            <div class="label">
+              <span class="ico"><img src="logo.png" alt="" /></span>
+              Modernizacje szaf automatyki
+            </div>
+            <p>Porządek w szafie, modernizacja pod nowe wymagania, poprawa niezawodności, opisy, schematy, zabezpieczenia i ergonomia serwisowa.</p>
+          </div>
+
+          <div class="feature">
+            <div class="label">
+              <span class="ico"><img src="logo.png" alt="" /></span>
+              Projektowanie automatyki i elektroniki na zamówienie
+            </div>
+            <p>Projekt od koncepcji po prototyp: elektronika sterująca, moduły wejść/wyjść, czujniki, komunikacja, integracje z istniejącą infrastrukturą.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="h2">Jak pracujemy</div>
+        <div class="card">
+          <div class="pad">
+            <table class="table" aria-label="Proces">
+              <thead>
+                <tr>
+                  <th>Etap</th>
+                  <th>Co dostajesz</th>
+                  <th>Po co</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1. Rozpoznanie</td>
+                  <td>Krótki opis problemu + zakres</td>
+                  <td>Żeby od razu ustalić sensowną ścieżkę</td>
+                </tr>
+                <tr>
+                  <td>2. Diagnostyka</td>
+                  <td>Pomiary, wnioski, propozycja naprawy</td>
+                  <td>Zero zgadywania — decyzje na faktach</td>
+                </tr>
+                <tr>
+                  <td>3. Realizacja</td>
+                  <td>Naprawa / modernizacja / prototyp</td>
+                  <td>Trwale i serwisowalnie</td>
+                </tr>
+                <tr>
+                  <td>4. Testy i odbiór</td>
+                  <td>Testy funkcjonalne + uwagi eksploatacyjne</td>
+                  <td>Żebyś miał spokój po uruchomieniu</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="foot">
+        <div class="left">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div>
+            <small><strong>INTERMOR</strong><br/>Serwis elektroniki • Automatyka • Elektronika jachtowa</small>
+            <small>tel. <a href="tel:+48503833119">+48 503 833 119</a> • <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></small>
+          </div>
+        </div>
+        <div class="right">
+          <div>© <span id="y"></span> INTERMOR</div>
+          <div>Minimal • Retro-90s • GitHub Pages-ready</div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Slider: PODMIENIONE zdjęcia NA TEMAT (szafa / PLC / jacht / safety)
-    const slides = [
-      {
-        // Szafa sterownicza / automatyka
-        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2400&q=70",
-        title: "Automatyka przemysłowa: szafy i serwis.",
-        text: "Modernizacje, poprawki, diagnostyka awarii. Czytelnie zrobione i łatwe do późniejszego serwisu."
-      },
-      {
-        // PLC / retrofit / przemysł
-        img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=2400&q=70",
-        title: "Retrofit PLC: wymiana i uporządkowanie.",
-        text: "Odświeżenie sterowania, logika, okablowanie, testy. Bez chaosu i bez losowych rozwiązań."
-      },
-      {
-        // Jacht / marine
-        img: "https://images.unsplash.com/photo-1518397387277-7843d318c5d3?auto=format&fit=crop&w=2400&q=70",
-        title: "Elektronika jachtowa na zamówienie.",
-        text: "Rozwiązania pod konkretny jacht: czujniki, panele, integracje. Plus modułowy system alarmowy."
-      },
-      {
-        // Safety / bezpieczeństwo (industrial)
-        img: "https://images.unsplash.com/photo-1581092919535-7146f6a0a3d5?auto=format&fit=crop&w=2400&q=70",
-        title: "Systemy bezpieczeństwa (safety).",
-        text: "E-STOP, blokady, przekaźniki safety, poprawki po audytach. Praktycznie i sensownie."
-      }
-    ];
-
-    let current = 0;
-    let timer = null;
-
-    const bg = document.getElementById("slideBg");
-    const titleEl = document.getElementById("slideTitle");
-    const textEl = document.getElementById("slideText");
-    const dots = document.getElementById("dots");
-
-    function renderDots(){
-      dots.innerHTML = "";
-      slides.forEach((_, i) => {
-        const d = document.createElement("div");
-        d.className = "dot" + (i === current ? " active" : "");
-        d.addEventListener("click", () => {
-          current = i;
-          applySlide(true);
-          restartTimer();
-        });
-        dots.appendChild(d);
-      });
-    }
-
-    function applySlide(instant=false){
-      const s = slides[current];
-      bg.style.opacity = "0";
-      setTimeout(() => {
-        bg.style.backgroundImage = `url('${s.img}')`;
-        titleEl.textContent = s.title;
-        textEl.textContent = s.text;
-        bg.style.opacity = "1";
-        renderDots();
-      }, instant ? 40 : 260);
-    }
-
-    function nextSlide(){
-      current = (current + 1) % slides.length;
-      applySlide(false);
-    }
-
-    function restartTimer(){
-      if(timer) clearInterval(timer);
-      timer = setInterval(nextSlide, 6500);
-    }
-
-    // Routing
-    const routes = {
-      "/": "strona_glowna",
-      "/strona_glowna": "strona_glowna",
-      "/elektronika_jachtowa": "elektronika_jachtowa",
-      "/realizacje": "realizacje",
-      "/kontakt": "kontakt",
-    };
-
-    function normalizePath(p){
-      if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
-      return p;
-    }
-
-    function setActiveNav(page){
-      document.querySelectorAll(".nav a").forEach(a => {
-        a.classList.toggle("active", a.dataset.page === page);
-      });
-    }
-
-    function showPage(page){
-      ["strona_glowna","elektronika_jachtowa","realizacje","kontakt"].forEach(p => {
-        const el = document.getElementById(`page-${p}`);
-        if(el) el.classList.toggle("active", p === page);
-      });
-      setActiveNav(page);
-    }
-
-    function navigate(path){
-      const target = routes[normalizePath(path)] || "strona_glowna";
-      showPage(target);
-    }
-
-    // menu click -> pushState
-    document.getElementById("nav").addEventListener("click", (e) => {
-      const a = e.target.closest("a");
-      if(!a) return;
-      e.preventDefault();
-      const href = a.getAttribute("href");
-      history.pushState({}, "", href);
-      navigate(location.pathname);
-    });
-
-    window.addEventListener("popstate", () => navigate(location.pathname));
-
-    // restore after 404 redirect
-    const saved = sessionStorage.getItem("redirectPath");
-    if (saved) {
-      sessionStorage.removeItem("redirectPath");
-      history.replaceState({}, "", saved);
-    }
-
-    // init
-    renderDots();
-    applySlide(true);
-    restartTimer();
-    navigate(location.pathname);
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
