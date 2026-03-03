@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontakt — INTERMOR</title>
+  <meta name="description" content="Kontakt do INTERMOR: +48 503 833 119, kontakt@intermor.net. Serwis elektroniki, automatyka, elektronika jachtowa." />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div class="title">
+            <strong>INTERMOR</strong>
+            <span>Elektronika • Automatyka • Jachty</span>
+          </div>
+        </a>
+        <nav class="menu" aria-label="Nawigacja">
+          <a data-nav href="index.html">Start</a>
+          <a data-nav href="uslugi.html">Usługi</a>
+          <a data-nav href="realizacje.html">Realizacje</a>
+          <a data-nav href="o-firmie.html">O firmie</a>
+          <a data-nav href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">Kontakt</div>
+      <h1 class="h1">Napisz lub zadzwoń</h1>
+      <p class="lead">
+        Najszybciej ruszymy temat, jeśli podasz: co nie działa, w jakich warunkach, od kiedy, oraz (jeśli możesz) zdjęcie tabliczki znamionowej / szafy / instalacji.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <div class="card"><div class="pad">
+          <div class="h2">Dane kontaktowe</div>
+          <div class="mini">
+            <div class="line"><b>Telefon</b> <a href="tel:+48503833119">+48 503 833 119</a></div>
+            <div class="line"><b>Email</b> <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></div>
+            <div class="line"><b>Zakres</b> <span>serwis • modernizacje • projektowanie</span></div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="mailto:kontakt@intermor.net?subject=Zapytanie%20INTERMOR&body=Dzie%C5%84%20dobry%2C%0A%0AOpis%20zlecenia%3A%0A-%20%0A%0ATelefon%20kontaktowy%3A%0A-%20%0A%0ALokalizacja%3A%0A-%20%0A"><span class="dot"></span>Napisz email</a>
+            <a class="btn" href="tel:+48503833119">Zadzwoń</a>
+          </div>
+
+          <div class="hr"></div>
+          <p class="note">
+            Uwaga: formularz poniżej działa jako „lokalny szkic” (bez backendu) — na GitHub Pages nie ma serwera.
+            Jeśli chcesz, podepnę gotowy bezpłatny endpoint (np. Formspree) albo zrobię prostą integrację.
+          </p>
+        </div></div>
+
+        <div class="card"><div class="pad">
+          <div class="h2">Szybka wiadomość (bez wysyłki)</div>
+          <form class="form" onsubmit="event.preventDefault(); alert('GitHub Pages: brak backendu — użyj maila lub podepniemy formularz.');">
+            <div class="field">
+              <label for="n">Imię / firma</label>
+              <input id="n" name="n" placeholder="np. Jan / Stocznia XYZ" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="p">Telefon / email</label>
+              <input id="p" name="p" placeholder="np. +48 ... / email" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="m">Opis</label>
+              <textarea id="m" name="m" placeholder="Co się dzieje? Jaki sprzęt? Jakie objawy?"></textarea>
+            </div>
+            <button class="btn primary" type="submit"><span class="dot"></span>Zapisz / pokaż info</button>
+          </form>
+        </div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="foot">
+        <div class="left">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div>
+            <small><strong>INTERMOR</strong><br/>Serwis elektroniki • Automatyka • Elektronika jachtowa</small>
+            <small>tel. <a href="tel:+48503833119">+48 503 833 119</a> • <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></small>
+          </div>
+        </div>
+        <div class="right">
+          <div>© <span id="y"></span> INTERMOR</div>
+          <div>Kontakt • Zapytania</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>
