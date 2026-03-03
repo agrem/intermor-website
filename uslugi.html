@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Usługi — INTERMOR</title>
+  <meta name="description" content="Oferta INTERMOR: serwis elektroniki, modernizacje szaf automatyki, projektowanie systemów automatyki oraz elektronika na zamówienie i serwis jachtów." />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div class="title">
+            <strong>INTERMOR</strong>
+            <span>Elektronika • Automatyka • Jachty</span>
+          </div>
+        </a>
+        <nav class="menu" aria-label="Nawigacja">
+          <a data-nav href="index.html">Start</a>
+          <a data-nav href="uslugi.html">Usługi</a>
+          <a data-nav href="realizacje.html">Realizacje</a>
+          <a data-nav href="o-firmie.html">O firmie</a>
+          <a data-nav href="kontakt.html">Kontakt</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">Oferta</div>
+      <h1 class="h1">Usługi INTERMOR</h1>
+      <p class="lead">
+        Pracujemy z elektroniką i automatyką od strony praktycznej: diagnoza, porządek w instalacjach, modernizacje
+        pod niezawodność oraz projektowanie rozwiązań „pod Ciebie”. Bez lania wody — liczy się efekt.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="h2">Główne obszary</div>
+      <div class="cols3">
+        <div class="feature">
+          <div class="label"><span class="ico"><img src="logo.png" alt="" /></span>Serwis elektroniki</div>
+          <p>Naprawy urządzeń i modułów, lokalizacja usterek, wymiany elementów, regeneracje złącz, testy i uruchomienia.</p>
+        </div>
+        <div class="feature">
+          <div class="label"><span class="ico"><img src="logo.png" alt="" /></span>Szafy automatyki</div>
+          <p>Modernizacje i porządkowanie: oznaczenia przewodów, poprawa zabezpieczeń, ergonomia serwisowa, dokumentacja.</p>
+        </div>
+        <div class="feature">
+          <div class="label"><span class="ico"><img src="logo.png" alt="" /></span>Projektowanie automatyki</div>
+          <p>Systemy sterowania, dobór czujników/aktuatorów, integracje, logika sterowania, przygotowanie pod uruchomienie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="h2">Elektronika na zamówienie</div>
+      <div class="card">
+        <div class="pad">
+          <p class="lead" style="margin-top:0">
+            Jeżeli nie ma gotowego rozwiązania — robimy je. Od prostych modułów po złożone systemy: prototyp,
+            dopracowanie, testy i dokumentacja użytkowa.
+          </p>
+          <div class="badges">
+            <span class="badge accent">Prototypy</span>
+            <span class="badge">Płyty PCB</span>
+            <span class="badge">Okablowanie</span>
+            <span class="badge">Komunikacja (np. magistrale)</span>
+            <span class="badge green">Testy i walidacja</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="h2">Elektronika jachtowa</div>
+      <div class="card">
+        <div class="pad">
+          <table class="table" aria-label="Elektronika jachtowa">
+            <thead>
+              <tr>
+                <th>Zakres</th>
+                <th>Przykłady</th>
+                <th>Efekt</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Diagnostyka i serwis</td>
+                <td>instalacje, połączenia, urządzenia pokładowe</td>
+                <td>sprawne systemy i mniej awarii w sezonie</td>
+              </tr>
+              <tr>
+                <td>Modernizacje</td>
+                <td>uporządkowanie instalacji, poprawa zabezpieczeń</td>
+                <td>bezpieczniej, czytelniej, łatwiej serwisować</td>
+              </tr>
+              <tr>
+                <td>Elektronika na zamówienie</td>
+                <td>moduły sterujące, monitoring, alarmy</td>
+                <td>funkcje dopasowane do jachtu i sposobu pływania</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="kontakt.html"><span class="dot"></span>Zapytaj o zakres na Twoim jachcie</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="foot">
+        <div class="left">
+          <img src="logo.png" alt="INTERMOR logo" />
+          <div>
+            <small><strong>INTERMOR</strong><br/>Serwis elektroniki • Automatyka • Elektronika jachtowa</small>
+            <small>tel. <a href="tel:+48503833119">+48 503 833 119</a> • <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></small>
+          </div>
+        </div>
+        <div class="right">
+          <div>© <span id="y"></span> INTERMOR</div>
+          <div>Oferta • Realizacje • Kontakt</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+</body>
+</html>
