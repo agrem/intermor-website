@@ -77,17 +77,21 @@ button,input,textarea{font:inherit}
   align-items:center;
   gap:14px;
   min-width:220px;
+  flex-shrink:0;   /* 🔥 kluczowe */
 }
 
 .brand img{
-  width:44px;
-  height:44px;
+  width:180px;        /* SZEROKIE LOGO */
+  height:60px;        /* proporcja */
+
   object-fit:contain;
-  border-radius:14px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(73,215,255,.20);
-  padding:5px;
-  box-shadow:0 0 0 6px rgba(73,215,255,.05);
+  display:block;
+
+  border-radius:0;    /* usuwa kwadrat */
+  background:transparent;
+  border:none;
+  padding:0;
+  box-shadow:none;
 }
 
 .brand-text strong{
