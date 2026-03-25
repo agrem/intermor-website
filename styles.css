@@ -79,18 +79,9 @@ button,input,textarea{font:inherit}
   min-width:auto;
 }
 
-.brand img{
-  width:220px;      /* 🔥 WIĘKSZE */
-  height:70px;      /* proporcje */
-
-  object-fit:contain;
-  display:block;
-
-  border-radius:0;
-  background:transparent;
-  border:none;
-  padding:0;
-  box-shadow:none;
+.brand img:hover{
+  transform:scale(1.03);
+  filter:brightness(1.1);
 }
 
 .brand-text strong{
