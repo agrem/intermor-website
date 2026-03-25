@@ -80,19 +80,6 @@ button,input,textarea{font:inherit}
   flex-shrink:0;   /* 🔥 kluczowe */
 }
 
-.brand img{
-  width:200px;        /* SZEROKIE LOGO */
-  height:60px;        /* proporcja */
-
-  object-fit:contain;
-  display:block;
-
-  border-radius:0;    /* usuwa kwadrat */
-  background:transparent;
-  border:none;
-  padding:0;
-  box-shadow:none;
-}
 
 .brand-text strong{
   display:block;
