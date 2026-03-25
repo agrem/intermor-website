@@ -80,8 +80,9 @@ button,input,textarea{font:inherit}
 }
 
 .brand img{
-  width:180px;
-  height:56px;
+  width:220px;      /* 🔥 WIĘKSZE */
+  height:70px;      /* proporcje */
+
   object-fit:contain;
   display:block;
 
