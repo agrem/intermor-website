@@ -1,63 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>404 — INTERMOR</title>
-  <link rel="icon" href="logo.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container">
-      <div class="nav">
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="INTERMOR logo" />
-          <div class="title">
-            <strong>INTERMOR</strong>
-            <span>Elektronika • Automatyka • Jachty</span>
-          </div>
-        </a>
-        <nav class="menu" aria-label="Nawigacja">
-          <a href="index.html">Start</a>
-          <a href="uslugi.html">Usługi</a>
-          <a href="realizacje.html">Realizacje</a>
-          <a href="o-firmie.html">O firmie</a>
-          <a href="kontakt.html">Kontakt</a>
-        </nav>
+<div class="noise"></div>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="INTERMOR logo">
+      <div class="brand-text">
+        <strong>INTERMOR</strong>
+        <span>Elektronika • Automatyka • Jachty</span>
+      </div>
+    </a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">404</div>
+    <h1>Ta strona nie istnieje</h1>
+    <p>Link jest nieaktualny albo strona została przeniesiona.</p>
+    <div style="margin-top:24px">
+      <a class="btn btn-primary" href="index.html">Wróć na stronę główną</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <img src="logo.png" alt="INTERMOR logo">
+      <div>
+        <strong>INTERMOR</strong><br>
+        <small>Elektronika • Automatyka • Jachty</small>
       </div>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="kicker">Błąd</div>
-      <h1 class="h1">404 — tej strony nie ma</h1>
-      <p class="lead">Jeśli trafiłeś tu z linku, wróć na stronę główną albo przejdź do kontaktu.</p>
-      <div class="ctaRow">
-        <a class="btn primary" href="index.html"><span class="dot"></span>Strona główna</a>
-        <a class="btn" href="kontakt.html">Kontakt</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="foot">
-        <div class="left">
-          <img src="logo.png" alt="INTERMOR logo" />
-          <div>
-            <small><strong>INTERMOR</strong><br/>tel. <a href="tel:+48503833119">+48 503 833 119</a> • <a href="mailto:kontakt@intermor.net">kontakt@intermor.net</a></small>
-          </div>
-        </div>
-        <div class="right">
-          <div>© <span id="y"></span> INTERMOR</div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script src="script.js"></script>
+    <div><small>kontakt@intermor.net • +48 503 833 119 • © 2026 INTERMOR</small></div>
+  </div>
+</footer>
 </body>
 </html>
