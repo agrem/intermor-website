@@ -79,6 +79,13 @@ button,input,textarea{font:inherit}
   min-width:auto;
 }
 
+.brand img{
+  width:200px;        /* zamiast 220 */
+  height:60px;
+  object-fit:contain;
+  display:block;
+}
+
 .brand img:hover{
   transform:scale(1.03);
   filter:brightness(1.1);
