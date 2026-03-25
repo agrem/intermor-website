@@ -79,14 +79,14 @@ button,input,textarea{font:inherit}
 }
 
 .brand img{
-  width:120px;     /* SZERZEJ */
-  height:44px;     /* zostaje */
-  object-fit:fill; /* ROZCIĄGA obraz */
+  width:160px;
+  height:44px;
+  object-fit:contain;
 
   border-radius:10px;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(73,215,255,.20);
-  padding:5px;
+  padding:5px 10px;
 
   box-shadow:0 0 0 6px rgba(73,215,255,.05);
 }
