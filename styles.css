@@ -64,6 +64,14 @@ button,input,textarea{font:inherit}
   border-bottom:1px solid rgba(35,48,74,.75);
 }
 
+.topbar .container{
+  width:calc(100% - 12px);
+  max-width:none;
+  margin:0;
+  padding-left:6px;
+  padding-right:6px;
+}
+
 .nav{
   min-height:82px;
   display:flex;
