@@ -38,31 +38,37 @@ img{
   margin:auto;
 }
 
-/* START SCREEN */
+/* STRONA WYBORU */
 
 .start-screen{
   min-height:100vh;
   display:flex;
   align-items:center;
-  padding:54px 0;
+  padding:24px 0;
 }
 
 .center-logo{
   text-align:center;
-  margin-bottom:38px;
+  margin-bottom:24px;
 }
 
 .center-logo img{
-  width:min(420px, 80vw);
-  margin:0 auto 18px;
+  width:min(330px, 70vw);
+  margin:0 auto 12px;
   object-fit:contain;
 }
 
 .center-logo p{
   margin:0 auto;
   color:var(--muted);
-  font-size:18px;
+  font-size:16px;
   max-width:620px;
+}
+
+/* zabezpieczenie: na podstronach duże logo ma nie istnieć */
+.subpage .center-logo,
+.subpage .start-screen{
+  display:none !important;
 }
 
 /* NAVBAR PODSTRON */
@@ -118,11 +124,6 @@ img{
   border-color:rgba(73,215,255,.18);
 }
 
-.nav-contact{
-  display:flex;
-  align-items:center;
-}
-
 .nav-phone{
   padding:10px 14px;
   border-radius:14px;
@@ -132,16 +133,16 @@ img{
   background:rgba(73,215,255,.08);
 }
 
-/* WYBÓR */
+/* KAFELKI */
 
 .choice-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;
+  gap:22px;
 }
 
 .choice{
-  min-height:420px;
+  min-height:clamp(260px, 42vh, 340px);
   border-radius:var(--radius);
   overflow:hidden;
   position:relative;
@@ -152,7 +153,7 @@ img{
 }
 
 .choice:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
   border-color:rgba(73,215,255,.45);
 }
 
@@ -169,17 +170,6 @@ img{
   background:linear-gradient(180deg, rgba(0,0,0,.18), rgba(5,7,11,.96));
 }
 
-.choice::after{
-  content:"";
-  position:absolute;
-  inset:auto 28px 28px auto;
-  width:80px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--accent));
-  z-index:2;
-  opacity:.7;
-}
-
 .choice.yacht{
   background:url("img/yacht.jpg") center/cover no-repeat;
 }
@@ -192,7 +182,7 @@ img{
   position:relative;
   z-index:2;
   width:100%;
-  padding:32px;
+  padding:28px;
 }
 
 .choice small{
@@ -206,8 +196,8 @@ img{
 }
 
 .choice h2{
-  font-size:40px;
-  margin:0 0 10px;
+  font-size:36px;
+  margin:0 0 8px;
 }
 
 .choice p{
@@ -218,22 +208,21 @@ img{
 
 .choice-action{
   opacity:0;
-  transform:translateY(14px);
+  transform:translateY(12px);
   max-height:0;
   overflow:hidden;
   transition:.35s ease;
-  margin-top:0;
 }
 
 .choice:hover .choice-action{
   opacity:1;
   transform:translateY(0);
-  max-height:90px;
-  margin-top:22px;
+  max-height:80px;
+  margin-top:18px;
 }
 
 .btn{
-  min-height:50px;
+  min-height:48px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -242,15 +231,16 @@ img{
   font-weight:800;
   background:linear-gradient(135deg, rgba(73,215,255,.18), rgba(123,255,200,.12));
   border:1px solid rgba(73,215,255,.35);
-  transition:.25s ease;
 }
+
+/* kontakt pod wyborem */
 
 .quick-contact{
   display:flex;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
-  margin-top:28px;
+  margin-top:20px;
   color:var(--muted);
   font-weight:700;
 }
@@ -301,12 +291,6 @@ img{
   border:1px solid rgba(34,48,74,.9);
   border-radius:var(--radius);
   padding:26px;
-  transition:.25s ease;
-}
-
-.card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(73,215,255,.22);
 }
 
 .card h3{
@@ -431,10 +415,6 @@ img{
   margin:7px 0;
 }
 
-.footer a:hover{
-  color:var(--text);
-}
-
 .footer-bottom{
   border-top:1px solid rgba(34,48,74,.7);
   padding-top:18px;
@@ -464,31 +444,32 @@ img{
     grid-template-columns:1fr;
   }
 
+  .choice{
+    min-height:260px;
+  }
+
   .nav{
     flex-direction:column;
     align-items:flex-start;
     padding:14px 0;
   }
-
-  .choice{
-    min-height:360px;
-  }
-
-  .brand img{
-    width:140px;
-  }
 }
 
 @media(max-width:600px){
-  .process{
-    grid-template-columns:1fr;
+  .start-screen{
+    align-items:flex-start;
+    padding:24px 0;
   }
 
   .center-logo img{
-    width:300px;
+    width:260px;
   }
 
   .choice h2{
-    font-size:34px;
+    font-size:32px;
+  }
+
+  .process{
+    grid-template-columns:1fr;
   }
 }
