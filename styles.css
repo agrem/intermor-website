@@ -1,7 +1,6 @@
 :root{
   --bg:#05070b;
   --panel:#0c111b;
-  --panel2:#101827;
   --text:#eef5ff;
   --muted:#9aa6bd;
   --line:#22304a;
@@ -11,13 +10,7 @@
   --radius:24px;
 }
 
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -36,8 +29,8 @@ a{
 }
 
 img{
-  display:block;
   max-width:100%;
+  display:block;
 }
 
 .container{
@@ -45,7 +38,34 @@ img{
   margin:auto;
 }
 
-/* TOPBAR */
+/* START SCREEN */
+
+.start-screen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:54px 0;
+}
+
+.center-logo{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.center-logo img{
+  width:min(420px, 80vw);
+  margin:0 auto 18px;
+  object-fit:contain;
+}
+
+.center-logo p{
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
+  max-width:620px;
+}
+
+/* NAVBAR PODSTRON */
 
 .topbar{
   position:sticky;
@@ -67,7 +87,6 @@ img{
 .brand{
   display:flex;
   align-items:center;
-  gap:14px;
 }
 
 .brand img{
@@ -88,8 +107,8 @@ img{
   border-radius:14px;
   font-size:14px;
   color:var(--muted);
-  transition:.25s ease;
   border:1px solid transparent;
+  transition:.25s ease;
 }
 
 .menu a:hover,
@@ -102,7 +121,6 @@ img{
 .nav-contact{
   display:flex;
   align-items:center;
-  gap:10px;
 }
 
 .nav-phone{
@@ -114,48 +132,7 @@ img{
   background:rgba(73,215,255,.08);
 }
 
-/* HERO */
-
-.hero{
-  min-height:calc(100vh - 78px);
-  display:flex;
-  align-items:center;
-  padding:70px 0;
-}
-
-.hero-top{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:18px;
-}
-
-.status-dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:var(--accent2);
-  box-shadow:0 0 0 6px rgba(123,255,200,.08);
-}
-
-.hero h1{
-  font-size:clamp(42px,6vw,82px);
-  line-height:.95;
-  letter-spacing:-2px;
-  margin:0 0 18px;
-  max-width:900px;
-}
-
-.hero p{
-  color:var(--muted);
-  font-size:19px;
-  max-width:720px;
-  margin:0 0 36px;
-}
-
-/* CHOICE */
+/* WYBÓR */
 
 .choice-grid{
   display:grid;
@@ -164,7 +141,7 @@ img{
 }
 
 .choice{
-  min-height:430px;
+  min-height:420px;
   border-radius:var(--radius);
   overflow:hidden;
   position:relative;
@@ -255,8 +232,6 @@ img{
   margin-top:22px;
 }
 
-/* BUTTON */
-
 .btn{
   min-height:50px;
   display:inline-flex;
@@ -270,11 +245,21 @@ img{
   transition:.25s ease;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
+.quick-contact{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:28px;
+  color:var(--muted);
+  font-weight:700;
 }
 
-/* SECTION */
+.quick-contact a:hover{
+  color:var(--text);
+}
+
+/* PODSTRONY */
 
 .section{
   padding:90px 0;
@@ -292,8 +277,7 @@ img{
   font-weight:800;
 }
 
-.section-head h1,
-.section-head h2{
+.section-head h1{
   font-size:clamp(36px,5vw,60px);
   line-height:1.02;
   letter-spacing:-1.5px;
@@ -305,8 +289,6 @@ img{
   color:var(--muted);
   font-size:18px;
 }
-
-/* CARDS */
 
 .cards{
   display:grid;
@@ -337,8 +319,6 @@ img{
   color:var(--muted);
 }
 
-/* MINI PROCESS */
-
 .process{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -364,11 +344,8 @@ img{
   font-size:14px;
 }
 
-/* CTA */
-
 .cta{
   border-radius:30px;
-  overflow:hidden;
   padding:40px;
   border:1px solid rgba(73,215,255,.18);
   background:
@@ -389,8 +366,6 @@ img{
   max-width:700px;
 }
 
-/* CONTACT */
-
 .contact-box{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -402,11 +377,6 @@ img{
   border-radius:22px;
   background:rgba(255,255,255,.03);
   border:1px solid rgba(34,48,74,.9);
-  transition:.25s ease;
-}
-
-.contact-item:hover{
-  border-color:rgba(73,215,255,.25);
 }
 
 .contact-item span{
@@ -446,7 +416,6 @@ img{
   margin-bottom:14px;
 }
 
-.footer h3,
 .footer h4{
   margin:0 0 12px;
   color:var(--text);
@@ -475,7 +444,7 @@ img{
   flex-wrap:wrap;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:1000px){
   .nav-contact{
@@ -501,10 +470,6 @@ img{
     padding:14px 0;
   }
 
-  .hero{
-    padding:50px 0;
-  }
-
   .choice{
     min-height:360px;
   }
@@ -519,8 +484,8 @@ img{
     grid-template-columns:1fr;
   }
 
-  .hero h1{
-    font-size:42px;
+  .center-logo img{
+    width:300px;
   }
 
   .choice h2{
