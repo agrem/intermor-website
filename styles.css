@@ -82,12 +82,12 @@ img{
     display:grid;
 
     /*
-       28% logo
-       72% kafelki
+       34% logo
+       66% kafelki
     */
 
     grid-template-rows:
-        28% 72%;
+        34% 66%;
 
     background:
 
@@ -138,15 +138,15 @@ img{
 
     position:absolute;
 
-    width:500px;
-    height:200px;
+    width:760px;
+    height:300px;
 
     border-radius:50%;
 
     background:
-        rgba(73,215,255,.035);
+        rgba(73,215,255,.045);
 
-    filter:blur(70px);
+    filter:blur(90px);
 
     pointer-events:none;
 }
@@ -168,7 +168,7 @@ img{
 
 .main-logo:hover{
 
-    transform:scale(1.015);
+    transform:scale(1.018);
 
     filter:brightness(1.08);
 }
@@ -177,19 +177,19 @@ img{
 .main-logo img{
 
     width:clamp(
-        260px,
-        27vw,
-        500px
+        380px,
+        34vw,
+        650px
     );
 
-    max-height:150px;
+    max-height:210px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 12px 30px
-            rgba(0,0,0,.35)
+            0 14px 40px
+            rgba(0,0,0,.40)
         );
 }
 
@@ -200,15 +200,15 @@ img{
 
     z-index:2;
 
-    margin-top:10px;
+    margin-top:14px;
 
-    font-size:9px;
+    font-size:13px;
 
     font-weight:600;
 
-    letter-spacing:4px;
+    letter-spacing:5px;
 
-    color:#687482;
+    color:#7d8998;
 }
 
 
@@ -672,7 +672,27 @@ img{
     .home{
 
         grid-template-rows:
-            25% 75%;
+            31% 69%;
+    }
+
+
+    .main-logo img{
+
+        width:clamp(
+            350px,
+            36vw,
+            570px
+        );
+
+        max-height:190px;
+    }
+
+
+    .brand-subtitle{
+
+        font-size:11px;
+
+        letter-spacing:4px;
     }
 
 
@@ -725,10 +745,10 @@ img{
 
     .brand-zone{
 
-        min-height:200px;
+        min-height:240px;
 
         padding:
-            30px 15px;
+            35px 20px;
     }
 
 
@@ -736,16 +756,21 @@ img{
 
         width:
             min(
-                420px,
-                80vw
+                500px,
+                86vw
             );
+
+        max-height:180px;
     }
 
 
-    /*
-       NA TABLECIE NADAL SĄ KAFELKI.
-       NIE ROBIMY LISTY.
-    */
+    .brand-subtitle{
+
+        font-size:10px;
+
+        letter-spacing:3px;
+    }
+
 
     .departments{
 
@@ -776,10 +801,10 @@ img{
 
     .brand-zone{
 
-        min-height:170px;
+        min-height:210px;
 
         padding:
-            20px 14px;
+            24px 14px;
     }
 
 
@@ -787,28 +812,23 @@ img{
 
         width:
             min(
-                320px,
-                82vw
+                370px,
+                88vw
             );
 
-        max-height:110px;
+        max-height:140px;
     }
 
 
     .brand-subtitle{
 
-        margin-top:6px;
+        margin-top:8px;
 
-        font-size:7px;
+        font-size:8px;
 
         letter-spacing:2px;
     }
 
-
-    /*
-       NA TELEFONIE 2 x 2
-       dzięki temu nadal wyglądają jak KAFELKI
-    */
 
     .departments{
 
@@ -857,11 +877,6 @@ img{
         letter-spacing:1px;
     }
 
-
-    /*
-       telefon nie ma hovera,
-       więc informację pokazujemy od razu
-    */
 
     .department-details{
 
