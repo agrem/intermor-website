@@ -1,7 +1,7 @@
 /* =========================================================
    INTERMOR
    HOME + DIVISION PAGES
-   ========================================================= */
+========================================================= */
 
 :root{
     --background:#030609;
@@ -29,7 +29,7 @@
 
 /* =========================================================
    RESET
-   ========================================================= */
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -39,6 +39,7 @@ html,
 body{
     margin:0;
     padding:0;
+
     width:100%;
     min-height:100%;
 }
@@ -63,6 +64,7 @@ body{
             rgba(44,135,180,.07),
             transparent 35%
         ),
+
         linear-gradient(
             180deg,
             #061019 0%,
@@ -94,10 +96,8 @@ img{
 
 
 /* =========================================================
-   =========================================================
-   STRONA STARTOWA
-   =========================================================
-   ========================================================= */
+   HOME
+========================================================= */
 
 .home{
     width:100vw;
@@ -126,7 +126,9 @@ img{
 }
 
 
-/* LOGO START */
+/* =========================================================
+   HOME LOGO
+========================================================= */
 
 .brand-zone{
     position:relative;
@@ -163,6 +165,7 @@ img{
 
 .main-logo{
     position:relative;
+
     z-index:2;
 
     display:block;
@@ -174,6 +177,7 @@ img{
 
 .main-logo:hover{
     transform:scale(1.018);
+
     filter:brightness(1.08);
 }
 
@@ -197,11 +201,13 @@ img{
 
 .brand-subtitle{
     position:relative;
+
     z-index:2;
 
     margin-top:14px;
 
     font-size:13px;
+
     font-weight:600;
 
     letter-spacing:5px;
@@ -210,7 +216,9 @@ img{
 }
 
 
-/* HOME DEPARTMENTS */
+/* =========================================================
+   HOME DEPARTMENTS
+========================================================= */
 
 .departments{
     width:100%;
@@ -267,6 +275,7 @@ img{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     z-index:-2;
@@ -280,13 +289,15 @@ img{
             transparent 66%
         );
 
-    transition:opacity .45s ease;
+    transition:
+        opacity .45s ease;
 }
 
 .department::after{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     z-index:-1;
@@ -304,11 +315,13 @@ img{
             transparent 65%
         );
 
-    transition:opacity .4s ease;
+    transition:
+        opacity .4s ease;
 }
 
 .department:hover{
-    transform:translateY(-6px);
+    transform:
+        translateY(-6px);
 
     border-color:
         color-mix(
@@ -331,7 +344,9 @@ img{
 }
 
 
-/* HOME COLORS */
+/* =========================================================
+   HOME COLORS
+========================================================= */
 
 .department.industrial{
     --color:#24282d;
@@ -358,7 +373,9 @@ img{
 }
 
 
-/* HOME TILE CONTENT */
+/* =========================================================
+   HOME TILE CONTENT
+========================================================= */
 
 .department-number{
     position:absolute;
@@ -367,6 +384,7 @@ img{
     right:22px;
 
     font-size:10px;
+
     font-weight:700;
 
     letter-spacing:2px;
@@ -374,11 +392,13 @@ img{
     color:
         rgba(255,255,255,.2);
 
-    transition:color .3s ease;
+    transition:
+        color .3s ease;
 }
 
 .department:hover .department-number{
-    color:rgba(255,255,255,.55);
+    color:
+        rgba(255,255,255,.55);
 }
 
 .department-content{
@@ -411,7 +431,9 @@ img{
 
 .department:hover .department-content::before{
     width:75px;
-    background:var(--color-light);
+
+    background:
+        var(--color-light);
 }
 
 .department-type{
@@ -423,15 +445,18 @@ img{
         rgba(255,255,255,.4);
 
     font-size:9px;
+
     font-weight:700;
 
     letter-spacing:2px;
 
-    transition:color .3s ease;
+    transition:
+        color .3s ease;
 }
 
 .department:hover .department-type{
-    color:var(--color-light);
+    color:
+        var(--color-light);
 }
 
 .department h2{
@@ -452,11 +477,13 @@ img{
 
     color:#f5f7fa;
 
-    transition:transform .35s ease;
+    transition:
+        transform .35s ease;
 }
 
 .department:hover h2{
-    transform:translateY(3px);
+    transform:
+        translateY(3px);
 }
 
 .department-details{
@@ -479,15 +506,19 @@ img{
 
 .department:hover .department-details{
     opacity:1;
-    transform:translateY(0);
+
+    transform:
+        translateY(0);
 }
 
 .department-details p{
-    margin:0 0 25px;
+    margin:
+        0 0 25px;
 
     max-width:290px;
 
     font-size:13px;
+
     line-height:1.65;
 
     color:
@@ -502,11 +533,13 @@ img{
     gap:12px;
 
     font-size:10px;
+
     font-weight:700;
 
     letter-spacing:1.5px;
 
-    color:var(--color-light);
+    color:
+        var(--color-light);
 }
 
 .department-button span{
@@ -516,17 +549,15 @@ img{
         transform .25s ease;
 }
 
-.department:hover
-.department-button span{
-    transform:translateX(8px);
+.department:hover .department-button span{
+    transform:
+        translateX(8px);
 }
 
 
 /* =========================================================
-   =========================================================
-   PODSTRONY — SYSTEM WSPÓLNY
-   =========================================================
-   ========================================================= */
+   DIVISION PAGES
+========================================================= */
 
 .division-page{
     --theme:#ffffff;
@@ -541,6 +572,7 @@ img{
             var(--theme-soft),
             transparent 28%
         ),
+
         linear-gradient(
             180deg,
             #04070b 0%,
@@ -550,7 +582,9 @@ img{
 }
 
 
-/* THEMES */
+/* =========================================================
+   THEMES
+========================================================= */
 
 .theme-industrial{
     --theme:#d8dde4;
@@ -578,11 +612,12 @@ img{
 
 
 /* =========================================================
-   HEADER PODSTRON
-   ========================================================= */
+   HEADER
+========================================================= */
 
 .site-header{
     position:sticky;
+
     top:0;
 
     z-index:100;
@@ -622,11 +657,9 @@ img{
     gap:30px;
 }
 
-
-/* logo */
-
 .header-logo{
     display:flex;
+
     align-items:center;
 
     width:max-content;
@@ -650,7 +683,8 @@ img{
 }
 
 .header-logo:hover img{
-    transform:scale(1.025);
+    transform:
+        scale(1.025);
 
     filter:
         drop-shadow(
@@ -659,9 +693,6 @@ img{
         )
         brightness(1.08);
 }
-
-
-/* nav */
 
 .header-nav{
     display:flex;
@@ -682,6 +713,7 @@ img{
     border-radius:12px;
 
     font-size:12px;
+
     font-weight:600;
 
     color:#7f8995;
@@ -703,7 +735,8 @@ img{
 }
 
 .header-nav a.active{
-    color:var(--theme);
+    color:
+        var(--theme);
 
     border-color:
         color-mix(
@@ -720,18 +753,17 @@ img{
         );
 }
 
-
-/* header contact */
-
 .header-contact{
     justify-self:end;
 
     display:inline-flex;
+
     align-items:center;
 
     gap:9px;
 
     font-size:12px;
+
     font-weight:700;
 
     padding:
@@ -739,7 +771,8 @@ img{
 
     border-radius:12px;
 
-    color:var(--theme);
+    color:
+        var(--theme);
 
     border:
         1px solid
@@ -767,13 +800,14 @@ img{
             transparent
         );
 
-    transform:translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 
 /* =========================================================
-   HERO PODSTRONY
-   ========================================================= */
+   HERO
+========================================================= */
 
 .division-hero{
     min-height:
@@ -791,9 +825,6 @@ img{
     border-bottom:
         1px solid rgba(255,255,255,.10);
 }
-
-
-/* left */
 
 .hero-copy{
     display:flex;
@@ -816,15 +847,18 @@ img{
 
 .division-label{
     display:flex;
+
     align-items:center;
 
     gap:14px;
 
     margin-bottom:25px;
 
-    color:var(--theme);
+    color:
+        var(--theme);
 
     font-size:11px;
+
     font-weight:700;
 
     letter-spacing:2.5px;
@@ -838,7 +872,8 @@ img{
     width:52px;
     height:1px;
 
-    background:var(--theme);
+    background:
+        var(--theme);
 }
 
 .hero-copy h1{
@@ -903,6 +938,7 @@ img{
     border-radius:13px;
 
     font-size:12px;
+
     font-weight:750;
 
     letter-spacing:.3px;
@@ -913,16 +949,19 @@ img{
 .primary-btn{
     color:#020405;
 
-    background:var(--theme);
+    background:
+        var(--theme);
 
     border:
         1px solid var(--theme);
 }
 
 .primary-btn:hover{
-    transform:translateY(-2px);
+    transform:
+        translateY(-2px);
 
-    filter:brightness(1.08);
+    filter:
+        brightness(1.08);
 }
 
 .secondary-btn{
@@ -945,11 +984,14 @@ img{
 
     color:#fff;
 
-    transform:translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
 
-/* HERO IMAGE */
+/* =========================================================
+   HERO IMAGE
+========================================================= */
 
 .hero-visual{
     min-height:100%;
@@ -958,8 +1000,7 @@ img{
 
     overflow:hidden;
 
-    border-left:
-        1px solid rgba(255,255,255,.10);
+    border-left:none;
 
     background:
         linear-gradient(
@@ -973,6 +1014,7 @@ img{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
@@ -1007,7 +1049,40 @@ img{
 }
 
 
-/* actual hero backgrounds */
+/* =========================================================
+   HERO DIVIDER
+========================================================= */
+
+.hero-divider{
+    position:absolute;
+
+    top:0;
+    bottom:0;
+
+    left:51%;
+
+    width:1px;
+
+    background:
+        var(--theme);
+
+    z-index:9999;
+
+    pointer-events:none;
+
+    box-shadow:
+        0 0 8px
+        color-mix(
+            in srgb,
+            var(--theme) 55%,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   HERO IMAGES
+========================================================= */
 
 .theme-industrial .hero-visual{
     background:
@@ -1059,8 +1134,8 @@ img{
 
 
 /* =========================================================
-   SECTION GENERAL
-   ========================================================= */
+   CONTENT SECTIONS
+========================================================= */
 
 .content-section{
     padding:
@@ -1082,9 +1157,11 @@ img{
 }
 
 .section-index{
-    color:var(--theme);
+    color:
+        var(--theme);
 
     font-size:11px;
+
     font-weight:700;
 
     letter-spacing:2px;
@@ -1095,7 +1172,8 @@ img{
 }
 
 .section-title h2{
-    margin:0 0 18px;
+    margin:
+        0 0 18px;
 
     font-size:
         clamp(
@@ -1119,13 +1197,14 @@ img{
     color:#8b96a3;
 
     font-size:17px;
+
     line-height:1.7;
 }
 
 
 /* =========================================================
    SERVICES
-   ========================================================= */
+========================================================= */
 
 .service-grid{
     display:grid;
@@ -1170,7 +1249,8 @@ img{
     width:0;
     height:2px;
 
-    background:var(--theme);
+    background:
+        var(--theme);
 
     transition:
         width .4s ease;
@@ -1231,8 +1311,8 @@ img{
 
 
 /* =========================================================
-   IMAGE SECTION
-   ========================================================= */
+   MEDIA
+========================================================= */
 
 .media-grid{
     display:grid;
@@ -1294,16 +1374,20 @@ img{
 
     letter-spacing:1.5px;
 
-    color:rgba(255,255,255,.68);
+    color:
+        rgba(255,255,255,.68);
 
     background:
         rgba(3,6,9,.65);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:
+        blur(8px);
 }
 
 
-/* AUTOMATYKA PHOTOS */
+/* =========================================================
+   INDUSTRIAL PHOTOS
+========================================================= */
 
 .theme-industrial .media-large{
     background-image:
@@ -1324,7 +1408,9 @@ img{
 }
 
 
-/* YACHT */
+/* =========================================================
+   YACHT PHOTOS
+========================================================= */
 
 .theme-yacht .media-large{
     background-image:
@@ -1345,7 +1431,9 @@ img{
 }
 
 
-/* ELECTRONICS */
+/* =========================================================
+   ELECTRONICS PHOTOS
+========================================================= */
 
 .theme-electronics .media-large{
     background-image:
@@ -1366,7 +1454,9 @@ img{
 }
 
 
-/* ROV */
+/* =========================================================
+   ROV PHOTOS
+========================================================= */
 
 .theme-rov .media-large{
     background-image:
@@ -1387,7 +1477,9 @@ img{
 }
 
 
-/* labels */
+/* =========================================================
+   PHOTO LABELS
+========================================================= */
 
 .media-large::after{
     content:"REALIZACJA / ZDJĘCIE 01";
@@ -1404,7 +1496,7 @@ img{
 
 /* =========================================================
    PROCESS
-   ========================================================= */
+========================================================= */
 
 .process-grid{
     display:grid;
@@ -1438,7 +1530,8 @@ img{
 
     margin-bottom:45px;
 
-    color:var(--theme);
+    color:
+        var(--theme);
 
     font-size:10px;
 
@@ -1446,7 +1539,8 @@ img{
 }
 
 .process-item h4{
-    margin:0 0 8px;
+    margin:
+        0 0 8px;
 
     font-size:17px;
 
@@ -1465,8 +1559,8 @@ img{
 
 
 /* =========================================================
-   CTA
-   ========================================================= */
+   CONTACT
+========================================================= */
 
 .contact-section{
     padding:
@@ -1506,6 +1600,7 @@ img{
             var(--theme-soft),
             transparent 40%
         ),
+
         rgba(255,255,255,.018);
 }
 
@@ -1520,11 +1615,13 @@ img{
     width:130px;
     height:2px;
 
-    background:var(--theme);
+    background:
+        var(--theme);
 }
 
 .contact-panel h2{
-    margin:0 0 16px;
+    margin:
+        0 0 16px;
 
     max-width:850px;
 
@@ -1596,13 +1693,122 @@ img{
 }
 
 .contact-data a:hover{
-    color:var(--theme);
+    color:
+        var(--theme);
+}
+
+
+/* =========================================================
+   ROV STATUS
+========================================================= */
+
+.rov-status{
+    width:max-content;
+
+    margin-bottom:22px;
+
+    padding:
+        8px 12px;
+
+    border-radius:8px;
+
+    border:
+        1px solid rgba(37,128,212,.35);
+
+    background:
+        rgba(37,128,212,.08);
+
+    color:#4e9fe8;
+
+    font-size:9px;
+
+    font-weight:750;
+
+    letter-spacing:1.8px;
+}
+
+.rov-status.small{
+    margin-bottom:18px;
+}
+
+.rov-development-note{
+    max-width:640px;
+
+    margin:
+        18px 0 0;
+
+    padding-left:18px;
+
+    border-left:
+        2px solid rgba(37,128,212,.65);
+
+    color:#647384;
+
+    font-size:12px;
+
+    line-height:1.65;
+}
+
+.rov-info-panel{
+    display:grid;
+
+    grid-template-columns:
+        .4fr 1.6fr;
+
+    gap:60px;
+
+    padding:
+        50px;
+
+    border:
+        1px solid rgba(37,128,212,.18);
+
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(37,128,212,.08),
+            transparent 45%
+        ),
+
+        rgba(255,255,255,.015);
+}
+
+.rov-info-panel h2{
+    margin:
+        0 0 18px;
+
+    font-size:
+        clamp(
+            30px,
+            3vw,
+            48px
+        );
+
+    line-height:1.05;
+
+    font-weight:600;
+
+    letter-spacing:-1.2px;
+}
+
+.rov-info-panel p{
+    margin:0;
+
+    max-width:850px;
+
+    color:#83909d;
+
+    font-size:15px;
+
+    line-height:1.75;
 }
 
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
 .site-footer{
     border-top:
@@ -1670,11 +1876,13 @@ img{
 
     font-size:13px;
 
-    transition:color .2s ease;
+    transition:
+        color .2s ease;
 }
 
 .footer-column a:hover{
-    color:var(--theme);
+    color:
+        var(--theme);
 }
 
 .footer-bottom{
@@ -1694,10 +1902,47 @@ img{
 
 
 /* =========================================================
-   BASIC RESPONSIVE
-   ========================================================= */
+   SMALLER LAPTOP
+========================================================= */
 
-@media(max-width:1100px){
+@media(max-width:1200px){
+
+    .home{
+        grid-template-rows:
+            31% 69%;
+    }
+
+    .main-logo img{
+        width:
+            clamp(
+                350px,
+                36vw,
+                570px
+            );
+
+        max-height:190px;
+    }
+
+    .brand-subtitle{
+        font-size:11px;
+
+        letter-spacing:4px;
+    }
+
+    .departments{
+        gap:8px;
+
+        padding:8px;
+    }
+
+    .department{
+        padding:
+            24px 20px;
+    }
+
+    .department-details{
+        top:130px;
+    }
 
     .header-inner{
         grid-template-columns:
@@ -1725,12 +1970,21 @@ img{
 }
 
 
-/* zachowujemy startową stronę z wcześniejszego projektu */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:850px){
 
+    body{
+        overflow:auto;
+    }
+
     .home{
+        width:100%;
+
         height:auto;
+
         min-height:100vh;
 
         grid-template-rows:
@@ -1739,7 +1993,9 @@ img{
 
     .brand-zone{
         min-height:240px;
-        padding:35px 20px;
+
+        padding:
+            35px 20px;
     }
 
     .main-logo img{
@@ -1748,6 +2004,14 @@ img{
                 500px,
                 86vw
             );
+
+        max-height:180px;
+    }
+
+    .brand-subtitle{
+        font-size:10px;
+
+        letter-spacing:3px;
     }
 
     .departments{
@@ -1755,133 +2019,14 @@ img{
 
         grid-template-columns:
             repeat(2,1fr);
+
+        padding:10px;
+
+        gap:10px;
     }
 
     .department{
         min-height:330px;
     }
 
-}
-
-/* =========================================================
-   ROV — STATUS / DEVELOPMENT
-========================================================= */
-
-.rov-status{
-    width:max-content;
-
-    margin-bottom:22px;
-
-    padding:8px 12px;
-
-    border-radius:8px;
-
-    border:1px solid
-        rgba(37,128,212,.35);
-
-    background:
-        rgba(37,128,212,.08);
-
-    color:#4e9fe8;
-
-    font-size:9px;
-
-    font-weight:750;
-
-    letter-spacing:1.8px;
-}
-
-
-.rov-status.small{
-    margin-bottom:18px;
-}
-
-
-.rov-development-note{
-    max-width:640px;
-
-    margin:
-        18px 0 0;
-
-    padding-left:18px;
-
-    border-left:
-        2px solid
-        rgba(37,128,212,.65);
-
-    color:#647384;
-
-    font-size:12px;
-
-    line-height:1.65;
-}
-
-
-.rov-info-panel{
-    display:grid;
-
-    grid-template-columns:
-        .4fr 1.6fr;
-
-    gap:60px;
-
-    padding:
-        50px;
-
-    border:
-        1px solid
-        rgba(37,128,212,.18);
-
-    border-radius:20px;
-
-    background:
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(37,128,212,.08),
-            transparent 45%
-        ),
-        rgba(255,255,255,.015);
-}
-
-
-.rov-info-panel h2{
-    margin:
-        0 0 18px;
-
-    font-size:
-        clamp(
-            30px,
-            3vw,
-            48px
-        );
-
-    line-height:1.05;
-
-    font-weight:600;
-
-    letter-spacing:-1.2px;
-}
-
-
-.rov-info-panel p{
-    margin:0;
-
-    max-width:850px;
-
-    color:#83909d;
-
-    font-size:15px;
-
-    line-height:1.75;
-}
-
-/* =========================================================
-   KOLOROWA LINIA MIĘDZY TREŚCIĄ A ZDJĘCIEM
-========================================================= */
-
-.hero-visual{
-    border-left:2px solid var(--theme) !important;
-
-    /* zdjęcie nie jest rysowane pod linią */
-    background-clip:padding-box;
 }
