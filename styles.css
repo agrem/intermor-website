@@ -2030,3 +2030,13 @@ img{
     }
 
 }
+/* =========================================================
+   USUNIĘCIE PODPISÓW ZE ZDJĘĆ
+========================================================= */
+
+.hero-visual::after,
+.media-large::after,
+.media-small::after{
+    content:none !important;
+    display:none !important;
+}
