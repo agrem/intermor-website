@@ -1876,41 +1876,36 @@ img{
 }
 
 /* =========================================================
-   PIONOWY PASEK KOLORU DZIAŁU W HERO
+   POPRAWKA PIONOWEGO PASKA MIĘDZY TEKSTEM A ZDJĘCIEM
    ========================================================= */
 
+/* lewa część hero jest NAD zdjęciem */
+.hero-copy{
+    position:relative;
+    z-index:10;
+
+    /* pasek rysowany WEWNĄTRZ lewej kolumny */
+    box-shadow:
+        inset -2px 0 0 var(--theme);
+}
+
+
+/* zdjęcie jest warstwę niżej */
 .hero-visual{
+    position:relative;
+    z-index:1;
+
     border-left:none !important;
 }
 
-.division-hero::after{
-    content:"";
 
-    position:absolute;
+/* gradient na zdjęciu zostaje, ale nie może wejść nad lewą kolumnę */
+.hero-visual::before{
+    z-index:2;
+}
 
-    /*
-       Hero ma kolumny 1.02fr / 0.98fr,
-       więc granica wypada dokładnie na 51%.
-    */
-    left:51%;
-    top:0;
-    bottom:0;
 
-    width:2px;
-
-    transform:translateX(-1px);
-
-    background:var(--theme);
-
-    box-shadow:
-        0 0 12px
-        color-mix(
-            in srgb,
-            var(--theme) 55%,
-            transparent
-        );
-
-    z-index:20;
-
-    pointer-events:none;
+/* podpis zdjęcia */
+.hero-visual::after{
+    z-index:3;
 }
