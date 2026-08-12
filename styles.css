@@ -1876,36 +1876,12 @@ img{
 }
 
 /* =========================================================
-   POPRAWKA PIONOWEGO PASKA MIĘDZY TEKSTEM A ZDJĘCIEM
-   ========================================================= */
+   KOLOROWA LINIA MIĘDZY TREŚCIĄ A ZDJĘCIEM
+========================================================= */
 
-/* lewa część hero jest NAD zdjęciem */
-.hero-copy{
-    position:relative;
-    z-index:10;
-
-    /* pasek rysowany WEWNĄTRZ lewej kolumny */
-    box-shadow:
-        inset -2px 0 0 var(--theme);
-}
-
-
-/* zdjęcie jest warstwę niżej */
 .hero-visual{
-    position:relative;
-    z-index:1;
+    border-left:2px solid var(--theme) !important;
 
-    border-left:none !important;
-}
-
-
-/* gradient na zdjęciu zostaje, ale nie może wejść nad lewą kolumnę */
-.hero-visual::before{
-    z-index:2;
-}
-
-
-/* podpis zdjęcia */
-.hero-visual::after{
-    z-index:3;
+    /* zdjęcie nie jest rysowane pod linią */
+    background-clip:padding-box;
 }
