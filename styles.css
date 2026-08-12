@@ -1874,3 +1874,19 @@ img{
 
     line-height:1.75;
 }
+/* =========================================================
+   PIONOWA LINIA MOTYWU MIĘDZY HERO A ZDJĘCIEM
+   ========================================================= */
+
+.hero-visual{
+    /* usuwamy starą szarą linię */
+    border-left:none !important;
+
+    /*
+       Kolorowa linia jest rysowana NAD tłem/zdjęciem,
+       więc zdjęcie jej już nie zakryje.
+    */
+    box-shadow:
+        inset 2px 0 0 var(--theme),
+        inset 10px 0 18px -18px var(--theme);
+}
