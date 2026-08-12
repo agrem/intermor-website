@@ -1762,3 +1762,115 @@ img{
     }
 
 }
+
+/* =========================================================
+   ROV — STATUS / DEVELOPMENT
+========================================================= */
+
+.rov-status{
+    width:max-content;
+
+    margin-bottom:22px;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    border:1px solid
+        rgba(37,128,212,.35);
+
+    background:
+        rgba(37,128,212,.08);
+
+    color:#4e9fe8;
+
+    font-size:9px;
+
+    font-weight:750;
+
+    letter-spacing:1.8px;
+}
+
+
+.rov-status.small{
+    margin-bottom:18px;
+}
+
+
+.rov-development-note{
+    max-width:640px;
+
+    margin:
+        18px 0 0;
+
+    padding-left:18px;
+
+    border-left:
+        2px solid
+        rgba(37,128,212,.65);
+
+    color:#647384;
+
+    font-size:12px;
+
+    line-height:1.65;
+}
+
+
+.rov-info-panel{
+    display:grid;
+
+    grid-template-columns:
+        .4fr 1.6fr;
+
+    gap:60px;
+
+    padding:
+        50px;
+
+    border:
+        1px solid
+        rgba(37,128,212,.18);
+
+    border-radius:20px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(37,128,212,.08),
+            transparent 45%
+        ),
+        rgba(255,255,255,.015);
+}
+
+
+.rov-info-panel h2{
+    margin:
+        0 0 18px;
+
+    font-size:
+        clamp(
+            30px,
+            3vw,
+            48px
+        );
+
+    line-height:1.05;
+
+    font-weight:600;
+
+    letter-spacing:-1.2px;
+}
+
+
+.rov-info-panel p{
+    margin:0;
+
+    max-width:850px;
+
+    color:#83909d;
+
+    font-size:15px;
+
+    line-height:1.75;
+}
