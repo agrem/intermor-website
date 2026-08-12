@@ -1,98 +1,108 @@
 /* =========================================================
-   INTERMOR
-   START PAGE
+   INTERMOR — START PAGE
    ========================================================= */
 
 :root{
 
-  --bg:#030507;
+    --background:#030609;
 
-  --text:#f4f7fb;
-  --muted:#8994a3;
+    --text:#f4f7fa;
+    --muted:#8b96a4;
 
-  --line:rgba(255,255,255,.13);
+    --border:rgba(255,255,255,.14);
 
-  /* kolory działów */
+    --industrial:#15181c;
+    --industrial-light:#ffffff;
 
-  --industrial:#101216;
-  --industrial-accent:#dfe4ea;
+    --yacht:#56cfff;
+    --yacht-light:#a5e8ff;
 
-  --yacht:#80dfff;
-  --yacht-accent:#b9edff;
+    --electronics:#68e79e;
+    --electronics-light:#a2f3c2;
 
-  --electronics:#7be7a8;
-  --electronics-accent:#a9f5c6;
+    --rov:#084785;
+    --rov-light:#2680d5;
 
-  --rov:#093d78;
-  --rov-accent:#358ade;
-
-}
-
-
-/* RESET */
-
-*{
-  box-sizing:border-box;
-}
-
-html,
-body{
-  margin:0;
-  width:100%;
-  min-height:100%;
-}
-
-html{
-  background:var(--bg);
-}
-
-body{
-  font-family:
-    Inter,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  background:var(--bg);
-  color:var(--text);
-
-  overflow:hidden;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-img{
-  display:block;
 }
 
 
 /* =========================================================
-   CAŁY EKRAN
+   RESET
+   ========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+
+    width:100%;
+    min-height:100%;
+
+    background:var(--background);
+}
+
+body{
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color:var(--text);
+
+    overflow:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    display:block;
+}
+
+
+/* =========================================================
+   CAŁA STRONA
    ========================================================= */
 
 .home{
 
-  width:100%;
+    width:100vw;
 
-  height:100vh;
-  height:100dvh;
+    height:100vh;
+    height:100dvh;
 
-  display:grid;
+    display:grid;
 
-  grid-template-rows:
-    24vh
-    1fr;
+    /*
+       28% logo
+       72% kafelki
+    */
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(48,132,170,.07),
-      transparent 34%
-    ),
-    #030507;
+    grid-template-rows:
+        28% 72%;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(33,130,170,.08),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            180deg,
+            #061019 0%,
+            #030609 55%,
+            #020406 100%
+        );
 
 }
 
@@ -103,193 +113,200 @@ img{
 
 .brand-zone{
 
-  display:flex;
+    position:relative;
 
-  flex-direction:column;
+    display:flex;
 
-  align-items:center;
-  justify-content:center;
+    flex-direction:column;
 
-  position:relative;
+    align-items:center;
 
-  border-bottom:
-    1px solid rgba(255,255,255,.13);
+    justify-content:center;
 
-  z-index:10;
+    border-bottom:
+        1px solid var(--border);
 
+    overflow:hidden;
 }
 
 
-/* subtelna linia pod logo */
+/* delikatne światło za logo */
 
-.brand-zone::after{
+.brand-zone::before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  bottom:-1px;
+    width:500px;
+    height:200px;
 
-  left:50%;
+    border-radius:50%;
 
-  transform:translateX(-50%);
+    background:
+        rgba(73,215,255,.035);
 
-  width:160px;
+    filter:blur(70px);
 
-  height:1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(73,215,255,.7),
-      transparent
-    );
-
+    pointer-events:none;
 }
 
 
 .main-logo{
 
-  display:block;
+    position:relative;
 
-  transition:
-    transform .3s ease,
-    filter .3s ease;
+    z-index:2;
 
-}
+    display:block;
 
-
-.main-logo img{
-
-  width:clamp(
-    260px,
-    24vw,
-    470px
-  );
-
-  max-height:135px;
-
-  object-fit:contain;
-
-  filter:
-    drop-shadow(
-      0 10px 40px
-      rgba(0,0,0,.4)
-    );
-
+    transition:
+        transform .3s ease,
+        filter .3s ease;
 }
 
 
 .main-logo:hover{
 
-  transform:scale(1.015);
+    transform:scale(1.015);
 
-  filter:
-    brightness(1.08);
-
+    filter:brightness(1.08);
 }
 
 
-.brand-caption{
+.main-logo img{
 
-  margin-top:12px;
+    width:clamp(
+        260px,
+        27vw,
+        500px
+    );
 
-  font-size:10px;
+    max-height:150px;
 
-  font-weight:600;
+    object-fit:contain;
 
-  letter-spacing:4px;
+    filter:
+        drop-shadow(
+            0 12px 30px
+            rgba(0,0,0,.35)
+        );
+}
 
-  color:#6d7784;
 
+.brand-subtitle{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:10px;
+
+    font-size:9px;
+
+    font-weight:600;
+
+    letter-spacing:4px;
+
+    color:#687482;
 }
 
 
 /* =========================================================
-   CZTERY DZIAŁY
+   UKŁAD KAFELKÓW
    ========================================================= */
 
 .departments{
 
-  width:100%;
+    width:100%;
 
-  display:grid;
+    height:100%;
 
-  grid-template-columns:
-    repeat(4,1fr);
+    padding:12px;
 
-  min-height:0;
+    display:grid;
 
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+    min-height:0;
 }
 
 
 /* =========================================================
-   POJEDYNCZY KAFELEK
+   KAFEL
    ========================================================= */
 
 .department{
 
-  --hover-color:#fff;
-  --hover-accent:#fff;
+    --color:#ffffff;
+    --color-light:#ffffff;
 
-  position:relative;
+    position:relative;
 
-  overflow:hidden;
+    min-width:0;
 
-  display:flex;
+    overflow:hidden;
 
-  align-items:flex-start;
+    border:
+        1px solid var(--border);
 
-  padding:
-    clamp(28px,3vw,56px)
-    clamp(24px,2.5vw,48px);
+    border-radius:16px;
 
-  border-right:
-    1px solid var(--line);
+    background:
+        rgba(255,255,255,.018);
 
-  background:#030507;
+    padding:
+        clamp(22px,2.3vw,42px);
 
-  isolation:isolate;
+    display:flex;
 
-  transition:
-    background .45s ease,
-    transform .35s ease,
-    border-color .35s ease;
+    align-items:flex-start;
 
+    isolation:isolate;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .32s ease,
+
+        border-color .32s ease,
+
+        background .4s ease,
+
+        box-shadow .4s ease;
 }
 
 
-.department:last-child{
-  border-right:none;
-}
-
-
-/* kolorowe światło */
+/* =========================================================
+   TŁO HOVER
+   ========================================================= */
 
 .department::before{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  inset:0;
+    inset:0;
 
-  z-index:-2;
+    z-index:-2;
 
-  opacity:0;
+    opacity:0;
 
-  background:
+    background:
 
-    radial-gradient(
-      circle at 50% 100%,
-      var(--hover-color),
-      transparent 70%
-    );
+        radial-gradient(
+            circle at 50% 110%,
+            var(--color),
+            transparent 66%
+        );
 
-  transition:
-    opacity .5s ease;
-
+    transition:
+        opacity .45s ease;
 }
 
 
@@ -297,95 +314,63 @@ img{
 
 .department::after{
 
-  content:"";
+    content:"";
 
-  position:absolute;
+    position:absolute;
 
-  left:0;
-  right:0;
-  bottom:0;
+    inset:0;
 
-  height:55%;
+    z-index:-1;
 
-  z-index:-1;
+    opacity:0;
 
-  opacity:0;
+    background:
 
-  background:
-    linear-gradient(
-      0deg,
-      color-mix(
-        in srgb,
-        var(--hover-color) 27%,
-        transparent
-      ),
-      transparent
-    );
+        linear-gradient(
+            0deg,
+            color-mix(
+                in srgb,
+                var(--color) 18%,
+                transparent
+            ),
+            transparent 65%
+        );
 
-  transition:
-    opacity .45s ease;
-
+    transition:
+        opacity .4s ease;
 }
 
 
-/* =========================================================
-   HOVER
-   ========================================================= */
+/* HOVER */
 
 .department:hover{
 
-  transform:
-    translateY(-5px);
+    transform:
+        translateY(-6px);
 
-  border-color:
-    rgba(255,255,255,.3);
+    border-color:
+        color-mix(
+            in srgb,
+            var(--color-light) 45%,
+            transparent
+        );
 
+    box-shadow:
+
+        0 18px 50px
+        rgba(0,0,0,.32),
+
+        inset 0 0 35px
+        rgba(255,255,255,.015);
 }
 
 
 .department:hover::before{
-
-  opacity:.23;
-
+    opacity:.28;
 }
-
 
 .department:hover::after{
-
-  opacity:1;
-
-}
-
-
-/* jasna górna kreska */
-
-.department .department-content::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  width:0;
-
-  height:2px;
-
-  background:
-    var(--hover-accent);
-
-  transition:
-    width .45s cubic-bezier(.2,.7,.2,1);
-
-}
-
-
-.department:hover
-.department-content::before{
-
-  width:70px;
-
+    opacity:1;
 }
 
 
@@ -393,313 +378,323 @@ img{
    KOLORY
    ========================================================= */
 
+.department.industrial{
 
-/* AUTOMATYKA — czarny / grafit */
-
-.department-industrial{
-
-  --hover-color:#30343a;
-  --hover-accent:#ffffff;
-
+    --color:#24282d;
+    --color-light:#ffffff;
 }
 
 
-.department-industrial:hover{
+.department.industrial:hover{
 
-  background:#090a0c;
-
+    background:#080a0c;
 }
 
 
-/* JACHTY — jasny niebieski */
+.department.yacht{
 
-.department-yacht{
-
-  --hover-color:#70d9ff;
-  --hover-accent:#8ce3ff;
-
+    --color:#56cfff;
+    --color-light:#a5e8ff;
 }
 
 
-/* ELEKTRONIKA — jasno zielony */
+.department.electronics{
 
-.department-electronics{
-
-  --hover-color:#62e99a;
-  --hover-accent:#83f1ae;
-
+    --color:#68e79e;
+    --color-light:#a2f3c2;
 }
 
 
-/* ROV — ciemny niebieski */
+.department.rov{
 
-.department-rov{
-
-  --hover-color:#094b94;
-  --hover-accent:#247ed4;
-
+    --color:#084785;
+    --color-light:#2680d5;
 }
 
 
 /* =========================================================
-   NUMER DZIAŁU
+   NUMER
    ========================================================= */
 
 .department-number{
 
-  position:absolute;
+    position:absolute;
 
-  right:28px;
+    top:20px;
+    right:22px;
 
-  top:28px;
+    font-size:10px;
 
-  font-size:11px;
+    font-weight:700;
 
-  font-weight:700;
+    letter-spacing:2px;
 
-  letter-spacing:2px;
+    color:
+        rgba(255,255,255,.2);
 
-  color:
-    rgba(255,255,255,.22);
-
-  transition:
-    color .35s ease;
-
+    transition:
+        color .3s ease;
 }
 
 
 .department:hover
 .department-number{
 
-  color:
-    rgba(255,255,255,.55);
-
+    color:
+        rgba(255,255,255,.55);
 }
 
 
 /* =========================================================
-   ZAWARTOŚĆ
+   CONTENT
    ========================================================= */
 
 .department-content{
 
-  position:relative;
+    position:relative;
 
-  width:100%;
+    width:100%;
 
-  padding-top:22px;
+    height:100%;
 
+    padding-top:18px;
 }
 
 
-.department-category{
+/* kreska nad tytułem */
 
-  display:block;
+.department-content::before{
 
-  margin-bottom:14px;
+    content:"";
 
-  font-size:10px;
+    position:absolute;
 
-  font-weight:700;
+    top:0;
+    left:0;
 
-  letter-spacing:2px;
+    width:28px;
 
-  color:
-    rgba(255,255,255,.42);
+    height:2px;
 
-  transition:
-    color .35s ease;
+    background:
+        rgba(255,255,255,.18);
 
+    transition:
+        width .4s ease,
+        background .4s ease;
 }
 
 
 .department:hover
-.department-category{
+.department-content::before{
 
-  color:
-    var(--hover-accent);
+    width:75px;
 
+    background:
+        var(--color-light);
 }
 
 
+/* TYP */
+
+.department-type{
+
+    display:block;
+
+    margin-bottom:13px;
+
+    color:
+        rgba(255,255,255,.4);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:
+        color .3s ease;
+}
+
+
+.department:hover
+.department-type{
+
+    color:
+        var(--color-light);
+}
+
+
+/* TYTUŁ */
+
 .department h2{
 
-  margin:0;
+    margin:0;
 
-  font-size:
-    clamp(
-      19px,
-      1.55vw,
-      28px
-    );
+    font-size:
+        clamp(
+            18px,
+            1.45vw,
+            28px
+        );
 
-  line-height:1.15;
+    line-height:1.15;
 
-  font-weight:650;
+    letter-spacing:-.4px;
 
-  letter-spacing:-.5px;
+    font-weight:650;
 
-  color:#f4f7fb;
+    color:#f5f7fa;
 
-  transition:
-    transform .4s ease;
-
+    transition:
+        transform .35s ease;
 }
 
 
 .department:hover h2{
 
-  transform:
-    translateY(4px);
-
+    transform:
+        translateY(3px);
 }
 
 
 /* =========================================================
-   TREŚĆ PO HOVER
+   OPIS PO HOVER
    ========================================================= */
 
-.department-hover{
+.department-details{
 
-  position:absolute;
+    position:absolute;
 
-  left:0;
+    left:0;
 
-  top:150px;
+    top:145px;
 
-  width:100%;
+    width:100%;
 
-  opacity:0;
+    opacity:0;
 
-  transform:
-    translateY(20px);
+    transform:
+        translateY(18px);
 
-  transition:
-    opacity .4s ease,
-    transform .4s ease;
+    transition:
 
+        opacity .38s ease,
+
+        transform .38s ease;
 }
 
 
 .department:hover
-.department-hover{
+.department-details{
 
-  opacity:1;
+    opacity:1;
 
-  transform:
-    translateY(0);
-
+    transform:
+        translateY(0);
 }
 
 
-.department-hover p{
+.department-details p{
 
-  margin:0 0 24px;
+    margin:
+        0 0 25px;
 
-  max-width:300px;
+    max-width:290px;
 
-  font-size:14px;
+    font-size:13px;
 
-  line-height:1.65;
+    line-height:1.65;
 
-  color:
-    rgba(255,255,255,.68);
-
+    color:
+        rgba(255,255,255,.65);
 }
 
 
-.department-link{
+/* PRZEJDŹ */
 
-  display:inline-flex;
+.department-button{
 
-  align-items:center;
+    display:inline-flex;
 
-  gap:12px;
+    align-items:center;
 
-  font-size:11px;
+    gap:12px;
 
-  font-weight:700;
+    font-size:10px;
 
-  letter-spacing:1.4px;
+    font-weight:700;
 
-  color:
-    var(--hover-accent);
+    letter-spacing:1.5px;
 
+    color:
+        var(--color-light);
 }
 
 
-.arrow{
+.department-button span{
 
-  display:inline-block;
+    font-size:18px;
 
-  font-size:18px;
-
-  transition:
-    transform .3s ease;
-
+    transition:
+        transform .25s ease;
 }
 
 
 .department:hover
-.arrow{
+.department-button span{
 
-  transform:
-    translateX(7px);
-
+    transform:
+        translateX(8px);
 }
 
 
 /* =========================================================
-   DELIKATNY PIONOWY HIGHLIGHT
-   ========================================================= */
-
-.department:hover{
-
-  box-shadow:
-
-    inset 0 1px 0
-    rgba(255,255,255,.08),
-
-    inset 0 0 60px
-    rgba(255,255,255,.012);
-
-}
-
-
-/* =========================================================
-   FOCUS — KLAWIATURA
+   FOCUS
    ========================================================= */
 
 .department:focus-visible{
 
-  outline:
-    2px solid var(--hover-accent);
+    outline:
+        2px solid
+        var(--color-light);
 
-  outline-offset:-2px;
-
+    outline-offset:-2px;
 }
 
 
 /* =========================================================
-   DUŻE EKRANY
+   MNIEJSZY LAPTOP
    ========================================================= */
 
-@media(min-width:1600px){
+@media(max-width:1200px){
 
-  .home{
+    .home{
 
-    grid-template-rows:
-      23vh
-      1fr;
+        grid-template-rows:
+            25% 75%;
+    }
 
-  }
 
-  .department{
+    .departments{
 
-    padding:
-      48px 54px;
+        gap:8px;
 
-  }
+        padding:8px;
+    }
+
+
+    .department{
+
+        padding:
+            24px 20px;
+    }
+
+
+    .department-details{
+
+        top:130px;
+    }
 
 }
 
@@ -708,51 +703,67 @@ img{
    TABLET
    ========================================================= */
 
-@media(max-width:1000px){
+@media(max-width:850px){
 
-  body{
-    overflow:auto;
-  }
+    body{
+        overflow:auto;
+    }
 
-  .home{
 
-    height:auto;
+    .home{
 
-    min-height:100vh;
+        width:100%;
 
-    grid-template-rows:
-      auto
-      auto;
+        height:auto;
 
-  }
+        min-height:100vh;
 
-  .brand-zone{
+        grid-template-rows:
+            auto auto;
+    }
 
-    min-height:210px;
 
-    padding:35px 20px;
+    .brand-zone{
 
-  }
+        min-height:200px;
 
-  .departments{
+        padding:
+            30px 15px;
+    }
 
-    grid-template-columns:
-      1fr 1fr;
 
-  }
+    .main-logo img{
 
-  .department{
+        width:
+            min(
+                420px,
+                80vw
+            );
+    }
 
-    min-height:360px;
 
-    border-bottom:
-      1px solid var(--line);
+    /*
+       NA TABLECIE NADAL SĄ KAFELKI.
+       NIE ROBIMY LISTY.
+    */
 
-  }
+    .departments{
 
-  .department:nth-child(2){
-    border-right:none;
-  }
+        height:auto;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        padding:10px;
+
+        gap:10px;
+    }
+
+
+    .department{
+
+        min-height:330px;
+    }
 
 }
 
@@ -761,85 +772,134 @@ img{
    TELEFON
    ========================================================= */
 
-@media(max-width:650px){
+@media(max-width:520px){
 
-  .brand-zone{
+    .brand-zone{
 
-    min-height:180px;
+        min-height:170px;
 
-  }
-
-
-  .main-logo img{
-
-    width:min(
-      330px,
-      80vw
-    );
-
-  }
-
-
-  .brand-caption{
-
-    font-size:8px;
-
-    letter-spacing:2.5px;
-
-  }
-
-
-  .departments{
-
-    grid-template-columns:1fr;
-
-  }
-
-
-  .department{
-
-    min-height:260px;
-
-    border-right:none;
-
-    border-bottom:
-      1px solid var(--line);
-
-    padding:
-      30px 24px;
-
-  }
-
-
-  .department:last-child{
-    border-bottom:none;
-  }
-
-
-  .department-hover{
-
-    position:relative;
-
-    top:auto;
-
-    margin-top:28px;
-
-  }
-
-
-  /* na ekranach dotykowych
-     pokazujemy część treści od razu */
-
-  @media(hover:none){
-
-    .department-hover{
-
-      opacity:.82;
-
-      transform:none;
-
+        padding:
+            20px 14px;
     }
 
-  }
+
+    .main-logo img{
+
+        width:
+            min(
+                320px,
+                82vw
+            );
+
+        max-height:110px;
+    }
+
+
+    .brand-subtitle{
+
+        margin-top:6px;
+
+        font-size:7px;
+
+        letter-spacing:2px;
+    }
+
+
+    /*
+       NA TELEFONIE 2 x 2
+       dzięki temu nadal wyglądają jak KAFELKI
+    */
+
+    .departments{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:7px;
+
+        padding:7px;
+    }
+
+
+    .department{
+
+        min-height:250px;
+
+        border-radius:12px;
+
+        padding:
+            20px 15px;
+    }
+
+
+    .department-number{
+
+        top:14px;
+        right:14px;
+    }
+
+
+    .department h2{
+
+        font-size:
+            clamp(
+                15px,
+                4vw,
+                19px
+            );
+    }
+
+
+    .department-type{
+
+        font-size:7px;
+
+        letter-spacing:1px;
+    }
+
+
+    /*
+       telefon nie ma hovera,
+       więc informację pokazujemy od razu
+    */
+
+    .department-details{
+
+        position:relative;
+
+        top:auto;
+
+        margin-top:24px;
+
+        opacity:1;
+
+        transform:none;
+    }
+
+
+    .department-details p{
+
+        font-size:10px;
+
+        line-height:1.5;
+
+        margin-bottom:16px;
+    }
+
+
+    .department-button{
+
+        font-size:8px;
+
+        letter-spacing:.7px;
+
+        gap:5px;
+    }
+
+
+    .department-button span{
+
+        font-size:14px;
+    }
 
 }
