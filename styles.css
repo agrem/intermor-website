@@ -1,0 +1,845 @@
+/* =========================================================
+   INTERMOR
+   START PAGE
+   ========================================================= */
+
+:root{
+
+  --bg:#030507;
+
+  --text:#f4f7fb;
+  --muted:#8994a3;
+
+  --line:rgba(255,255,255,.13);
+
+  /* kolory działów */
+
+  --industrial:#101216;
+  --industrial-accent:#dfe4ea;
+
+  --yacht:#80dfff;
+  --yacht-accent:#b9edff;
+
+  --electronics:#7be7a8;
+  --electronics-accent:#a9f5c6;
+
+  --rov:#093d78;
+  --rov-accent:#358ade;
+
+}
+
+
+/* RESET */
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  margin:0;
+  width:100%;
+  min-height:100%;
+}
+
+html{
+  background:var(--bg);
+}
+
+body{
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  display:block;
+}
+
+
+/* =========================================================
+   CAŁY EKRAN
+   ========================================================= */
+
+.home{
+
+  width:100%;
+
+  height:100vh;
+  height:100dvh;
+
+  display:grid;
+
+  grid-template-rows:
+    24vh
+    1fr;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(48,132,170,.07),
+      transparent 34%
+    ),
+    #030507;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand-zone{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.13);
+
+  z-index:10;
+
+}
+
+
+/* subtelna linia pod logo */
+
+.brand-zone::after{
+
+  content:"";
+
+  position:absolute;
+
+  bottom:-1px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:160px;
+
+  height:1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(73,215,255,.7),
+      transparent
+    );
+
+}
+
+
+.main-logo{
+
+  display:block;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+
+}
+
+
+.main-logo img{
+
+  width:clamp(
+    260px,
+    24vw,
+    470px
+  );
+
+  max-height:135px;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(
+      0 10px 40px
+      rgba(0,0,0,.4)
+    );
+
+}
+
+
+.main-logo:hover{
+
+  transform:scale(1.015);
+
+  filter:
+    brightness(1.08);
+
+}
+
+
+.brand-caption{
+
+  margin-top:12px;
+
+  font-size:10px;
+
+  font-weight:600;
+
+  letter-spacing:4px;
+
+  color:#6d7784;
+
+}
+
+
+/* =========================================================
+   CZTERY DZIAŁY
+   ========================================================= */
+
+.departments{
+
+  width:100%;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  min-height:0;
+
+}
+
+
+/* =========================================================
+   POJEDYNCZY KAFELEK
+   ========================================================= */
+
+.department{
+
+  --hover-color:#fff;
+  --hover-accent:#fff;
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:flex-start;
+
+  padding:
+    clamp(28px,3vw,56px)
+    clamp(24px,2.5vw,48px);
+
+  border-right:
+    1px solid var(--line);
+
+  background:#030507;
+
+  isolation:isolate;
+
+  transition:
+    background .45s ease,
+    transform .35s ease,
+    border-color .35s ease;
+
+}
+
+
+.department:last-child{
+  border-right:none;
+}
+
+
+/* kolorowe światło */
+
+.department::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:-2;
+
+  opacity:0;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 100%,
+      var(--hover-color),
+      transparent 70%
+    );
+
+  transition:
+    opacity .5s ease;
+
+}
+
+
+/* gradient od dołu */
+
+.department::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:55%;
+
+  z-index:-1;
+
+  opacity:0;
+
+  background:
+    linear-gradient(
+      0deg,
+      color-mix(
+        in srgb,
+        var(--hover-color) 27%,
+        transparent
+      ),
+      transparent
+    );
+
+  transition:
+    opacity .45s ease;
+
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.department:hover{
+
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(255,255,255,.3);
+
+}
+
+
+.department:hover::before{
+
+  opacity:.23;
+
+}
+
+
+.department:hover::after{
+
+  opacity:1;
+
+}
+
+
+/* jasna górna kreska */
+
+.department .department-content::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:0;
+
+  height:2px;
+
+  background:
+    var(--hover-accent);
+
+  transition:
+    width .45s cubic-bezier(.2,.7,.2,1);
+
+}
+
+
+.department:hover
+.department-content::before{
+
+  width:70px;
+
+}
+
+
+/* =========================================================
+   KOLORY
+   ========================================================= */
+
+
+/* AUTOMATYKA — czarny / grafit */
+
+.department-industrial{
+
+  --hover-color:#30343a;
+  --hover-accent:#ffffff;
+
+}
+
+
+.department-industrial:hover{
+
+  background:#090a0c;
+
+}
+
+
+/* JACHTY — jasny niebieski */
+
+.department-yacht{
+
+  --hover-color:#70d9ff;
+  --hover-accent:#8ce3ff;
+
+}
+
+
+/* ELEKTRONIKA — jasno zielony */
+
+.department-electronics{
+
+  --hover-color:#62e99a;
+  --hover-accent:#83f1ae;
+
+}
+
+
+/* ROV — ciemny niebieski */
+
+.department-rov{
+
+  --hover-color:#094b94;
+  --hover-accent:#247ed4;
+
+}
+
+
+/* =========================================================
+   NUMER DZIAŁU
+   ========================================================= */
+
+.department-number{
+
+  position:absolute;
+
+  right:28px;
+
+  top:28px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  color:
+    rgba(255,255,255,.22);
+
+  transition:
+    color .35s ease;
+
+}
+
+
+.department:hover
+.department-number{
+
+  color:
+    rgba(255,255,255,.55);
+
+}
+
+
+/* =========================================================
+   ZAWARTOŚĆ
+   ========================================================= */
+
+.department-content{
+
+  position:relative;
+
+  width:100%;
+
+  padding-top:22px;
+
+}
+
+
+.department-category{
+
+  display:block;
+
+  margin-bottom:14px;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  color:
+    rgba(255,255,255,.42);
+
+  transition:
+    color .35s ease;
+
+}
+
+
+.department:hover
+.department-category{
+
+  color:
+    var(--hover-accent);
+
+}
+
+
+.department h2{
+
+  margin:0;
+
+  font-size:
+    clamp(
+      19px,
+      1.55vw,
+      28px
+    );
+
+  line-height:1.15;
+
+  font-weight:650;
+
+  letter-spacing:-.5px;
+
+  color:#f4f7fb;
+
+  transition:
+    transform .4s ease;
+
+}
+
+
+.department:hover h2{
+
+  transform:
+    translateY(4px);
+
+}
+
+
+/* =========================================================
+   TREŚĆ PO HOVER
+   ========================================================= */
+
+.department-hover{
+
+  position:absolute;
+
+  left:0;
+
+  top:150px;
+
+  width:100%;
+
+  opacity:0;
+
+  transform:
+    translateY(20px);
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+
+}
+
+
+.department:hover
+.department-hover{
+
+  opacity:1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.department-hover p{
+
+  margin:0 0 24px;
+
+  max-width:300px;
+
+  font-size:14px;
+
+  line-height:1.65;
+
+  color:
+    rgba(255,255,255,.68);
+
+}
+
+
+.department-link{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:12px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:1.4px;
+
+  color:
+    var(--hover-accent);
+
+}
+
+
+.arrow{
+
+  display:inline-block;
+
+  font-size:18px;
+
+  transition:
+    transform .3s ease;
+
+}
+
+
+.department:hover
+.arrow{
+
+  transform:
+    translateX(7px);
+
+}
+
+
+/* =========================================================
+   DELIKATNY PIONOWY HIGHLIGHT
+   ========================================================= */
+
+.department:hover{
+
+  box-shadow:
+
+    inset 0 1px 0
+    rgba(255,255,255,.08),
+
+    inset 0 0 60px
+    rgba(255,255,255,.012);
+
+}
+
+
+/* =========================================================
+   FOCUS — KLAWIATURA
+   ========================================================= */
+
+.department:focus-visible{
+
+  outline:
+    2px solid var(--hover-accent);
+
+  outline-offset:-2px;
+
+}
+
+
+/* =========================================================
+   DUŻE EKRANY
+   ========================================================= */
+
+@media(min-width:1600px){
+
+  .home{
+
+    grid-template-rows:
+      23vh
+      1fr;
+
+  }
+
+  .department{
+
+    padding:
+      48px 54px;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:1000px){
+
+  body{
+    overflow:auto;
+  }
+
+  .home{
+
+    height:auto;
+
+    min-height:100vh;
+
+    grid-template-rows:
+      auto
+      auto;
+
+  }
+
+  .brand-zone{
+
+    min-height:210px;
+
+    padding:35px 20px;
+
+  }
+
+  .departments{
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+  .department{
+
+    min-height:360px;
+
+    border-bottom:
+      1px solid var(--line);
+
+  }
+
+  .department:nth-child(2){
+    border-right:none;
+  }
+
+}
+
+
+/* =========================================================
+   TELEFON
+   ========================================================= */
+
+@media(max-width:650px){
+
+  .brand-zone{
+
+    min-height:180px;
+
+  }
+
+
+  .main-logo img{
+
+    width:min(
+      330px,
+      80vw
+    );
+
+  }
+
+
+  .brand-caption{
+
+    font-size:8px;
+
+    letter-spacing:2.5px;
+
+  }
+
+
+  .departments{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .department{
+
+    min-height:260px;
+
+    border-right:none;
+
+    border-bottom:
+      1px solid var(--line);
+
+    padding:
+      30px 24px;
+
+  }
+
+
+  .department:last-child{
+    border-bottom:none;
+  }
+
+
+  .department-hover{
+
+    position:relative;
+
+    top:auto;
+
+    margin-top:28px;
+
+  }
+
+
+  /* na ekranach dotykowych
+     pokazujemy część treści od razu */
+
+  @media(hover:none){
+
+    .department-hover{
+
+      opacity:.82;
+
+      transform:none;
+
+    }
+
+  }
+
+}
