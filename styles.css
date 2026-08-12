@@ -1874,19 +1874,43 @@ img{
 
     line-height:1.75;
 }
+
 /* =========================================================
-   PIONOWA LINIA MOTYWU MIĘDZY HERO A ZDJĘCIEM
+   PIONOWY PASEK KOLORU DZIAŁU W HERO
    ========================================================= */
 
 .hero-visual{
-    /* usuwamy starą szarą linię */
     border-left:none !important;
+}
+
+.division-hero::after{
+    content:"";
+
+    position:absolute;
 
     /*
-       Kolorowa linia jest rysowana NAD tłem/zdjęciem,
-       więc zdjęcie jej już nie zakryje.
+       Hero ma kolumny 1.02fr / 0.98fr,
+       więc granica wypada dokładnie na 51%.
     */
+    left:51%;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    transform:translateX(-1px);
+
+    background:var(--theme);
+
     box-shadow:
-        inset 2px 0 0 var(--theme),
-        inset 10px 0 18px -18px var(--theme);
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--theme) 55%,
+            transparent
+        );
+
+    z-index:20;
+
+    pointer-events:none;
 }
