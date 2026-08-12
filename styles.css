@@ -1,9 +1,9 @@
 /* =========================================================
-   INTERMOR — START PAGE
+   INTERMOR
+   HOME + DIVISION PAGES
    ========================================================= */
 
 :root{
-
     --background:#030609;
 
     --text:#f4f7fa;
@@ -11,7 +11,7 @@
 
     --border:rgba(255,255,255,.14);
 
-    --industrial:#15181c;
+    --industrial:#24282d;
     --industrial-light:#ffffff;
 
     --yacht:#56cfff;
@@ -23,6 +23,7 @@
     --rov:#084785;
     --rov-light:#2680d5;
 
+    --max:1380px;
 }
 
 
@@ -38,15 +39,16 @@ html,
 body{
     margin:0;
     padding:0;
-
     width:100%;
     min-height:100%;
+}
 
+html{
     background:var(--background);
+    scroll-behavior:smooth;
 }
 
 body{
-
     font-family:
         Inter,
         "Segoe UI",
@@ -55,7 +57,20 @@ body{
 
     color:var(--text);
 
-    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(44,135,180,.07),
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #061019 0%,
+            #030609 50%,
+            #020406 100%
+        );
+
+    line-height:1.5;
 }
 
 a{
@@ -65,15 +80,26 @@ a{
 
 img{
     display:block;
+    max-width:100%;
+}
+
+.container{
+    width:min(
+        var(--max),
+        calc(100% - 70px)
+    );
+
+    margin:0 auto;
 }
 
 
 /* =========================================================
-   CAŁA STRONA
+   =========================================================
+   STRONA STARTOWA
+   =========================================================
    ========================================================= */
 
 .home{
-
     width:100vw;
 
     height:100vh;
@@ -81,16 +107,10 @@ img{
 
     display:grid;
 
-    /*
-       34% logo
-       66% kafelki
-    */
-
     grid-template-rows:
         34% 66%;
 
     background:
-
         radial-gradient(
             circle at 50% 0%,
             rgba(33,130,170,.08),
@@ -103,24 +123,18 @@ img{
             #030609 55%,
             #020406 100%
         );
-
 }
 
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+/* LOGO START */
 
 .brand-zone{
-
     position:relative;
 
     display:flex;
-
     flex-direction:column;
 
     align-items:center;
-
     justify-content:center;
 
     border-bottom:
@@ -129,11 +143,7 @@ img{
     overflow:hidden;
 }
 
-
-/* delikatne światło za logo */
-
 .brand-zone::before{
-
     content:"";
 
     position:absolute;
@@ -151,11 +161,8 @@ img{
     pointer-events:none;
 }
 
-
 .main-logo{
-
     position:relative;
-
     z-index:2;
 
     display:block;
@@ -165,17 +172,12 @@ img{
         filter .3s ease;
 }
 
-
 .main-logo:hover{
-
     transform:scale(1.018);
-
     filter:brightness(1.08);
 }
 
-
 .main-logo img{
-
     width:clamp(
         380px,
         34vw,
@@ -193,17 +195,13 @@ img{
         );
 }
 
-
 .brand-subtitle{
-
     position:relative;
-
     z-index:2;
 
     margin-top:14px;
 
     font-size:13px;
-
     font-weight:600;
 
     letter-spacing:5px;
@@ -212,14 +210,10 @@ img{
 }
 
 
-/* =========================================================
-   UKŁAD KAFELKÓW
-   ========================================================= */
+/* HOME DEPARTMENTS */
 
 .departments{
-
     width:100%;
-
     height:100%;
 
     padding:12px;
@@ -234,13 +228,7 @@ img{
     min-height:0;
 }
 
-
-/* =========================================================
-   KAFEL
-   ========================================================= */
-
 .department{
-
     --color:#ffffff;
     --color-light:#ffffff;
 
@@ -262,7 +250,6 @@ img{
         clamp(22px,2.3vw,42px);
 
     display:flex;
-
     align-items:flex-start;
 
     isolation:isolate;
@@ -270,27 +257,16 @@ img{
     cursor:pointer;
 
     transition:
-
         transform .32s ease,
-
         border-color .32s ease,
-
         background .4s ease,
-
         box-shadow .4s ease;
 }
 
-
-/* =========================================================
-   TŁO HOVER
-   ========================================================= */
-
 .department::before{
-
     content:"";
 
     position:absolute;
-
     inset:0;
 
     z-index:-2;
@@ -298,26 +274,19 @@ img{
     opacity:0;
 
     background:
-
         radial-gradient(
             circle at 50% 110%,
             var(--color),
             transparent 66%
         );
 
-    transition:
-        opacity .45s ease;
+    transition:opacity .45s ease;
 }
 
-
-/* gradient od dołu */
-
 .department::after{
-
     content:"";
 
     position:absolute;
-
     inset:0;
 
     z-index:-1;
@@ -325,7 +294,6 @@ img{
     opacity:0;
 
     background:
-
         linear-gradient(
             0deg,
             color-mix(
@@ -336,17 +304,11 @@ img{
             transparent 65%
         );
 
-    transition:
-        opacity .4s ease;
+    transition:opacity .4s ease;
 }
 
-
-/* HOVER */
-
 .department:hover{
-
-    transform:
-        translateY(-6px);
+    transform:translateY(-6px);
 
     border-color:
         color-mix(
@@ -356,14 +318,9 @@ img{
         );
 
     box-shadow:
-
-        0 18px 50px
-        rgba(0,0,0,.32),
-
-        inset 0 0 35px
-        rgba(255,255,255,.015);
+        0 18px 50px rgba(0,0,0,.32),
+        inset 0 0 35px rgba(255,255,255,.015);
 }
-
 
 .department:hover::before{
     opacity:.28;
@@ -374,57 +331,42 @@ img{
 }
 
 
-/* =========================================================
-   KOLORY
-   ========================================================= */
+/* HOME COLORS */
 
 .department.industrial{
-
     --color:#24282d;
     --color-light:#ffffff;
 }
 
-
 .department.industrial:hover{
-
     background:#080a0c;
 }
 
-
 .department.yacht{
-
     --color:#56cfff;
     --color-light:#a5e8ff;
 }
 
-
 .department.electronics{
-
     --color:#68e79e;
     --color-light:#a2f3c2;
 }
 
-
 .department.rov{
-
     --color:#084785;
     --color-light:#2680d5;
 }
 
 
-/* =========================================================
-   NUMER
-   ========================================================= */
+/* HOME TILE CONTENT */
 
 .department-number{
-
     position:absolute;
 
     top:20px;
     right:22px;
 
     font-size:10px;
-
     font-weight:700;
 
     letter-spacing:2px;
@@ -432,39 +374,23 @@ img{
     color:
         rgba(255,255,255,.2);
 
-    transition:
-        color .3s ease;
+    transition:color .3s ease;
 }
 
-
-.department:hover
-.department-number{
-
-    color:
-        rgba(255,255,255,.55);
+.department:hover .department-number{
+    color:rgba(255,255,255,.55);
 }
-
-
-/* =========================================================
-   CONTENT
-   ========================================================= */
 
 .department-content{
-
     position:relative;
 
     width:100%;
-
     height:100%;
 
     padding-top:18px;
 }
 
-
-/* kreska nad tytułem */
-
 .department-content::before{
-
     content:"";
 
     position:absolute;
@@ -473,7 +399,6 @@ img{
     left:0;
 
     width:28px;
-
     height:2px;
 
     background:
@@ -484,21 +409,12 @@ img{
         background .4s ease;
 }
 
-
-.department:hover
-.department-content::before{
-
+.department:hover .department-content::before{
     width:75px;
-
-    background:
-        var(--color-light);
+    background:var(--color-light);
 }
 
-
-/* TYP */
-
 .department-type{
-
     display:block;
 
     margin-bottom:13px;
@@ -507,28 +423,18 @@ img{
         rgba(255,255,255,.4);
 
     font-size:9px;
-
     font-weight:700;
 
     letter-spacing:2px;
 
-    transition:
-        color .3s ease;
+    transition:color .3s ease;
 }
 
-
-.department:hover
-.department-type{
-
-    color:
-        var(--color-light);
+.department:hover .department-type{
+    color:var(--color-light);
 }
-
-
-/* TYTUŁ */
 
 .department h2{
-
     margin:0;
 
     font-size:
@@ -546,28 +452,17 @@ img{
 
     color:#f5f7fa;
 
-    transition:
-        transform .35s ease;
+    transition:transform .35s ease;
 }
-
 
 .department:hover h2{
-
-    transform:
-        translateY(3px);
+    transform:translateY(3px);
 }
 
-
-/* =========================================================
-   OPIS PO HOVER
-   ========================================================= */
-
 .department-details{
-
     position:absolute;
 
     left:0;
-
     top:145px;
 
     width:100%;
@@ -578,43 +473,28 @@ img{
         translateY(18px);
 
     transition:
-
         opacity .38s ease,
-
         transform .38s ease;
 }
 
-
-.department:hover
-.department-details{
-
+.department:hover .department-details{
     opacity:1;
-
-    transform:
-        translateY(0);
+    transform:translateY(0);
 }
 
-
 .department-details p{
-
-    margin:
-        0 0 25px;
+    margin:0 0 25px;
 
     max-width:290px;
 
     font-size:13px;
-
     line-height:1.65;
 
     color:
         rgba(255,255,255,.65);
 }
 
-
-/* PRZEJDŹ */
-
 .department-button{
-
     display:inline-flex;
 
     align-items:center;
@@ -622,299 +502,1263 @@ img{
     gap:12px;
 
     font-size:10px;
-
     font-weight:700;
 
     letter-spacing:1.5px;
 
-    color:
-        var(--color-light);
+    color:var(--color-light);
 }
 
-
 .department-button span{
-
     font-size:18px;
 
     transition:
         transform .25s ease;
 }
 
-
 .department:hover
 .department-button span{
-
-    transform:
-        translateX(8px);
+    transform:translateX(8px);
 }
 
 
 /* =========================================================
-   FOCUS
+   =========================================================
+   PODSTRONY — SYSTEM WSPÓLNY
+   =========================================================
    ========================================================= */
 
-.department:focus-visible{
+.division-page{
+    --theme:#ffffff;
+    --theme-soft:rgba(255,255,255,.10);
+    --theme-dark:#181b20;
 
-    outline:
-        2px solid
-        var(--color-light);
+    min-height:100vh;
 
-    outline-offset:-2px;
+    background:
+        radial-gradient(
+            circle at 85% 0%,
+            var(--theme-soft),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #04070b 0%,
+            #030609 60%,
+            #020405 100%
+        );
+}
+
+
+/* THEMES */
+
+.theme-industrial{
+    --theme:#d8dde4;
+    --theme-soft:rgba(190,198,208,.09);
+    --theme-dark:#161a1f;
+}
+
+.theme-yacht{
+    --theme:#70d8ff;
+    --theme-soft:rgba(86,207,255,.12);
+    --theme-dark:#07364c;
+}
+
+.theme-electronics{
+    --theme:#76eaa7;
+    --theme-soft:rgba(104,231,158,.11);
+    --theme-dark:#0c3b25;
+}
+
+.theme-rov{
+    --theme:#2580d4;
+    --theme-soft:rgba(30,103,185,.15);
+    --theme-dark:#062b55;
 }
 
 
 /* =========================================================
-   MNIEJSZY LAPTOP
+   HEADER PODSTRON
    ========================================================= */
 
-@media(max-width:1200px){
+.site-header{
+    position:sticky;
+    top:0;
 
-    .home{
+    z-index:100;
 
-        grid-template-rows:
-            31% 69%;
-    }
+    height:92px;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        rgba(3,6,9,.78);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+.header-inner{
+    width:min(
+        var(--max),
+        calc(100% - 70px)
+    );
+
+    height:100%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        260px 1fr 220px;
+
+    align-items:center;
+
+    gap:30px;
+}
 
 
-    .main-logo img{
+/* logo */
 
-        width:clamp(
-            350px,
-            36vw,
-            570px
+.header-logo{
+    display:flex;
+    align-items:center;
+
+    width:max-content;
+}
+
+.header-logo img{
+    width:235px;
+    height:68px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 0 22px
+            var(--theme-soft)
         );
 
-        max-height:190px;
+    transition:
+        transform .25s ease,
+        filter .25s ease;
+}
+
+.header-logo:hover img{
+    transform:scale(1.025);
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            var(--theme-soft)
+        )
+        brightness(1.08);
+}
+
+
+/* nav */
+
+.header-nav{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:6px;
+}
+
+.header-nav a{
+    padding:
+        9px 12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:12px;
+
+    font-size:12px;
+    font-weight:600;
+
+    color:#7f8995;
+
+    transition:
+        color .25s ease,
+        background .25s ease,
+        border .25s ease;
+}
+
+.header-nav a:hover{
+    color:#fff;
+
+    background:
+        rgba(255,255,255,.035);
+
+    border-color:
+        rgba(255,255,255,.08);
+}
+
+.header-nav a.active{
+    color:var(--theme);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--theme) 25%,
+            transparent
+        );
+
+    background:
+        color-mix(
+            in srgb,
+            var(--theme) 7%,
+            transparent
+        );
+}
+
+
+/* header contact */
+
+.header-contact{
+    justify-self:end;
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:9px;
+
+    font-size:12px;
+    font-weight:700;
+
+    padding:
+        11px 15px;
+
+    border-radius:12px;
+
+    color:var(--theme);
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--theme) 32%,
+            transparent
+        );
+
+    background:
+        color-mix(
+            in srgb,
+            var(--theme) 7%,
+            transparent
+        );
+
+    transition:.25s ease;
+}
+
+.header-contact:hover{
+    background:
+        color-mix(
+            in srgb,
+            var(--theme) 13%,
+            transparent
+        );
+
+    transform:translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO PODSTRONY
+   ========================================================= */
+
+.division-hero{
+    min-height:
+        calc(100vh - 92px);
+
+    display:grid;
+
+    grid-template-columns:
+        1.02fr .98fr;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.10);
+}
+
+
+/* left */
+
+.hero-copy{
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:
+        80px
+        7vw
+        80px
+        max(
+            40px,
+            calc(
+                (100vw - var(--max)) / 2
+            )
+        );
+}
+
+.division-label{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:25px;
+
+    color:var(--theme);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+}
+
+.division-label::before{
+    content:"";
+
+    width:52px;
+    height:1px;
+
+    background:var(--theme);
+}
+
+.hero-copy h1{
+    margin:0;
+
+    max-width:820px;
+
+    font-size:
+        clamp(
+            48px,
+            5.4vw,
+            88px
+        );
+
+    line-height:.97;
+
+    letter-spacing:-2.5px;
+
+    font-weight:650;
+}
+
+.hero-copy .lead{
+    max-width:650px;
+
+    margin:
+        28px 0 0;
+
+    color:#929daa;
+
+    font-size:
+        clamp(
+            16px,
+            1.25vw,
+            19px
+        );
+
+    line-height:1.65;
+}
+
+.hero-actions{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:34px;
+}
+
+.primary-btn,
+.secondary-btn{
+    min-height:50px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        0 20px;
+
+    border-radius:13px;
+
+    font-size:12px;
+    font-weight:750;
+
+    letter-spacing:.3px;
+
+    transition:.25s ease;
+}
+
+.primary-btn{
+    color:#020405;
+
+    background:var(--theme);
+
+    border:
+        1px solid var(--theme);
+}
+
+.primary-btn:hover{
+    transform:translateY(-2px);
+
+    filter:brightness(1.08);
+}
+
+.secondary-btn{
+    color:#d9dee5;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.13);
+}
+
+.secondary-btn:hover{
+    border-color:
+        color-mix(
+            in srgb,
+            var(--theme) 45%,
+            transparent
+        );
+
+    color:#fff;
+
+    transform:translateY(-2px);
+}
+
+
+/* HERO IMAGE */
+
+.hero-visual{
+    min-height:100%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-left:
+        1px solid rgba(255,255,255,.10);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--theme-dark),
+            #020405 75%
+        );
+}
+
+.hero-visual::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #030609 0%,
+            rgba(3,6,9,.30) 32%,
+            rgba(3,6,9,.15) 100%
+        );
+
+    z-index:2;
+}
+
+.hero-visual::after{
+    content:"ZDJĘCIE GŁÓWNE";
+
+    position:absolute;
+
+    z-index:3;
+
+    right:30px;
+    bottom:28px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:
+        rgba(255,255,255,.40);
+}
+
+
+/* actual hero backgrounds */
+
+.theme-industrial .hero-visual{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,9,.80),
+            rgba(3,6,9,.20)
+        ),
+        url("img/industrial-hero.jpg")
+        center/cover no-repeat,
+        #14181d;
+}
+
+.theme-yacht .hero-visual{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,9,.78),
+            rgba(3,6,9,.15)
+        ),
+        url("img/yacht-hero.jpg")
+        center/cover no-repeat,
+        #073c54;
+}
+
+.theme-electronics .hero-visual{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,9,.78),
+            rgba(3,6,9,.15)
+        ),
+        url("img/electronics-hero.jpg")
+        center/cover no-repeat,
+        #0b3823;
+}
+
+.theme-rov .hero-visual{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,6,9,.78),
+            rgba(3,6,9,.12)
+        ),
+        url("img/rov-hero.jpg")
+        center/cover no-repeat,
+        #062b55;
+}
+
+
+/* =========================================================
+   SECTION GENERAL
+   ========================================================= */
+
+.content-section{
+    padding:
+        115px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.section-heading{
+    display:grid;
+
+    grid-template-columns:
+        .4fr 1.6fr;
+
+    gap:60px;
+
+    margin-bottom:55px;
+}
+
+.section-index{
+    color:var(--theme);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.section-title{
+    max-width:900px;
+}
+
+.section-title h2{
+    margin:0 0 18px;
+
+    font-size:
+        clamp(
+            34px,
+            3vw,
+            52px
+        );
+
+    line-height:1.04;
+
+    letter-spacing:-1.3px;
+
+    font-weight:600;
+}
+
+.section-title p{
+    margin:0;
+
+    max-width:720px;
+
+    color:#8b96a3;
+
+    font-size:17px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.service-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+}
+
+.service-item{
+    min-height:265px;
+
+    padding:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+.service-item::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:0;
+    height:2px;
+
+    background:var(--theme);
+
+    transition:
+        width .4s ease;
+}
+
+.service-item:hover{
+    transform:
+        translateY(-4px);
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--theme) 28%,
+            transparent
+        );
+
+    background:
+        color-mix(
+            in srgb,
+            var(--theme) 4%,
+            rgba(255,255,255,.018)
+        );
+}
+
+.service-item:hover::before{
+    width:80px;
+}
+
+.service-number{
+    color:
+        rgba(255,255,255,.25);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.service-item h3{
+    margin:
+        65px 0 12px;
+
+    font-size:22px;
+
+    line-height:1.15;
+
+    font-weight:600;
+}
+
+.service-item p{
+    margin:0;
+
+    color:#828d9a;
+
+    font-size:14px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   IMAGE SECTION
+   ========================================================= */
+
+.media-grid{
+    display:grid;
+
+    grid-template-columns:
+        1.35fr .65fr;
+
+    gap:12px;
+
+    height:600px;
+}
+
+.media-large,
+.media-small{
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--theme-dark),
+            #030609
+        );
+
+    background-size:cover;
+    background-position:center;
+}
+
+.media-side{
+    display:grid;
+
+    grid-template-rows:
+        1fr 1fr;
+
+    gap:12px;
+}
+
+.media-large::after,
+.media-small::after{
+    position:absolute;
+
+    left:20px;
+    bottom:18px;
+
+    padding:
+        7px 10px;
+
+    border-radius:8px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    color:rgba(255,255,255,.68);
+
+    background:
+        rgba(3,6,9,.65);
+
+    backdrop-filter:blur(8px);
+}
+
+
+/* AUTOMATYKA PHOTOS */
+
+.theme-industrial .media-large{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.18),
+            rgba(3,6,9,.38)
+        ),
+        url("img/industrial-01.jpg");
+}
+
+.theme-industrial .media-small.one{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.15),
+            rgba(3,6,9,.35)
+        ),
+        url("img/industrial-02.jpg");
+}
+
+
+/* YACHT */
+
+.theme-yacht .media-large{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.12),
+            rgba(3,6,9,.35)
+        ),
+        url("img/yacht-01.jpg");
+}
+
+.theme-yacht .media-small.one{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.12),
+            rgba(3,6,9,.35)
+        ),
+        url("img/yacht-02.jpg");
+}
+
+
+/* ELECTRONICS */
+
+.theme-electronics .media-large{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.12),
+            rgba(3,6,9,.35)
+        ),
+        url("img/electronics-01.jpg");
+}
+
+.theme-electronics .media-small.one{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.12),
+            rgba(3,6,9,.35)
+        ),
+        url("img/electronics-02.jpg");
+}
+
+
+/* ROV */
+
+.theme-rov .media-large{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.08),
+            rgba(3,6,9,.40)
+        ),
+        url("img/rov-01.jpg");
+}
+
+.theme-rov .media-small.one{
+    background-image:
+        linear-gradient(
+            rgba(3,6,9,.08),
+            rgba(3,6,9,.40)
+        ),
+        url("img/rov-02.jpg");
+}
+
+
+/* labels */
+
+.media-large::after{
+    content:"REALIZACJA / ZDJĘCIE 01";
+}
+
+.media-small.one::after{
+    content:"DETAL / ZDJĘCIE 02";
+}
+
+.media-small.two::after{
+    content:"MIEJSCE NA KOLEJNE ZDJĘCIE";
+}
+
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid rgba(255,255,255,.11);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.11);
+}
+
+.process-item{
+    min-height:190px;
+
+    padding:
+        28px 30px;
+
+    border-right:
+        1px solid rgba(255,255,255,.10);
+}
+
+.process-item:last-child{
+    border-right:none;
+}
+
+.process-item strong{
+    display:block;
+
+    margin-bottom:45px;
+
+    color:var(--theme);
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.process-item h4{
+    margin:0 0 8px;
+
+    font-size:17px;
+
+    font-weight:600;
+}
+
+.process-item p{
+    margin:0;
+
+    color:#7f8995;
+
+    font-size:13px;
+
+    line-height:1.55;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.contact-section{
+    padding:
+        125px 0;
+}
+
+.contact-panel{
+    position:relative;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:
+        1.3fr .7fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:
+        60px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--theme) 24%,
+            rgba(255,255,255,.08)
+        );
+
+    border-radius:22px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            var(--theme-soft),
+            transparent 40%
+        ),
+        rgba(255,255,255,.018);
+}
+
+.contact-panel::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:130px;
+    height:2px;
+
+    background:var(--theme);
+}
+
+.contact-panel h2{
+    margin:0 0 16px;
+
+    max-width:850px;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            62px
+        );
+
+    line-height:1.03;
+
+    letter-spacing:-1.8px;
+
+    font-weight:600;
+}
+
+.contact-panel p{
+    margin:0;
+
+    max-width:660px;
+
+    color:#8994a0;
+
+    font-size:16px;
+
+    line-height:1.7;
+}
+
+.contact-data{
+    justify-self:end;
+
+    width:100%;
+
+    max-width:330px;
+}
+
+.contact-data small{
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#68737f;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    text-transform:uppercase;
+}
+
+.contact-data a{
+    display:block;
+
+    padding:
+        15px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.10);
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:
+        color .2s ease;
+}
+
+.contact-data a:hover{
+    color:var(--theme);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer{
+    border-top:
+        1px solid rgba(255,255,255,.10);
+
+    background:#020405;
+
+    padding:
+        60px 0 26px;
+}
+
+.footer-main{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr .8fr .8fr;
+
+    gap:70px;
+
+    padding-bottom:48px;
+}
+
+.footer-brand img{
+    width:220px;
+    height:70px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+}
+
+.footer-brand p{
+    max-width:420px;
+
+    margin:0;
+
+    color:#737e8a;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.footer-column h5{
+    margin:
+        5px 0 17px;
+
+    color:#b2bac4;
+
+    font-size:10px;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+}
+
+.footer-column a,
+.footer-column span{
+    display:block;
+
+    margin:
+        9px 0;
+
+    color:#737e8a;
+
+    font-size:13px;
+
+    transition:color .2s ease;
+}
+
+.footer-column a:hover{
+    color:var(--theme);
+}
+
+.footer-bottom{
+    padding-top:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:#525d68;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   BASIC RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .header-inner{
+        grid-template-columns:
+            220px 1fr;
     }
 
-
-    .brand-subtitle{
-
-        font-size:11px;
-
-        letter-spacing:4px;
+    .header-contact{
+        display:none;
     }
 
-
-    .departments{
-
-        gap:8px;
-
-        padding:8px;
+    .hero-copy{
+        padding-left:45px;
+        padding-right:45px;
     }
 
-
-    .department{
-
-        padding:
-            24px 20px;
+    .service-grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-
-    .department-details{
-
-        top:130px;
+    .footer-main{
+        gap:35px;
     }
 
 }
 
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* zachowujemy startową stronę z wcześniejszego projektu */
 
 @media(max-width:850px){
 
-    body{
-        overflow:auto;
-    }
-
-
     .home{
-
-        width:100%;
-
         height:auto;
-
         min-height:100vh;
 
         grid-template-rows:
             auto auto;
     }
 
-
     .brand-zone{
-
         min-height:240px;
-
-        padding:
-            35px 20px;
+        padding:35px 20px;
     }
 
-
     .main-logo img{
-
         width:
             min(
                 500px,
                 86vw
             );
-
-        max-height:180px;
     }
-
-
-    .brand-subtitle{
-
-        font-size:10px;
-
-        letter-spacing:3px;
-    }
-
 
     .departments{
-
         height:auto;
 
         grid-template-columns:
             repeat(2,1fr);
-
-        padding:10px;
-
-        gap:10px;
     }
 
-
     .department{
-
         min-height:330px;
-    }
-
-}
-
-
-/* =========================================================
-   TELEFON
-   ========================================================= */
-
-@media(max-width:520px){
-
-    .brand-zone{
-
-        min-height:210px;
-
-        padding:
-            24px 14px;
-    }
-
-
-    .main-logo img{
-
-        width:
-            min(
-                370px,
-                88vw
-            );
-
-        max-height:140px;
-    }
-
-
-    .brand-subtitle{
-
-        margin-top:8px;
-
-        font-size:8px;
-
-        letter-spacing:2px;
-    }
-
-
-    .departments{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:7px;
-
-        padding:7px;
-    }
-
-
-    .department{
-
-        min-height:250px;
-
-        border-radius:12px;
-
-        padding:
-            20px 15px;
-    }
-
-
-    .department-number{
-
-        top:14px;
-        right:14px;
-    }
-
-
-    .department h2{
-
-        font-size:
-            clamp(
-                15px,
-                4vw,
-                19px
-            );
-    }
-
-
-    .department-type{
-
-        font-size:7px;
-
-        letter-spacing:1px;
-    }
-
-
-    .department-details{
-
-        position:relative;
-
-        top:auto;
-
-        margin-top:24px;
-
-        opacity:1;
-
-        transform:none;
-    }
-
-
-    .department-details p{
-
-        font-size:10px;
-
-        line-height:1.5;
-
-        margin-bottom:16px;
-    }
-
-
-    .department-button{
-
-        font-size:8px;
-
-        letter-spacing:.7px;
-
-        gap:5px;
-    }
-
-
-    .department-button span{
-
-        font-size:14px;
     }
 
 }
