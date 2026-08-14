@@ -2051,46 +2051,62 @@ img{
 
     background:
         radial-gradient(
-            circle at 80% 15%,
-            rgba(118,234,167,.045),
-            transparent 30%
+            circle at 72% 18%,
+            rgba(118,234,167,.05),
+            transparent 29%
         );
 }
 
 
 /* =========================================================
-   HERO MSA
+   GÓRNA PREZENTACJA
 ========================================================= */
 
 .msa-hero{
+    max-width:1280px;
+
+    margin:0 auto;
+
+    min-height:680px;
+
     display:grid;
 
     grid-template-columns:
-        .95fr 1.05fr;
-
-    gap:100px;
+        .92fr 1.08fr;
 
     align-items:center;
 
-    min-height:620px;
+    gap:90px;
+
+    padding:
+        30px 35px
+        80px;
 }
 
 
+/* =========================================================
+   TEKST
+========================================================= */
+
 .msa-copy{
-    max-width:660px;
+    width:100%;
+
+    max-width:570px;
+
+    justify-self:end;
+
+    padding-left:15px;
 }
 
 
 .msa-eyebrow{
-    display:flex;
+    display:inline-flex;
 
     align-items:center;
 
     gap:10px;
 
-    width:max-content;
-
-    margin-bottom:24px;
+    margin-bottom:27px;
 
     padding:
         8px 11px;
@@ -2118,6 +2134,8 @@ img{
     width:6px;
     height:6px;
 
+    flex:0 0 6px;
+
     border-radius:50%;
 
     background:
@@ -2129,393 +2147,314 @@ img{
 }
 
 
+.msa-copy .section-index{
+    margin-bottom:23px;
+}
+
+
 .msa-copy h2{
-    margin:
-        20px 0 22px;
+    margin:0;
+
+    color:#f4f7f5;
 
     font-size:
         clamp(
-            65px,
-            6vw,
-            105px
+            70px,
+            5.8vw,
+            100px
         );
 
-    line-height:.86;
-
-    letter-spacing:-4px;
+    line-height:.88;
 
     font-weight:650;
 
-    color:#f3f7f4;
+    letter-spacing:-4px;
 }
 
 
 .msa-copy h2 span{
     display:block;
 
-    margin-top:22px;
+    max-width:500px;
+
+    margin-top:25px;
+
+    color:
+        var(--theme);
 
     font-size:
         clamp(
-            28px,
-            2.4vw,
-            42px
+            30px,
+            2.5vw,
+            43px
         );
 
     line-height:1.08;
 
-    letter-spacing:-1px;
+    font-weight:620;
 
-    color:
-        var(--theme);
+    letter-spacing:-1.2px;
+
+    text-wrap:balance;
 }
 
 
 .msa-lead{
+    max-width:520px;
+
     margin:
-        30px 0 16px;
+        35px 0 20px;
 
-    max-width:580px;
+    color:#c3ccc7;
 
-    color:#c3cbc6;
+    font-size:19px;
 
-    font-size:20px;
+    font-weight:500;
 
-    line-height:1.55;
+    line-height:1.65;
+
+    text-wrap:pretty;
 }
 
 
 .msa-text{
-    margin:0;
+    max-width:540px;
 
-    max-width:610px;
+    margin:
+        0 0 17px;
 
     color:#7f8c86;
 
     font-size:14px;
 
-    line-height:1.8;
+    line-height:1.85;
+
+    text-align:justify;
+
+    text-justify:inter-word;
+
+    hyphens:auto;
 }
 
 
 .msa-main-button{
-    margin-top:32px;
+    margin-top:23px;
 }
 
 
 /* =========================================================
-   MOCKUP SYSTEMU
+   ZDJĘCIE MSA
 ========================================================= */
 
-.msa-visual{
+.msa-product-visual{
     position:relative;
+
+    min-height:570px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    min-height:530px;
+    isolation:isolate;
 }
 
 
-.msa-visual::before{
+/* duża miękka poświata */
+
+.msa-product-glow{
+    position:absolute;
+
+    z-index:-2;
+
+    width:78%;
+    height:72%;
+
+    border-radius:50%;
+
+    background:
+        rgba(118,234,167,.10);
+
+    filter:
+        blur(100px);
+
+    opacity:.8;
+}
+
+
+/* dodatkowe światło dokładnie za zdjęciem */
+
+.msa-product-visual::before{
     content:"";
 
     position:absolute;
 
-    width:430px;
-    height:430px;
+    z-index:-1;
+
+    width:62%;
+    height:62%;
 
     border-radius:50%;
 
     background:
-        rgba(118,234,167,.055);
-
-    filter:
-        blur(80px);
-}
-
-
-.msa-screen{
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    max-width:570px;
-
-    padding:28px;
-
-    border-radius:24px;
-
-    border:
-        1px solid rgba(118,234,167,.18);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(14,25,20,.94),
-            rgba(5,9,7,.98)
+        radial-gradient(
+            circle,
+            rgba(118,234,167,.13) 0%,
+            rgba(118,234,167,.045) 42%,
+            transparent 72%
         );
 
-    box-shadow:
-        0 35px 90px rgba(0,0,0,.45),
-        inset 0 1px 0 rgba(255,255,255,.03);
+    filter:
+        blur(25px);
 }
 
 
-.msa-screen-top{
-    display:flex;
+/*
+   TU PÓŹNIEJ WRZUCASZ:
 
-    align-items:center;
-    justify-content:space-between;
+   img/msa-main.jpg
+*/
 
-    padding-bottom:24px;
+.msa-product-image{
+    width:min(
+        100%,
+        650px
+    );
 
-    border-bottom:
-        1px solid rgba(255,255,255,.08);
-}
+    height:520px;
 
-
-.msa-screen-name{
-    display:block;
-
-    color:#e6ece8;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-}
-
-
-.msa-screen-sub{
-    display:block;
-
-    margin-top:4px;
-
-    color:#5e6d65;
-
-    font-size:8px;
-
-    letter-spacing:1.8px;
-}
-
-
-.msa-online{
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    color:
-        var(--theme);
-
-    font-size:8px;
-
-    font-weight:700;
-
-    letter-spacing:1.3px;
-}
-
-
-.msa-online span{
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:
-        var(--theme);
-
-    box-shadow:
-        0 0 10px
-        rgba(118,234,167,.7);
-}
-
-
-/* =========================================================
-   STATUSY
-========================================================= */
-
-.msa-status-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:10px;
-
-    padding:
-        24px 0;
-}
-
-
-.msa-status-card{
     position:relative;
 
-    display:grid;
+    border-radius:22px;
 
-    grid-template-columns:
-        38px 1fr auto;
+    background:
 
-    align-items:center;
+        linear-gradient(
+            135deg,
+            rgba(118,234,167,.045),
+            rgba(4,9,7,.25)
+        ),
 
-    gap:13px;
+        url("img/msa-main.jpg")
+        center/contain
+        no-repeat;
 
-    min-height:82px;
-
-    padding:
-        15px;
+    /*
+       Nie robimy wyraźnej ramki.
+       Tylko bardzo subtelna krawędź.
+    */
 
     border:
-        1px solid rgba(255,255,255,.07);
-
-    border-radius:12px;
-
-    background:
-        rgba(255,255,255,.018);
-}
-
-
-.msa-status-icon{
-    width:38px;
-    height:38px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:9px;
-
-    color:
-        var(--theme);
-
-    background:
-        rgba(118,234,167,.065);
-
-    font-size:9px;
-
-    font-weight:700;
-}
-
-
-.msa-status-card span{
-    display:block;
-
-    color:#607068;
-
-    font-size:8px;
-
-    letter-spacing:1px;
-}
-
-
-.msa-status-card strong{
-    display:block;
-
-    margin-top:3px;
-
-    color:#c9d1cc;
-
-    font-size:11px;
-
-    font-weight:600;
-}
-
-
-.msa-status-card i{
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:
-        var(--theme);
+        1px solid
+        rgba(118,234,167,.07);
 
     box-shadow:
-        0 0 8px
-        rgba(118,234,167,.55);
+
+        0 35px 90px
+        rgba(0,0,0,.38),
+
+        0 0 70px
+        rgba(118,234,167,.08),
+
+        inset 0 1px 0
+        rgba(255,255,255,.015);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
 }
 
 
-.msa-screen-bottom{
-    display:flex;
+/* zdjęcie lekko żyje po najechaniu */
 
-    justify-content:space-between;
+.msa-product-image:hover{
+    transform:
+        translateY(-5px)
+        scale(1.008);
 
-    padding-top:18px;
+    box-shadow:
 
-    border-top:
-        1px solid rgba(255,255,255,.07);
+        0 42px 100px
+        rgba(0,0,0,.42),
 
-    color:#53615a;
-
-    font-size:7px;
-
-    letter-spacing:1.5px;
+        0 0 95px
+        rgba(118,234,167,.13);
 }
 
 
 /* =========================================================
-   MOŻLIWOŚCI
+   MONITORING
 ========================================================= */
 
 .msa-capabilities{
+    max-width:1200px;
+
+    margin:
+        0 auto;
+
     display:grid;
 
     grid-template-columns:
-        .8fr 1.2fr;
+        .85fr 1.15fr;
 
-    gap:100px;
+    align-items:start;
+
+    gap:115px;
 
     padding:
-        110px 0;
+        120px 35px;
 
     border-top:
-        1px solid rgba(255,255,255,.08);
+        1px solid rgba(255,255,255,.075);
 }
 
 
 .msa-capabilities-heading{
-    max-width:520px;
+    max-width:480px;
 }
 
 
 .msa-capabilities-heading h3{
     margin:
-        16px 0;
+        18px 0 20px;
+
+    color:#edf2ef;
 
     font-size:
         clamp(
-            34px,
+            35px,
             3vw,
             50px
         );
 
-    line-height:1.05;
+    line-height:1.06;
+
+    font-weight:600;
 
     letter-spacing:-1.3px;
 
-    font-weight:600;
+    text-wrap:balance;
 }
 
 
 .msa-capabilities-heading p{
     margin:0;
 
-    color:#7e8983;
+    color:#7d8983;
 
     font-size:14px;
 
-    line-height:1.75;
+    line-height:1.8;
+
+    text-align:justify;
+
+    hyphens:auto;
 }
 
+
+/* =========================================================
+   LISTA PARAMETRÓW
+========================================================= */
 
 .msa-capabilities-list{
     display:grid;
@@ -2523,22 +2462,34 @@ img{
     grid-template-columns:
         1fr 1fr;
 
-    align-content:center;
+    column-gap:40px;
 }
 
 
 .msa-capability{
+    min-height:72px;
+
     display:grid;
 
     grid-template-columns:
-        50px 1fr;
+        48px 1fr;
 
     align-items:center;
 
-    min-height:66px;
-
     border-bottom:
         1px solid rgba(255,255,255,.075);
+
+    transition:
+        padding-left .25s ease,
+        border-color .25s ease;
+}
+
+
+.msa-capability:hover{
+    padding-left:6px;
+
+    border-color:
+        rgba(118,234,167,.22);
 }
 
 
@@ -2555,7 +2506,7 @@ img{
 
 
 .msa-capability strong{
-    color:#aab4ae;
+    color:#aab5af;
 
     font-size:13px;
 
@@ -2568,6 +2519,12 @@ img{
 ========================================================= */
 
 .msa-modular{
+    max-width:1200px;
+
+    margin:
+        20px auto
+        110px;
+
     position:relative;
 
     overflow:hidden;
@@ -2577,51 +2534,56 @@ img{
     grid-template-columns:
         .55fr 1.45fr;
 
-    gap:70px;
-
     align-items:center;
 
-    padding:
-        80px;
+    gap:85px;
 
-    margin-bottom:100px;
+    padding:
+        80px 85px;
 
     border-radius:22px;
 
     border:
-        1px solid rgba(118,234,167,.14);
+        1px solid
+        rgba(118,234,167,.13);
 
     background:
+
         radial-gradient(
-            circle at 0% 50%,
-            rgba(118,234,167,.07),
-            transparent 35%
+            circle at 8% 50%,
+            rgba(118,234,167,.075),
+            transparent 33%
         ),
 
-        rgba(255,255,255,.014);
+        rgba(255,255,255,.012);
 }
 
 
 .msa-modular-number{
     color:
-        rgba(118,234,167,.09);
+        rgba(118,234,167,.085);
 
     font-size:
         clamp(
-            110px,
-            12vw,
-            190px
+            115px,
+            11vw,
+            180px
         );
 
     font-weight:700;
 
     letter-spacing:-10px;
 
-    line-height:.7;
+    line-height:.72;
 }
 
 
-.msa-modular-copy span{
+.msa-modular-copy{
+    max-width:700px;
+}
+
+
+.msa-modular-copy > span{
     color:
         var(--theme);
 
@@ -2635,33 +2597,39 @@ img{
 
 .msa-modular-copy h3{
     margin:
-        12px 0 16px;
+        14px 0 18px;
+
+    color:#eef2ef;
 
     font-size:
         clamp(
-            32px,
+            34px,
             3vw,
             48px
         );
 
-    line-height:1.05;
+    line-height:1.06;
 
     font-weight:600;
 
     letter-spacing:-1.2px;
+
+    text-wrap:balance;
 }
 
 
 .msa-modular-copy p{
-    max-width:720px;
-
     margin:0;
 
     color:#7e8983;
 
     font-size:14px;
 
-    line-height:1.75;
+    line-height:1.8;
+
+    text-align:justify;
+
+    hyphens:auto;
 }
 
 
@@ -2670,24 +2638,29 @@ img{
 ========================================================= */
 
 .msa-contact{
+    max-width:1200px;
+
+    margin:0 auto;
+
     display:grid;
 
     grid-template-columns:
         1fr auto;
 
-    gap:80px;
-
     align-items:center;
 
-    padding-top:65px;
+    gap:100px;
+
+    padding:
+        70px 35px 20px;
 
     border-top:
-        1px solid rgba(255,255,255,.09);
+        1px solid rgba(255,255,255,.085);
 }
 
 
 .msa-contact > div:first-child{
-    max-width:720px;
+    max-width:700px;
 }
 
 
@@ -2705,20 +2678,24 @@ img{
 
 .msa-contact h3{
     margin:
-        12px 0 14px;
+        14px 0 17px;
+
+    color:#edf2ef;
 
     font-size:
         clamp(
             34px,
             3vw,
-            50px
+            49px
         );
 
-    line-height:1.05;
+    line-height:1.06;
 
     font-weight:600;
 
     letter-spacing:-1.2px;
+
+    text-wrap:balance;
 }
 
 
@@ -2727,15 +2704,21 @@ img{
 
     max-width:650px;
 
-    color:#7d8983;
+    color:#7e8983;
 
     font-size:14px;
 
-    line-height:1.7;
+    line-height:1.75;
+
+    text-align:justify;
+
+    hyphens:auto;
 }
 
 
 .msa-contact-actions{
+    min-width:235px;
+
     display:flex;
 
     flex-direction:column;
@@ -2743,6 +2726,4 @@ img{
     align-items:stretch;
 
     gap:10px;
-
-    min-width:230px;
 }
