@@ -2975,3 +2975,43 @@ img{
     }
 
 }
+/* =========================================================
+   POPRAWKA WARSTW - PASEK HERO NIE WCHODZI NA HEADER
+========================================================= */
+
+.site-header{
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+
+    isolation:isolate;
+
+    background:rgba(3,6,9,.94);
+}
+
+
+/* hero tworzy własną zamkniętą warstwę */
+.division-hero{
+    position:relative;
+
+    isolation:isolate;
+}
+
+
+/* pionowy pasek jest nad zdjęciem, ale POD headerem */
+.hero-divider{
+    z-index:20 !important;
+}
+
+
+/* tekst i zdjęcie pozostają pod paskiem */
+.hero-copy{
+    position:relative;
+    z-index:2;
+}
+
+.hero-visual{
+    position:relative;
+    z-index:1;
+}
