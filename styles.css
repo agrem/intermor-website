@@ -1,6 +1,5 @@
 /* =========================================================
    INTERMOR
-   HOME + DIVISION PAGES
 ========================================================= */
 
 :root{
@@ -35,6 +34,7 @@
     box-sizing:border-box;
 }
 
+
 html,
 body{
     margin:0;
@@ -44,10 +44,13 @@ body{
     min-height:100%;
 }
 
+
 html{
     background:var(--background);
+
     scroll-behavior:smooth;
 }
+
 
 body{
     font-family:
@@ -75,15 +78,20 @@ body{
     line-height:1.5;
 }
 
+
 a{
     color:inherit;
+
     text-decoration:none;
 }
 
+
 img{
     display:block;
+
     max-width:100%;
 }
+
 
 .container{
     width:min(
@@ -111,6 +119,7 @@ img{
         34% 66%;
 
     background:
+
         radial-gradient(
             circle at 50% 0%,
             rgba(33,130,170,.08),
@@ -134,6 +143,7 @@ img{
     position:relative;
 
     display:flex;
+
     flex-direction:column;
 
     align-items:center;
@@ -144,6 +154,7 @@ img{
 
     overflow:hidden;
 }
+
 
 .brand-zone::before{
     content:"";
@@ -163,6 +174,7 @@ img{
     pointer-events:none;
 }
 
+
 .main-logo{
     position:relative;
 
@@ -175,18 +187,23 @@ img{
         filter .3s ease;
 }
 
-.main-logo:hover{
-    transform:scale(1.018);
 
-    filter:brightness(1.08);
+.main-logo:hover{
+    transform:
+        scale(1.018);
+
+    filter:
+        brightness(1.08);
 }
 
+
 .main-logo img{
-    width:clamp(
-        380px,
-        34vw,
-        650px
-    );
+    width:
+        clamp(
+            380px,
+            34vw,
+            650px
+        );
 
     max-height:210px;
 
@@ -199,6 +216,7 @@ img{
         );
 }
 
+
 .brand-subtitle{
     position:relative;
 
@@ -206,13 +224,13 @@ img{
 
     margin-top:14px;
 
+    color:#7d8998;
+
     font-size:13px;
 
     font-weight:600;
 
     letter-spacing:5px;
-
-    color:#7d8998;
 }
 
 
@@ -236,6 +254,7 @@ img{
     min-height:0;
 }
 
+
 .department{
     --color:#ffffff;
     --color-light:#ffffff;
@@ -258,6 +277,7 @@ img{
         clamp(22px,2.3vw,42px);
 
     display:flex;
+
     align-items:flex-start;
 
     isolation:isolate;
@@ -270,6 +290,7 @@ img{
         background .4s ease,
         box-shadow .4s ease;
 }
+
 
 .department::before{
     content:"";
@@ -292,6 +313,7 @@ img{
     transition:
         opacity .45s ease;
 }
+
 
 .department::after{
     content:"";
@@ -319,6 +341,7 @@ img{
         opacity .4s ease;
 }
 
+
 .department:hover{
     transform:
         translateY(-6px);
@@ -331,13 +354,18 @@ img{
         );
 
     box-shadow:
-        0 18px 50px rgba(0,0,0,.32),
-        inset 0 0 35px rgba(255,255,255,.015);
+        0 18px 50px
+        rgba(0,0,0,.32),
+
+        inset 0 0 35px
+        rgba(255,255,255,.015);
 }
+
 
 .department:hover::before{
     opacity:.28;
 }
+
 
 .department:hover::after{
     opacity:1;
@@ -353,19 +381,23 @@ img{
     --color-light:#ffffff;
 }
 
+
 .department.industrial:hover{
     background:#080a0c;
 }
+
 
 .department.yacht{
     --color:#56cfff;
     --color-light:#a5e8ff;
 }
 
+
 .department.electronics{
     --color:#68e79e;
     --color-light:#a2f3c2;
 }
+
 
 .department.rov{
     --color:#084785;
@@ -374,7 +406,7 @@ img{
 
 
 /* =========================================================
-   HOME TILE CONTENT
+   HOME CONTENT
 ========================================================= */
 
 .department-number{
@@ -383,23 +415,26 @@ img{
     top:20px;
     right:22px;
 
+    color:
+        rgba(255,255,255,.2);
+
     font-size:10px;
 
     font-weight:700;
 
     letter-spacing:2px;
 
-    color:
-        rgba(255,255,255,.2);
-
     transition:
         color .3s ease;
 }
 
-.department:hover .department-number{
+
+.department:hover
+.department-number{
     color:
         rgba(255,255,255,.55);
 }
+
 
 .department-content{
     position:relative;
@@ -409,6 +444,7 @@ img{
 
     padding-top:18px;
 }
+
 
 .department-content::before{
     content:"";
@@ -429,12 +465,15 @@ img{
         background .4s ease;
 }
 
-.department:hover .department-content::before{
+
+.department:hover
+.department-content::before{
     width:75px;
 
     background:
         var(--color-light);
 }
+
 
 .department-type{
     display:block;
@@ -449,18 +488,20 @@ img{
     font-weight:700;
 
     letter-spacing:2px;
-
-    transition:
-        color .3s ease;
 }
 
-.department:hover .department-type{
+
+.department:hover
+.department-type{
     color:
         var(--color-light);
 }
 
+
 .department h2{
     margin:0;
+
+    color:#f5f7fa;
 
     font-size:
         clamp(
@@ -474,17 +515,8 @@ img{
     letter-spacing:-.4px;
 
     font-weight:650;
-
-    color:#f5f7fa;
-
-    transition:
-        transform .35s ease;
 }
 
-.department:hover h2{
-    transform:
-        translateY(3px);
-}
 
 .department-details{
     position:absolute;
@@ -504,12 +536,15 @@ img{
         transform .38s ease;
 }
 
-.department:hover .department-details{
+
+.department:hover
+.department-details{
     opacity:1;
 
     transform:
         translateY(0);
 }
+
 
 .department-details p{
     margin:
@@ -517,13 +552,14 @@ img{
 
     max-width:290px;
 
+    color:
+        rgba(255,255,255,.65);
+
     font-size:13px;
 
     line-height:1.65;
-
-    color:
-        rgba(255,255,255,.65);
 }
+
 
 .department-button{
     display:inline-flex;
@@ -532,15 +568,16 @@ img{
 
     gap:12px;
 
+    color:
+        var(--color-light);
+
     font-size:10px;
 
     font-weight:700;
 
     letter-spacing:1.5px;
-
-    color:
-        var(--color-light);
 }
+
 
 .department-button span{
     font-size:18px;
@@ -549,7 +586,9 @@ img{
         transform .25s ease;
 }
 
-.department:hover .department-button span{
+
+.department:hover
+.department-button span{
     transform:
         translateX(8px);
 }
@@ -567,6 +606,7 @@ img{
     min-height:100vh;
 
     background:
+
         radial-gradient(
             circle at 85% 0%,
             var(--theme-soft),
@@ -588,25 +628,40 @@ img{
 
 .theme-industrial{
     --theme:#d8dde4;
-    --theme-soft:rgba(190,198,208,.09);
+
+    --theme-soft:
+        rgba(190,198,208,.09);
+
     --theme-dark:#161a1f;
 }
 
+
 .theme-yacht{
     --theme:#70d8ff;
-    --theme-soft:rgba(86,207,255,.12);
+
+    --theme-soft:
+        rgba(86,207,255,.12);
+
     --theme-dark:#07364c;
 }
 
+
 .theme-electronics{
     --theme:#76eaa7;
-    --theme-soft:rgba(104,231,158,.11);
+
+    --theme-soft:
+        rgba(104,231,158,.11);
+
     --theme-dark:#0c3b25;
 }
 
+
 .theme-rov{
     --theme:#2580d4;
-    --theme-soft:rgba(30,103,185,.15);
+
+    --theme-soft:
+        rgba(30,103,185,.15);
+
     --theme-dark:#062b55;
 }
 
@@ -625,10 +680,11 @@ img{
     height:92px;
 
     display:flex;
+
     align-items:center;
 
     background:
-        rgba(3,6,9,.78);
+        rgba(3,6,9,.82);
 
     border-bottom:
         1px solid rgba(255,255,255,.10);
@@ -636,6 +692,7 @@ img{
     backdrop-filter:
         blur(18px);
 }
+
 
 .header-inner{
     width:min(
@@ -657,6 +714,7 @@ img{
     gap:30px;
 }
 
+
 .header-logo{
     display:flex;
 
@@ -664,6 +722,7 @@ img{
 
     width:max-content;
 }
+
 
 .header-logo img{
     width:235px;
@@ -682,6 +741,7 @@ img{
         filter .25s ease;
 }
 
+
 .header-logo:hover img{
     transform:
         scale(1.025);
@@ -694,6 +754,7 @@ img{
         brightness(1.08);
 }
 
+
 .header-nav{
     display:flex;
 
@@ -702,6 +763,7 @@ img{
 
     gap:6px;
 }
+
 
 .header-nav a{
     padding:
@@ -712,17 +774,18 @@ img{
 
     border-radius:12px;
 
+    color:#7f8995;
+
     font-size:12px;
 
     font-weight:600;
-
-    color:#7f8995;
 
     transition:
         color .25s ease,
         background .25s ease,
         border .25s ease;
 }
+
 
 .header-nav a:hover{
     color:#fff;
@@ -733,6 +796,7 @@ img{
     border-color:
         rgba(255,255,255,.08);
 }
+
 
 .header-nav a.active{
     color:
@@ -753,18 +817,13 @@ img{
         );
 }
 
+
 .header-contact{
     justify-self:end;
 
     display:inline-flex;
 
     align-items:center;
-
-    gap:9px;
-
-    font-size:12px;
-
-    font-weight:700;
 
     padding:
         11px 15px;
@@ -789,8 +848,13 @@ img{
             transparent
         );
 
+    font-size:12px;
+
+    font-weight:700;
+
     transition:.25s ease;
 }
+
 
 .header-contact:hover{
     background:
@@ -826,6 +890,7 @@ img{
         1px solid rgba(255,255,255,.10);
 }
 
+
 .hero-copy{
     display:flex;
 
@@ -844,6 +909,7 @@ img{
             )
         );
 }
+
 
 .division-label{
     display:flex;
@@ -866,6 +932,7 @@ img{
     text-transform:uppercase;
 }
 
+
 .division-label::before{
     content:"";
 
@@ -876,10 +943,13 @@ img{
         var(--theme);
 }
 
+
 .hero-copy h1{
     margin:0;
 
     max-width:820px;
+
+    color:#f3f5f8;
 
     font-size:
         clamp(
@@ -894,6 +964,7 @@ img{
 
     font-weight:650;
 }
+
 
 .hero-copy .lead{
     max-width:650px;
@@ -913,6 +984,7 @@ img{
     line-height:1.65;
 }
 
+
 .hero-actions{
     display:flex;
 
@@ -922,6 +994,11 @@ img{
 
     margin-top:34px;
 }
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .primary-btn,
 .secondary-btn{
@@ -941,10 +1018,9 @@ img{
 
     font-weight:750;
 
-    letter-spacing:.3px;
-
     transition:.25s ease;
 }
+
 
 .primary-btn{
     color:#020405;
@@ -956,6 +1032,7 @@ img{
         1px solid var(--theme);
 }
 
+
 .primary-btn:hover{
     transform:
         translateY(-2px);
@@ -963,6 +1040,7 @@ img{
     filter:
         brightness(1.08);
 }
+
 
 .secondary-btn{
     color:#d9dee5;
@@ -974,15 +1052,16 @@ img{
         1px solid rgba(255,255,255,.13);
 }
 
+
 .secondary-btn:hover{
+    color:#fff;
+
     border-color:
         color-mix(
             in srgb,
             var(--theme) 45%,
             transparent
         );
-
-    color:#fff;
 
     transform:
         translateY(-2px);
@@ -1000,8 +1079,6 @@ img{
 
     overflow:hidden;
 
-    border-left:none;
-
     background:
         linear-gradient(
             135deg,
@@ -1010,12 +1087,15 @@ img{
         );
 }
 
+
 .hero-visual::before{
     content:"";
 
     position:absolute;
 
     inset:0;
+
+    z-index:2;
 
     background:
         linear-gradient(
@@ -1024,28 +1104,13 @@ img{
             rgba(3,6,9,.30) 32%,
             rgba(3,6,9,.15) 100%
         );
-
-    z-index:2;
 }
 
+
 .hero-visual::after{
-    content:"ZDJĘCIE GŁÓWNE";
+    display:none;
 
-    position:absolute;
-
-    z-index:3;
-
-    right:30px;
-    bottom:28px;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    color:
-        rgba(255,255,255,.40);
+    content:none;
 }
 
 
@@ -1081,60 +1146,79 @@ img{
 
 
 /* =========================================================
-   HERO IMAGES
+   HERO PHOTOS
 ========================================================= */
 
-.theme-industrial .hero-visual{
+.theme-industrial
+.hero-visual{
     background:
+
         linear-gradient(
             90deg,
             rgba(3,6,9,.80),
             rgba(3,6,9,.20)
         ),
+
         url("img/industrial-hero.jpg")
         center/cover no-repeat,
+
         #14181d;
 }
 
-.theme-yacht .hero-visual{
+
+.theme-yacht
+.hero-visual{
     background:
+
         linear-gradient(
             90deg,
             rgba(3,6,9,.78),
             rgba(3,6,9,.15)
         ),
+
         url("img/yacht-hero.jpg")
         center/cover no-repeat,
+
         #073c54;
 }
 
-.theme-electronics .hero-visual{
+
+.theme-electronics
+.hero-visual{
     background:
+
         linear-gradient(
             90deg,
             rgba(3,6,9,.78),
             rgba(3,6,9,.15)
         ),
+
         url("img/electronics-hero.jpg")
         center/cover no-repeat,
+
         #0b3823;
 }
 
-.theme-rov .hero-visual{
+
+.theme-rov
+.hero-visual{
     background:
+
         linear-gradient(
             90deg,
             rgba(3,6,9,.78),
             rgba(3,6,9,.12)
         ),
+
         url("img/rov-hero.jpg")
         center/cover no-repeat,
+
         #062b55;
 }
 
 
 /* =========================================================
-   CONTENT SECTIONS
+   GENERAL SECTIONS
 ========================================================= */
 
 .content-section{
@@ -1144,6 +1228,7 @@ img{
     border-bottom:
         1px solid rgba(255,255,255,.08);
 }
+
 
 .section-heading{
     display:grid;
@@ -1156,6 +1241,7 @@ img{
     margin-bottom:55px;
 }
 
+
 .section-index{
     color:
         var(--theme);
@@ -1167,13 +1253,17 @@ img{
     letter-spacing:2px;
 }
 
+
 .section-title{
     max-width:900px;
 }
 
+
 .section-title h2{
     margin:
         0 0 18px;
+
+    color:#f1f4f7;
 
     font-size:
         clamp(
@@ -1188,6 +1278,7 @@ img{
 
     font-weight:600;
 }
+
 
 .section-title p{
     margin:0;
@@ -1215,6 +1306,7 @@ img{
     gap:12px;
 }
 
+
 .service-item{
     min-height:265px;
 
@@ -1238,6 +1330,7 @@ img{
         background .3s ease;
 }
 
+
 .service-item::before{
     content:"";
 
@@ -1255,6 +1348,7 @@ img{
     transition:
         width .4s ease;
 }
+
 
 .service-item:hover{
     transform:
@@ -1275,9 +1369,11 @@ img{
         );
 }
 
+
 .service-item:hover::before{
     width:80px;
 }
+
 
 .service-number{
     color:
@@ -1288,9 +1384,12 @@ img{
     letter-spacing:2px;
 }
 
+
 .service-item h3{
     margin:
         65px 0 12px;
+
+    color:#eef1f4;
 
     font-size:22px;
 
@@ -1298,6 +1397,7 @@ img{
 
     font-weight:600;
 }
+
 
 .service-item p{
     margin:0;
@@ -1325,6 +1425,7 @@ img{
     height:600px;
 }
 
+
 .media-large,
 .media-small{
     position:relative;
@@ -1347,6 +1448,7 @@ img{
     background-position:center;
 }
 
+
 .media-side{
     display:grid;
 
@@ -1356,141 +1458,120 @@ img{
     gap:12px;
 }
 
+
 .media-large::after,
 .media-small::after{
-    position:absolute;
+    display:none;
 
-    left:20px;
-    bottom:18px;
-
-    padding:
-        7px 10px;
-
-    border-radius:8px;
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.5px;
-
-    color:
-        rgba(255,255,255,.68);
-
-    background:
-        rgba(3,6,9,.65);
-
-    backdrop-filter:
-        blur(8px);
+    content:none;
 }
 
 
 /* =========================================================
-   INDUSTRIAL PHOTOS
+   MEDIA PHOTOS
 ========================================================= */
 
-.theme-industrial .media-large{
+.theme-industrial
+.media-large{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.18),
             rgba(3,6,9,.38)
         ),
+
         url("img/industrial-01.jpg");
 }
 
-.theme-industrial .media-small.one{
+
+.theme-industrial
+.media-small.one{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.15),
             rgba(3,6,9,.35)
         ),
+
         url("img/industrial-02.jpg");
 }
 
 
-/* =========================================================
-   YACHT PHOTOS
-========================================================= */
-
-.theme-yacht .media-large{
+.theme-yacht
+.media-large{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.12),
             rgba(3,6,9,.35)
         ),
+
         url("img/yacht-01.jpg");
 }
 
-.theme-yacht .media-small.one{
+
+.theme-yacht
+.media-small.one{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.12),
             rgba(3,6,9,.35)
         ),
+
         url("img/yacht-02.jpg");
 }
 
 
-/* =========================================================
-   ELECTRONICS PHOTOS
-========================================================= */
-
-.theme-electronics .media-large{
+.theme-electronics
+.media-large{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.12),
             rgba(3,6,9,.35)
         ),
+
         url("img/electronics-01.jpg");
 }
 
-.theme-electronics .media-small.one{
+
+.theme-electronics
+.media-small.one{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.12),
             rgba(3,6,9,.35)
         ),
+
         url("img/electronics-02.jpg");
 }
 
 
-/* =========================================================
-   ROV PHOTOS
-========================================================= */
-
-.theme-rov .media-large{
+.theme-rov
+.media-large{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.08),
             rgba(3,6,9,.40)
         ),
+
         url("img/rov-01.jpg");
 }
 
-.theme-rov .media-small.one{
+
+.theme-rov
+.media-small.one{
     background-image:
+
         linear-gradient(
             rgba(3,6,9,.08),
             rgba(3,6,9,.40)
         ),
+
         url("img/rov-02.jpg");
-}
-
-
-/* =========================================================
-   PHOTO LABELS
-========================================================= */
-
-.media-large::after{
-    content:"REALIZACJA / ZDJĘCIE 01";
-}
-
-.media-small.one::after{
-    content:"DETAL / ZDJĘCIE 02";
-}
-
-.media-small.two::after{
-    content:"MIEJSCE NA KOLEJNE ZDJĘCIE";
 }
 
 
@@ -1511,6 +1592,7 @@ img{
         1px solid rgba(255,255,255,.11);
 }
 
+
 .process-item{
     min-height:190px;
 
@@ -1521,9 +1603,11 @@ img{
         1px solid rgba(255,255,255,.10);
 }
 
+
 .process-item:last-child{
     border-right:none;
 }
+
 
 .process-item strong{
     display:block;
@@ -1538,14 +1622,18 @@ img{
     letter-spacing:2px;
 }
 
+
 .process-item h4{
     margin:
         0 0 8px;
+
+    color:#edf1f4;
 
     font-size:17px;
 
     font-weight:600;
 }
+
 
 .process-item p{
     margin:0;
@@ -1567,6 +1655,7 @@ img{
         125px 0;
 }
 
+
 .contact-panel{
     position:relative;
 
@@ -1581,8 +1670,7 @@ img{
 
     gap:60px;
 
-    padding:
-        60px;
+    padding:60px;
 
     border:
         1px solid
@@ -1595,6 +1683,7 @@ img{
     border-radius:22px;
 
     background:
+
         radial-gradient(
             circle at 100% 0%,
             var(--theme-soft),
@@ -1603,6 +1692,7 @@ img{
 
         rgba(255,255,255,.018);
 }
+
 
 .contact-panel::before{
     content:"";
@@ -1619,11 +1709,14 @@ img{
         var(--theme);
 }
 
+
 .contact-panel h2{
     margin:
         0 0 16px;
 
     max-width:850px;
+
+    color:#f0f3f6;
 
     font-size:
         clamp(
@@ -1639,6 +1732,7 @@ img{
     font-weight:600;
 }
 
+
 .contact-panel p{
     margin:0;
 
@@ -1651,6 +1745,7 @@ img{
     line-height:1.7;
 }
 
+
 .contact-data{
     justify-self:end;
 
@@ -1658,6 +1753,7 @@ img{
 
     max-width:330px;
 }
+
 
 .contact-data small{
     display:block;
@@ -1671,9 +1767,8 @@ img{
     font-weight:700;
 
     letter-spacing:1.8px;
-
-    text-transform:uppercase;
 }
+
 
 .contact-data a{
     display:block;
@@ -1684,6 +1779,8 @@ img{
     border-bottom:
         1px solid rgba(255,255,255,.10);
 
+    color:#e1e6ea;
+
     font-size:18px;
 
     font-weight:600;
@@ -1692,6 +1789,7 @@ img{
         color .2s ease;
 }
 
+
 .contact-data a:hover{
     color:
         var(--theme);
@@ -1699,354 +1797,10 @@ img{
 
 
 /* =========================================================
-   ROV STATUS
-========================================================= */
-
-.rov-status{
-    width:max-content;
-
-    margin-bottom:22px;
-
-    padding:
-        8px 12px;
-
-    border-radius:8px;
-
-    border:
-        1px solid rgba(37,128,212,.35);
-
-    background:
-        rgba(37,128,212,.08);
-
-    color:#4e9fe8;
-
-    font-size:9px;
-
-    font-weight:750;
-
-    letter-spacing:1.8px;
-}
-
-.rov-status.small{
-    margin-bottom:18px;
-}
-
-.rov-development-note{
-    max-width:640px;
-
-    margin:
-        18px 0 0;
-
-    padding-left:18px;
-
-    border-left:
-        2px solid rgba(37,128,212,.65);
-
-    color:#647384;
-
-    font-size:12px;
-
-    line-height:1.65;
-}
-
-.rov-info-panel{
-    display:grid;
-
-    grid-template-columns:
-        .4fr 1.6fr;
-
-    gap:60px;
-
-    padding:
-        50px;
-
-    border:
-        1px solid rgba(37,128,212,.18);
-
-    border-radius:20px;
-
-    background:
-        radial-gradient(
-            circle at 100% 0%,
-            rgba(37,128,212,.08),
-            transparent 45%
-        ),
-
-        rgba(255,255,255,.015);
-}
-
-.rov-info-panel h2{
-    margin:
-        0 0 18px;
-
-    font-size:
-        clamp(
-            30px,
-            3vw,
-            48px
-        );
-
-    line-height:1.05;
-
-    font-weight:600;
-
-    letter-spacing:-1.2px;
-}
-
-.rov-info-panel p{
-    margin:0;
-
-    max-width:850px;
-
-    color:#83909d;
-
-    font-size:15px;
-
-    line-height:1.75;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.site-footer{
-    border-top:
-        1px solid rgba(255,255,255,.10);
-
-    background:#020405;
-
-    padding:
-        60px 0 26px;
-}
-
-.footer-main{
-    display:grid;
-
-    grid-template-columns:
-        1.4fr .8fr .8fr;
-
-    gap:70px;
-
-    padding-bottom:48px;
-}
-
-.footer-brand img{
-    width:220px;
-    height:70px;
-
-    object-fit:contain;
-
-    margin-bottom:20px;
-}
-
-.footer-brand p{
-    max-width:420px;
-
-    margin:0;
-
-    color:#737e8a;
-
-    font-size:13px;
-
-    line-height:1.7;
-}
-
-.footer-column h5{
-    margin:
-        5px 0 17px;
-
-    color:#b2bac4;
-
-    font-size:10px;
-
-    letter-spacing:1.7px;
-
-    text-transform:uppercase;
-}
-
-.footer-column a,
-.footer-column span{
-    display:block;
-
-    margin:
-        9px 0;
-
-    color:#737e8a;
-
-    font-size:13px;
-
-    transition:
-        color .2s ease;
-}
-
-.footer-column a:hover{
-    color:
-        var(--theme);
-}
-
-.footer-bottom{
-    padding-top:22px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    border-top:
-        1px solid rgba(255,255,255,.08);
-
-    color:#525d68;
-
-    font-size:11px;
-}
-
-
-/* =========================================================
-   SMALLER LAPTOP
-========================================================= */
-
-@media(max-width:1200px){
-
-    .home{
-        grid-template-rows:
-            31% 69%;
-    }
-
-    .main-logo img{
-        width:
-            clamp(
-                350px,
-                36vw,
-                570px
-            );
-
-        max-height:190px;
-    }
-
-    .brand-subtitle{
-        font-size:11px;
-
-        letter-spacing:4px;
-    }
-
-    .departments{
-        gap:8px;
-
-        padding:8px;
-    }
-
-    .department{
-        padding:
-            24px 20px;
-    }
-
-    .department-details{
-        top:130px;
-    }
-
-    .header-inner{
-        grid-template-columns:
-            220px 1fr;
-    }
-
-    .header-contact{
-        display:none;
-    }
-
-    .hero-copy{
-        padding-left:45px;
-        padding-right:45px;
-    }
-
-    .service-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .footer-main{
-        gap:35px;
-    }
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:850px){
-
-    body{
-        overflow:auto;
-    }
-
-    .home{
-        width:100%;
-
-        height:auto;
-
-        min-height:100vh;
-
-        grid-template-rows:
-            auto auto;
-    }
-
-    .brand-zone{
-        min-height:240px;
-
-        padding:
-            35px 20px;
-    }
-
-    .main-logo img{
-        width:
-            min(
-                500px,
-                86vw
-            );
-
-        max-height:180px;
-    }
-
-    .brand-subtitle{
-        font-size:10px;
-
-        letter-spacing:3px;
-    }
-
-    .departments{
-        height:auto;
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        padding:10px;
-
-        gap:10px;
-    }
-
-    .department{
-        min-height:330px;
-    }
-
-}
-/* =========================================================
-   USUNIĘCIE PODPISÓW ZE ZDJĘĆ
-========================================================= */
-
-.hero-visual::after,
-.media-large::after,
-.media-small::after{
-    content:none !important;
-    display:none !important;
-}
-/* =========================================================
-   MSA - MODUŁOWY SYSTEM ALARMOWY
+   MSA
 ========================================================= */
 
 .msa-section{
-    position:relative;
-
     width:100%;
 
     overflow:hidden;
@@ -2058,6 +1812,13 @@ img{
         1px solid rgba(255,255,255,.07);
 
     background:
+
+        radial-gradient(
+            circle at 70% 15%,
+            rgba(118,234,167,.035),
+            transparent 27%
+        ),
+
         linear-gradient(
             180deg,
             #030709 0%,
@@ -2067,8 +1828,86 @@ img{
 
 
 /* =========================================================
-   WSPÓLNY UKŁAD
-   TEKST | LINIA | ZDJĘCIE
+   MSA INTRO
+========================================================= */
+
+.msa-intro{
+    padding:
+        110px 60px 95px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+}
+
+
+.msa-intro-inner{
+    width:min(
+        1200px,
+        100%
+    );
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        .4fr 1.6fr;
+
+    gap:70px;
+}
+
+
+.msa-intro-index{
+    padding-top:10px;
+
+    color:#76eaa7;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+
+.msa-intro h2{
+    margin:0;
+
+    max-width:840px;
+
+    color:#f3f6f4;
+
+    font-size:
+        clamp(
+            45px,
+            4.3vw,
+            70px
+        );
+
+    line-height:1.02;
+
+    letter-spacing:-2px;
+
+    font-weight:600;
+}
+
+
+.msa-intro p{
+    max-width:650px;
+
+    margin:
+        24px 0 0;
+
+    color:#808d86;
+
+    font-size:16px;
+
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   MSA SPLIT
 ========================================================= */
 
 .msa-split{
@@ -2078,19 +1917,10 @@ img{
 
     display:grid;
 
-    /*
-       LEWA STRONA
-       LINIA
-       PRAWA STRONA
-
-       linia wypada lekko przed środkiem
-       dokładnie jak na Twoim szkicu
-    */
-
     grid-template-columns:
-        44% 2px 56%;
-
-    position:relative;
+        minmax(0,44%)
+        2px
+        minmax(0,56%);
 
     border-bottom:
         1px solid rgba(255,255,255,.065);
@@ -2098,40 +1928,181 @@ img{
 
 
 /* =========================================================
-   LEWA STRONA
+   MSA COPY
 ========================================================= */
 
 .msa-split-copy{
     display:flex;
 
     align-items:center;
-
     justify-content:flex-end;
 
     padding:
-        90px
-        65px
-        90px
-        60px;
+        90px 70px
+        90px 60px;
 }
 
-
-/*
-   TEKST NIE JEST PRZY KRAWĘDZI.
-   SIEDZI ŁADNIE WEWNĄTRZ LEWEJ CZĘŚCI.
-*/
 
 .msa-copy-inner{
     width:100%;
 
-    max-width:560px;
+    max-width:550px;
 
     margin-left:auto;
 }
 
 
+.msa-badge{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:25px;
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(118,234,167,.22);
+
+    border-radius:8px;
+
+    background:
+        rgba(118,234,167,.045);
+
+    color:#76eaa7;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.6px;
+}
+
+
+.msa-badge span{
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#76eaa7;
+
+    box-shadow:
+        0 0 9px
+        rgba(118,234,167,.65);
+}
+
+
+.msa-label,
+.msa-section-number{
+    color:#76eaa7;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+
 /* =========================================================
-   PIONOWA ZIELONA LINIA
+   MSA MAIN TITLE
+========================================================= */
+
+.msa-title{
+    margin:
+        27px 0 0;
+
+    color:#f4f7f5;
+
+    font-size:
+        clamp(
+            72px,
+            6vw,
+            105px
+        );
+
+    line-height:.85;
+
+    font-weight:650;
+
+    letter-spacing:-4px;
+}
+
+
+.msa-title span{
+    display:block;
+
+    max-width:500px;
+
+    margin-top:28px;
+
+    color:#76eaa7;
+
+    font-size:
+        clamp(
+            32px,
+            2.5vw,
+            44px
+        );
+
+    line-height:1.08;
+
+    font-weight:600;
+
+    letter-spacing:-1.2px;
+}
+
+
+.msa-lead{
+    max-width:510px;
+
+    margin:
+        38px 0 22px;
+
+    color:#c3ccc7;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    line-height:1.65;
+}
+
+
+.msa-description{
+    width:100%;
+
+    max-width:540px;
+
+    margin:
+        0 0 18px;
+
+    color:#7e8b84;
+
+    font-size:14px;
+
+    line-height:1.85;
+
+    text-align:justify;
+
+    text-justify:inter-word;
+
+    hyphens:auto;
+}
+
+
+.msa-button{
+    margin-top:22px;
+}
+
+
+/* =========================================================
+   MSA DIVIDER
 ========================================================= */
 
 .msa-divider{
@@ -2143,10 +2114,10 @@ img{
 
     height:100%;
 
-    background:
-        var(--theme);
+    background:#76eaa7;
 
     box-shadow:
+
         0 0 12px
         rgba(118,234,167,.40),
 
@@ -2156,7 +2127,7 @@ img{
 
 
 /* =========================================================
-   PRAWA CZĘŚĆ ZE ZDJĘCIEM
+   MSA IMAGE SIDE
 ========================================================= */
 
 .msa-split-image{
@@ -2167,20 +2138,16 @@ img{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     padding:
-        55px
-        70px;
+        55px 70px;
 
     overflow:hidden;
 
     isolation:isolate;
 }
 
-
-/* bardzo delikatna poświata całej prawej części */
 
 .msa-split-image::before{
     content:"";
@@ -2189,30 +2156,26 @@ img{
 
     z-index:-3;
 
-    width:70%;
-    height:70%;
+    width:72%;
+    height:72%;
 
     border-radius:50%;
 
     background:
-        rgba(118,234,167,.06);
+        rgba(118,234,167,.055);
 
     filter:
         blur(130px);
 }
 
 
-/* =========================================================
-   POŚWIATA ZA ZDJĘCIEM
-========================================================= */
-
 .msa-photo-glow{
     position:absolute;
 
     z-index:-2;
 
-    width:72%;
-    height:72%;
+    width:75%;
+    height:75%;
 
     border-radius:50%;
 
@@ -2230,26 +2193,29 @@ img{
 
 
 /* =========================================================
-   MIEJSCE NA ZDJĘCIE
+   MSA PHOTO
 ========================================================= */
 
 .msa-photo{
+    position:relative;
+
     width:100%;
 
-    max-width:820px;
+    max-width:850px;
 
     height:620px;
 
-    position:relative;
+    border:
+        1px solid
+        rgba(118,234,167,.08);
 
     border-radius:24px;
 
     background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
 
-    border:
-        1px solid rgba(118,234,167,.08);
+    background-repeat:no-repeat;
+
+    background-size:cover;
 
     box-shadow:
 
@@ -2281,14 +2247,14 @@ img{
 
 
 /* =========================================================
-   ZDJĘCIE 01 - GŁÓWNE
+   MSA PHOTOS
 ========================================================= */
 
 .msa-photo-main{
     background:
 
         linear-gradient(
-            rgba(3,7,5,.05),
+            rgba(3,7,5,.04),
             rgba(3,7,5,.10)
         ),
 
@@ -2302,10 +2268,6 @@ img{
         );
 }
 
-
-/* =========================================================
-   ZDJĘCIE 02 - MONITORING
-========================================================= */
 
 .msa-photo-monitoring{
     background:
@@ -2326,10 +2288,6 @@ img{
 }
 
 
-/* =========================================================
-   ZDJĘCIE 03 - MODUŁY
-========================================================= */
-
 .msa-photo-modular{
     background:
 
@@ -2348,10 +2306,6 @@ img{
         );
 }
 
-
-/* =========================================================
-   ZDJĘCIE 04 - ALARMY
-========================================================= */
 
 .msa-photo-alerts{
     background:
@@ -2373,185 +2327,11 @@ img{
 
 
 /* =========================================================
-   BADGE
-========================================================= */
-
-.msa-badge{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    margin-bottom:24px;
-
-    padding:
-        8px 11px;
-
-    border:
-        1px solid rgba(118,234,167,.22);
-
-    border-radius:8px;
-
-    background:
-        rgba(118,234,167,.045);
-
-    color:
-        var(--theme);
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.6px;
-}
-
-
-.msa-badge span{
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:
-        var(--theme);
-
-    box-shadow:
-        0 0 9px
-        rgba(118,234,167,.65);
-}
-
-
-/* =========================================================
-   MAŁE NAGŁÓWKI
-========================================================= */
-
-.msa-label,
-.msa-section-number{
-    color:
-        var(--theme);
-
-    font-size:10px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-}
-
-
-/* =========================================================
-   GŁÓWNY TYTUŁ MSA
-========================================================= */
-
-.msa-title{
-    margin:
-        25px 0 0;
-
-    color:#f4f7f5;
-
-    font-size:
-        clamp(
-            72px,
-            6vw,
-            105px
-        );
-
-    line-height:.85;
-
-    font-weight:650;
-
-    letter-spacing:-4px;
-}
-
-
-.msa-title span{
-    display:block;
-
-    max-width:500px;
-
-    margin-top:27px;
-
-    color:
-        var(--theme);
-
-    font-size:
-        clamp(
-            32px,
-            2.5vw,
-            44px
-        );
-
-    line-height:1.08;
-
-    font-weight:600;
-
-    letter-spacing:-1.2px;
-
-    text-wrap:balance;
-}
-
-
-/* =========================================================
-   LEAD
-========================================================= */
-
-.msa-lead{
-    max-width:510px;
-
-    margin:
-        38px 0 22px;
-
-    color:#c3ccc7;
-
-    font-size:19px;
-
-    font-weight:500;
-
-    line-height:1.65;
-
-    text-wrap:pretty;
-}
-
-
-/* =========================================================
-   TEKST
-========================================================= */
-
-.msa-description{
-    width:100%;
-
-    max-width:540px;
-
-    margin:
-        0 0 18px;
-
-    color:#7e8b84;
-
-    font-size:14px;
-
-    line-height:1.85;
-
-    text-align:justify;
-
-    text-justify:inter-word;
-
-    hyphens:auto;
-}
-
-
-.msa-button{
-    margin-top:22px;
-}
-
-
-/* =========================================================
-   SEKCJE 01 / 02 / 03
+   MSA STORIES
 ========================================================= */
 
 .msa-story{
-    min-height:700px;
+    min-height:720px;
 }
 
 
@@ -2575,13 +2355,11 @@ img{
     font-weight:600;
 
     letter-spacing:-1.4px;
-
-    text-wrap:balance;
 }
 
 
 /* =========================================================
-   PROSTA LISTA MONITOROWANYCH PARAMETRÓW
+   MSA LIST
 ========================================================= */
 
 .msa-simple-list{
@@ -2623,8 +2401,7 @@ img{
 
 
 .msa-simple-list span{
-    color:
-        var(--theme);
+    color:#76eaa7;
 
     font-size:9px;
 
@@ -2635,7 +2412,7 @@ img{
 
 
 /* =========================================================
-   HIGHLIGHT
+   MSA HIGHLIGHT
 ========================================================= */
 
 .msa-highlight{
@@ -2645,7 +2422,7 @@ img{
         18px 20px;
 
     border-left:
-        2px solid var(--theme);
+        2px solid #76eaa7;
 
     background:
         rgba(118,234,167,.035);
@@ -2659,7 +2436,7 @@ img{
 
 
 /* =========================================================
-   KOŃCOWE CTA
+   MSA FINAL
 ========================================================= */
 
 .msa-final{
@@ -2667,7 +2444,6 @@ img{
         110px 60px;
 
     background:
-
         radial-gradient(
             circle at 80% 50%,
             rgba(118,234,167,.055),
@@ -2742,4 +2518,460 @@ img{
     flex-direction:column;
 
     gap:10px;
+}
+
+
+/* =========================================================
+   YACHT MSA TEASER
+========================================================= */
+
+.yacht-msa-section{
+    padding:
+        20px 0 110px;
+}
+
+
+.yacht-msa{
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:300px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.35fr .65fr;
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:
+        58px 60px;
+
+    border-radius:22px;
+
+    border:
+        1px solid
+        rgba(112,216,255,.16);
+
+    background:
+
+        radial-gradient(
+            circle at 100% 50%,
+            rgba(118,234,167,.075),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(112,216,255,.07),
+            transparent 32%
+        ),
+
+        rgba(255,255,255,.015);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.yacht-msa::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:150px;
+    height:2px;
+
+    background:#70d8ff;
+
+    box-shadow:
+        0 0 16px
+        rgba(112,216,255,.35);
+}
+
+
+.yacht-msa:hover{
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(112,216,255,.32);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.28);
+}
+
+
+.yacht-msa-copy{
+    max-width:780px;
+}
+
+
+.yacht-msa-label{
+    margin-bottom:18px;
+
+    color:#70d8ff;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+
+.yacht-msa-copy h2{
+    margin:
+        0 0 20px;
+
+    color:#f2f6f8;
+
+    font-size:
+        clamp(
+            42px,
+            4vw,
+            62px
+        );
+
+    line-height:.95;
+
+    font-weight:650;
+
+    letter-spacing:-2px;
+}
+
+
+.yacht-msa-copy h2 span{
+    display:block;
+
+    margin-top:14px;
+
+    color:#76eaa7;
+
+    font-size:
+        clamp(
+            22px,
+            2vw,
+            32px
+        );
+
+    line-height:1.1;
+
+    letter-spacing:-.7px;
+}
+
+
+.yacht-msa-copy p{
+    max-width:700px;
+
+    margin:0;
+
+    color:#83909b;
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+
+.yacht-msa-action{
+    justify-self:end;
+
+    min-width:245px;
+}
+
+
+.yacht-msa-status{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:22px;
+
+    color:#76eaa7;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.6px;
+}
+
+
+.yacht-msa-status span{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#76eaa7;
+
+    box-shadow:
+        0 0 10px
+        rgba(118,234,167,.65);
+}
+
+
+.yacht-msa-link{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    padding:
+        17px 18px;
+
+    border-radius:12px;
+
+    border:
+        1px solid
+        rgba(118,234,167,.20);
+
+    background:
+        rgba(118,234,167,.045);
+
+    color:#dbe8e1;
+
+    font-size:12px;
+
+    font-weight:650;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease;
+}
+
+
+.yacht-msa-link span{
+    color:#76eaa7;
+
+    font-size:20px;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.yacht-msa:hover
+.yacht-msa-link{
+    background:
+        rgba(118,234,167,.075);
+
+    border-color:
+        rgba(118,234,167,.34);
+}
+
+
+.yacht-msa:hover
+.yacht-msa-link span{
+    transform:
+        translateX(7px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer{
+    padding:
+        60px 0 26px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+
+    background:#020405;
+}
+
+
+.footer-main{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr .8fr .8fr;
+
+    gap:70px;
+
+    padding-bottom:48px;
+}
+
+
+.footer-brand img{
+    width:220px;
+    height:70px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+}
+
+
+.footer-brand p{
+    max-width:420px;
+
+    margin:0;
+
+    color:#737e8a;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+.footer-column h5{
+    margin:
+        5px 0 17px;
+
+    color:#b2bac4;
+
+    font-size:10px;
+
+    letter-spacing:1.7px;
+}
+
+
+.footer-column a,
+.footer-column span{
+    display:block;
+
+    margin:
+        9px 0;
+
+    color:#737e8a;
+
+    font-size:13px;
+
+    transition:
+        color .2s ease;
+}
+
+
+.footer-column a:hover{
+    color:
+        var(--theme);
+}
+
+
+.footer-bottom{
+    padding-top:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:#525d68;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   SMALLER DESKTOP
+========================================================= */
+
+@media(max-width:1200px){
+
+    .home{
+        grid-template-rows:
+            31% 69%;
+    }
+
+
+    .main-logo img{
+        width:
+            clamp(
+                350px,
+                36vw,
+                570px
+            );
+
+        max-height:190px;
+    }
+
+
+    .brand-subtitle{
+        font-size:11px;
+
+        letter-spacing:4px;
+    }
+
+
+    .departments{
+        gap:8px;
+
+        padding:8px;
+    }
+
+
+    .department{
+        padding:
+            24px 20px;
+    }
+
+
+    .header-inner{
+        grid-template-columns:
+            220px 1fr;
+    }
+
+
+    .header-contact{
+        display:none;
+    }
+
+
+    .hero-copy{
+        padding-left:45px;
+
+        padding-right:45px;
+    }
+
+
+    .msa-split{
+        grid-template-columns:
+            minmax(0,46%)
+            2px
+            minmax(0,54%);
+    }
+
+
+    .msa-split-copy{
+        padding:
+            70px 45px;
+    }
+
+
+    .msa-split-image{
+        padding:
+            45px;
+    }
+
+
+    .msa-photo{
+        height:540px;
+    }
+
+
+    .footer-main{
+        gap:35px;
+    }
+
 }
