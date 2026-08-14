@@ -2044,75 +2044,352 @@ img{
    MSA - MODUŁOWY SYSTEM ALARMOWY
 ========================================================= */
 
-.msa-showcase{
+.msa-section{
     position:relative;
+
+    width:100%;
 
     overflow:hidden;
 
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
     background:
-        radial-gradient(
-            circle at 72% 18%,
-            rgba(118,234,167,.05),
-            transparent 29%
+        linear-gradient(
+            180deg,
+            #030709 0%,
+            #020605 100%
         );
 }
 
 
 /* =========================================================
-   GÓRNA PREZENTACJA
+   WSPÓLNY UKŁAD
+   TEKST | LINIA | ZDJĘCIE
 ========================================================= */
 
-.msa-hero{
-    max-width:1280px;
+.msa-split{
+    width:100%;
 
-    margin:0 auto;
-
-    min-height:680px;
+    min-height:760px;
 
     display:grid;
 
+    /*
+       LEWA STRONA
+       LINIA
+       PRAWA STRONA
+
+       linia wypada lekko przed środkiem
+       dokładnie jak na Twoim szkicu
+    */
+
     grid-template-columns:
-        .92fr 1.08fr;
+        44% 2px 56%;
 
-    align-items:center;
+    position:relative;
 
-    gap:90px;
-
-    padding:
-        30px 35px
-        80px;
+    border-bottom:
+        1px solid rgba(255,255,255,.065);
 }
 
 
 /* =========================================================
-   TEKST
+   LEWA STRONA
 ========================================================= */
 
-.msa-copy{
-    width:100%;
+.msa-split-copy{
+    display:flex;
 
-    max-width:570px;
+    align-items:center;
 
-    justify-self:end;
+    justify-content:flex-end;
 
-    padding-left:15px;
+    padding:
+        90px
+        65px
+        90px
+        60px;
 }
 
 
-.msa-eyebrow{
+/*
+   TEKST NIE JEST PRZY KRAWĘDZI.
+   SIEDZI ŁADNIE WEWNĄTRZ LEWEJ CZĘŚCI.
+*/
+
+.msa-copy-inner{
+    width:100%;
+
+    max-width:560px;
+
+    margin-left:auto;
+}
+
+
+/* =========================================================
+   PIONOWA ZIELONA LINIA
+========================================================= */
+
+.msa-divider{
+    position:relative;
+
+    z-index:20;
+
+    width:2px;
+
+    height:100%;
+
+    background:
+        var(--theme);
+
+    box-shadow:
+        0 0 12px
+        rgba(118,234,167,.40),
+
+        0 0 32px
+        rgba(118,234,167,.12);
+}
+
+
+/* =========================================================
+   PRAWA CZĘŚĆ ZE ZDJĘCIEM
+========================================================= */
+
+.msa-split-image{
+    position:relative;
+
+    min-width:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        55px
+        70px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+}
+
+
+/* bardzo delikatna poświata całej prawej części */
+
+.msa-split-image::before{
+    content:"";
+
+    position:absolute;
+
+    z-index:-3;
+
+    width:70%;
+    height:70%;
+
+    border-radius:50%;
+
+    background:
+        rgba(118,234,167,.06);
+
+    filter:
+        blur(130px);
+}
+
+
+/* =========================================================
+   POŚWIATA ZA ZDJĘCIEM
+========================================================= */
+
+.msa-photo-glow{
+    position:absolute;
+
+    z-index:-2;
+
+    width:72%;
+    height:72%;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(118,234,167,.14) 0%,
+            rgba(118,234,167,.055) 40%,
+            transparent 72%
+        );
+
+    filter:
+        blur(35px);
+}
+
+
+/* =========================================================
+   MIEJSCE NA ZDJĘCIE
+========================================================= */
+
+.msa-photo{
+    width:100%;
+
+    max-width:820px;
+
+    height:620px;
+
+    position:relative;
+
+    border-radius:24px;
+
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    border:
+        1px solid rgba(118,234,167,.08);
+
+    box-shadow:
+
+        0 40px 100px
+        rgba(0,0,0,.42),
+
+        0 0 80px
+        rgba(118,234,167,.065);
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease;
+}
+
+
+.msa-photo:hover{
+    transform:
+        translateY(-5px)
+        scale(1.005);
+
+    box-shadow:
+
+        0 45px 110px
+        rgba(0,0,0,.46),
+
+        0 0 100px
+        rgba(118,234,167,.11);
+}
+
+
+/* =========================================================
+   ZDJĘCIE 01 - GŁÓWNE
+========================================================= */
+
+.msa-photo-main{
+    background:
+
+        linear-gradient(
+            rgba(3,7,5,.05),
+            rgba(3,7,5,.10)
+        ),
+
+        url("img/msa-main.jpg")
+        center/cover no-repeat,
+
+        linear-gradient(
+            135deg,
+            #07110d,
+            #030706
+        );
+}
+
+
+/* =========================================================
+   ZDJĘCIE 02 - MONITORING
+========================================================= */
+
+.msa-photo-monitoring{
+    background:
+
+        linear-gradient(
+            rgba(3,7,5,.08),
+            rgba(3,7,5,.14)
+        ),
+
+        url("img/msa-monitoring.jpg")
+        center/cover no-repeat,
+
+        linear-gradient(
+            135deg,
+            #07110d,
+            #030706
+        );
+}
+
+
+/* =========================================================
+   ZDJĘCIE 03 - MODUŁY
+========================================================= */
+
+.msa-photo-modular{
+    background:
+
+        linear-gradient(
+            rgba(3,7,5,.08),
+            rgba(3,7,5,.14)
+        ),
+
+        url("img/msa-modular.jpg")
+        center/cover no-repeat,
+
+        linear-gradient(
+            135deg,
+            #07110d,
+            #030706
+        );
+}
+
+
+/* =========================================================
+   ZDJĘCIE 04 - ALARMY
+========================================================= */
+
+.msa-photo-alerts{
+    background:
+
+        linear-gradient(
+            rgba(3,7,5,.08),
+            rgba(3,7,5,.14)
+        ),
+
+        url("img/msa-alerts.jpg")
+        center/cover no-repeat,
+
+        linear-gradient(
+            135deg,
+            #07110d,
+            #030706
+        );
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.msa-badge{
     display:inline-flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:9px;
 
-    margin-bottom:27px;
+    margin-bottom:24px;
 
     padding:
         8px 11px;
 
     border:
-        1px solid rgba(118,234,167,.20);
+        1px solid rgba(118,234,167,.22);
 
     border-radius:8px;
 
@@ -2126,15 +2403,13 @@ img{
 
     font-weight:700;
 
-    letter-spacing:1.7px;
+    letter-spacing:1.6px;
 }
 
 
-.msa-dot{
+.msa-badge span{
     width:6px;
     height:6px;
-
-    flex:0 0 6px;
 
     border-radius:50%;
 
@@ -2142,29 +2417,48 @@ img{
         var(--theme);
 
     box-shadow:
-        0 0 10px
+        0 0 9px
         rgba(118,234,167,.65);
 }
 
 
-.msa-copy .section-index{
-    margin-bottom:23px;
+/* =========================================================
+   MAŁE NAGŁÓWKI
+========================================================= */
+
+.msa-label,
+.msa-section-number{
+    color:
+        var(--theme);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
 }
 
 
-.msa-copy h2{
-    margin:0;
+/* =========================================================
+   GŁÓWNY TYTUŁ MSA
+========================================================= */
+
+.msa-title{
+    margin:
+        25px 0 0;
 
     color:#f4f7f5;
 
     font-size:
         clamp(
-            70px,
-            5.8vw,
-            100px
+            72px,
+            6vw,
+            105px
         );
 
-    line-height:.88;
+    line-height:.85;
 
     font-weight:650;
 
@@ -2172,26 +2466,26 @@ img{
 }
 
 
-.msa-copy h2 span{
+.msa-title span{
     display:block;
 
     max-width:500px;
 
-    margin-top:25px;
+    margin-top:27px;
 
     color:
         var(--theme);
 
     font-size:
         clamp(
-            30px,
+            32px,
             2.5vw,
-            43px
+            44px
         );
 
     line-height:1.08;
 
-    font-weight:620;
+    font-weight:600;
 
     letter-spacing:-1.2px;
 
@@ -2199,11 +2493,15 @@ img{
 }
 
 
+/* =========================================================
+   LEAD
+========================================================= */
+
 .msa-lead{
-    max-width:520px;
+    max-width:510px;
 
     margin:
-        35px 0 20px;
+        38px 0 22px;
 
     color:#c3ccc7;
 
@@ -2217,13 +2515,19 @@ img{
 }
 
 
-.msa-text{
+/* =========================================================
+   TEKST
+========================================================= */
+
+.msa-description{
+    width:100%;
+
     max-width:540px;
 
     margin:
-        0 0 17px;
+        0 0 18px;
 
-    color:#7f8c86;
+    color:#7e8b84;
 
     font-size:14px;
 
@@ -2237,237 +2541,59 @@ img{
 }
 
 
-.msa-main-button{
-    margin-top:23px;
+.msa-button{
+    margin-top:22px;
 }
 
 
 /* =========================================================
-   ZDJĘCIE MSA
+   SEKCJE 01 / 02 / 03
 ========================================================= */
 
-.msa-product-visual{
-    position:relative;
-
-    min-height:570px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    isolation:isolate;
+.msa-story{
+    min-height:700px;
 }
 
 
-/* duża miękka poświata */
-
-.msa-product-glow{
-    position:absolute;
-
-    z-index:-2;
-
-    width:78%;
-    height:72%;
-
-    border-radius:50%;
-
-    background:
-        rgba(118,234,167,.10);
-
-    filter:
-        blur(100px);
-
-    opacity:.8;
-}
-
-
-/* dodatkowe światło dokładnie za zdjęciem */
-
-.msa-product-visual::before{
-    content:"";
-
-    position:absolute;
-
-    z-index:-1;
-
-    width:62%;
-    height:62%;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(118,234,167,.13) 0%,
-            rgba(118,234,167,.045) 42%,
-            transparent 72%
-        );
-
-    filter:
-        blur(25px);
-}
-
-
-/*
-   TU PÓŹNIEJ WRZUCASZ:
-
-   img/msa-main.jpg
-*/
-
-.msa-product-image{
-    width:min(
-        100%,
-        650px
-    );
-
-    height:520px;
-
-    position:relative;
-
-    border-radius:22px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(118,234,167,.045),
-            rgba(4,9,7,.25)
-        ),
-
-        url("img/msa-main.jpg")
-        center/contain
-        no-repeat;
-
-    /*
-       Nie robimy wyraźnej ramki.
-       Tylko bardzo subtelna krawędź.
-    */
-
-    border:
-        1px solid
-        rgba(118,234,167,.07);
-
-    box-shadow:
-
-        0 35px 90px
-        rgba(0,0,0,.38),
-
-        0 0 70px
-        rgba(118,234,167,.08),
-
-        inset 0 1px 0
-        rgba(255,255,255,.015);
-
-    transition:
-        transform .45s ease,
-        box-shadow .45s ease;
-}
-
-
-/* zdjęcie lekko żyje po najechaniu */
-
-.msa-product-image:hover{
-    transform:
-        translateY(-5px)
-        scale(1.008);
-
-    box-shadow:
-
-        0 42px 100px
-        rgba(0,0,0,.42),
-
-        0 0 95px
-        rgba(118,234,167,.13);
-}
-
-
-/* =========================================================
-   MONITORING
-========================================================= */
-
-.msa-capabilities{
-    max-width:1200px;
+.msa-story-title{
+    max-width:530px;
 
     margin:
-        0 auto;
+        20px 0 28px;
 
-    display:grid;
-
-    grid-template-columns:
-        .85fr 1.15fr;
-
-    align-items:start;
-
-    gap:115px;
-
-    padding:
-        120px 35px;
-
-    border-top:
-        1px solid rgba(255,255,255,.075);
-}
-
-
-.msa-capabilities-heading{
-    max-width:480px;
-}
-
-
-.msa-capabilities-heading h3{
-    margin:
-        18px 0 20px;
-
-    color:#edf2ef;
+    color:#eef3f0;
 
     font-size:
         clamp(
-            35px,
-            3vw,
-            50px
+            38px,
+            3.3vw,
+            55px
         );
 
-    line-height:1.06;
+    line-height:1.05;
 
     font-weight:600;
 
-    letter-spacing:-1.3px;
+    letter-spacing:-1.4px;
 
     text-wrap:balance;
 }
 
 
-.msa-capabilities-heading p{
-    margin:0;
-
-    color:#7d8983;
-
-    font-size:14px;
-
-    line-height:1.8;
-
-    text-align:justify;
-
-    hyphens:auto;
-}
-
-
 /* =========================================================
-   LISTA PARAMETRÓW
+   PROSTA LISTA MONITOROWANYCH PARAMETRÓW
 ========================================================= */
 
-.msa-capabilities-list{
-    display:grid;
+.msa-simple-list{
+    margin-top:35px;
 
-    grid-template-columns:
-        1fr 1fr;
-
-    column-gap:40px;
+    border-top:
+        1px solid rgba(255,255,255,.08);
 }
 
 
-.msa-capability{
-    min-height:72px;
+.msa-simple-list div{
+    min-height:54px;
 
     display:grid;
 
@@ -2477,23 +2603,26 @@ img{
     align-items:center;
 
     border-bottom:
-        1px solid rgba(255,255,255,.075);
+        1px solid rgba(255,255,255,.07);
+
+    color:#9aa69f;
+
+    font-size:13px;
 
     transition:
         padding-left .25s ease,
-        border-color .25s ease;
+        color .25s ease;
 }
 
 
-.msa-capability:hover{
+.msa-simple-list div:hover{
     padding-left:6px;
 
-    border-color:
-        rgba(118,234,167,.22);
+    color:#d3dbd6;
 }
 
 
-.msa-capability span{
+.msa-simple-list span{
     color:
         var(--theme);
 
@@ -2501,12 +2630,27 @@ img{
 
     font-weight:700;
 
-    letter-spacing:1.5px;
+    letter-spacing:1.4px;
 }
 
 
-.msa-capability strong{
-    color:#aab5af;
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.msa-highlight{
+    margin-top:32px;
+
+    padding:
+        18px 20px;
+
+    border-left:
+        2px solid var(--theme);
+
+    background:
+        rgba(118,234,167,.035);
+
+    color:#a9b5ae;
 
     font-size:13px;
 
@@ -2515,130 +2659,28 @@ img{
 
 
 /* =========================================================
-   MODUŁOWOŚĆ
+   KOŃCOWE CTA
 ========================================================= */
 
-.msa-modular{
-    max-width:1200px;
-
-    margin:
-        20px auto
-        110px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    display:grid;
-
-    grid-template-columns:
-        .55fr 1.45fr;
-
-    align-items:center;
-
-    gap:85px;
-
+.msa-final{
     padding:
-        80px 85px;
-
-    border-radius:22px;
-
-    border:
-        1px solid
-        rgba(118,234,167,.13);
+        110px 60px;
 
     background:
 
         radial-gradient(
-            circle at 8% 50%,
-            rgba(118,234,167,.075),
-            transparent 33%
-        ),
-
-        rgba(255,255,255,.012);
-}
-
-
-.msa-modular-number{
-    color:
-        rgba(118,234,167,.085);
-
-    font-size:
-        clamp(
-            115px,
-            11vw,
-            180px
+            circle at 80% 50%,
+            rgba(118,234,167,.055),
+            transparent 35%
         );
-
-    font-weight:700;
-
-    letter-spacing:-10px;
-
-    line-height:.72;
 }
 
 
-.msa-modular-copy{
-    max-width:700px;
-}
-
-
-.msa-modular-copy > span{
-    color:
-        var(--theme);
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.8px;
-}
-
-
-.msa-modular-copy h3{
-    margin:
-        14px 0 18px;
-
-    color:#eef2ef;
-
-    font-size:
-        clamp(
-            34px,
-            3vw,
-            48px
-        );
-
-    line-height:1.06;
-
-    font-weight:600;
-
-    letter-spacing:-1.2px;
-
-    text-wrap:balance;
-}
-
-
-.msa-modular-copy p{
-    margin:0;
-
-    color:#7e8983;
-
-    font-size:14px;
-
-    line-height:1.8;
-
-    text-align:justify;
-
-    hyphens:auto;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.msa-contact{
-    max-width:1200px;
+.msa-final-inner{
+    width:min(
+        1200px,
+        100%
+    );
 
     margin:0 auto;
 
@@ -2650,80 +2692,54 @@ img{
     align-items:center;
 
     gap:100px;
-
-    padding:
-        70px 35px 20px;
-
-    border-top:
-        1px solid rgba(255,255,255,.085);
 }
 
 
-.msa-contact > div:first-child{
+.msa-final-inner > div:first-child{
     max-width:700px;
 }
 
 
-.msa-contact > div:first-child > span{
-    color:
-        var(--theme);
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:1.7px;
-}
-
-
-.msa-contact h3{
+.msa-final h3{
     margin:
-        14px 0 17px;
+        15px 0 17px;
 
-    color:#edf2ef;
+    color:#eef3f0;
 
     font-size:
         clamp(
-            34px,
-            3vw,
-            49px
+            38px,
+            3.4vw,
+            54px
         );
 
-    line-height:1.06;
+    line-height:1.05;
 
     font-weight:600;
 
-    letter-spacing:-1.2px;
-
-    text-wrap:balance;
+    letter-spacing:-1.4px;
 }
 
 
-.msa-contact p{
+.msa-final p{
     margin:0;
 
-    max-width:650px;
+    max-width:640px;
 
-    color:#7e8983;
+    color:#7e8a84;
 
     font-size:14px;
 
-    line-height:1.75;
-
-    text-align:justify;
-
-    hyphens:auto;
+    line-height:1.8;
 }
 
 
-.msa-contact-actions{
-    min-width:235px;
+.msa-final-actions{
+    min-width:240px;
 
     display:flex;
 
     flex-direction:column;
-
-    align-items:stretch;
 
     gap:10px;
 }
