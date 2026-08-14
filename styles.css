@@ -2040,3 +2040,447 @@ img{
     content:none !important;
     display:none !important;
 }
+/* =========================================================
+   MSA - MODUŁOWY SYSTEM ALARMOWY
+========================================================= */
+
+.msa-section{
+    position:relative;
+}
+
+.msa-panel{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:60px;
+
+    border-radius:24px;
+
+    border:
+        1px solid
+        rgba(118,234,167,.20);
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(118,234,167,.09),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(118,234,167,.035),
+            transparent 32%
+        ),
+
+        rgba(255,255,255,.018);
+}
+
+.msa-panel::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:190px;
+    height:2px;
+
+    background:
+        var(--theme);
+
+    box-shadow:
+        0 0 20px
+        rgba(118,234,167,.40);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.msa-top{
+    display:grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap:60px;
+
+    align-items:start;
+
+    padding-bottom:45px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.09);
+}
+
+
+.msa-badge{
+    display:inline-flex;
+
+    margin-bottom:24px;
+
+    padding:
+        8px 11px;
+
+    border-radius:8px;
+
+    color:
+        var(--theme);
+
+    background:
+        rgba(118,234,167,.07);
+
+    border:
+        1px solid rgba(118,234,167,.22);
+
+    font-size:9px;
+
+    font-weight:750;
+
+    letter-spacing:1.6px;
+}
+
+
+.msa-top h2{
+    margin:
+        14px 0 18px;
+
+    max-width:850px;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            64px
+        );
+
+    line-height:1.02;
+
+    letter-spacing:-1.8px;
+
+    font-weight:600;
+}
+
+
+.msa-lead{
+    max-width:720px;
+
+    margin:0;
+
+    color:#909ca8;
+
+    font-size:18px;
+
+    line-height:1.7;
+}
+
+
+/* MSA duży znak */
+
+.msa-mark{
+    min-width:180px;
+
+    padding-top:20px;
+
+    color:
+        rgba(118,234,167,.90);
+
+    font-size:64px;
+
+    font-weight:700;
+
+    line-height:.85;
+
+    letter-spacing:-4px;
+
+    text-align:right;
+}
+
+
+.msa-mark span{
+    display:block;
+
+    margin-top:15px;
+
+    color:
+        rgba(255,255,255,.26);
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.msa-description{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:40px;
+
+    padding:
+        45px 0;
+}
+
+
+.msa-description p{
+    margin:0;
+
+    color:#85919e;
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.msa-features{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+        1px solid rgba(255,255,255,.09);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.09);
+}
+
+
+.msa-feature{
+    min-height:235px;
+
+    padding:
+        28px;
+
+    border-right:
+        1px solid rgba(255,255,255,.09);
+
+    transition:
+        background .3s ease;
+}
+
+
+.msa-feature:last-child{
+    border-right:none;
+}
+
+
+.msa-feature:hover{
+    background:
+        rgba(118,234,167,.035);
+}
+
+
+.msa-feature-number{
+    color:
+        var(--theme);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+
+.msa-feature h3{
+    margin:
+        50px 0 12px;
+
+    font-size:18px;
+
+    line-height:1.2;
+
+    font-weight:600;
+}
+
+
+.msa-feature p{
+    margin:0;
+
+    color:#7d8995;
+
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   MONITORING
+========================================================= */
+
+.msa-monitoring{
+    display:grid;
+
+    grid-template-columns:
+        .75fr 1.25fr;
+
+    gap:70px;
+
+    padding:
+        50px 0;
+}
+
+
+.msa-monitoring-title span{
+    color:
+        var(--theme);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+}
+
+
+.msa-monitoring-title h3{
+    margin:
+        12px 0 0;
+
+    max-width:460px;
+
+    font-size:
+        clamp(
+            25px,
+            2.3vw,
+            37px
+        );
+
+    line-height:1.08;
+
+    letter-spacing:-.8px;
+
+    font-weight:600;
+}
+
+
+.msa-monitoring-grid{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+}
+
+
+.msa-monitoring-grid span{
+    position:relative;
+
+    padding:
+        15px 15px 15px 25px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    color:#8b97a3;
+
+    font-size:13px;
+}
+
+
+.msa-monitoring-grid span::before{
+    content:"";
+
+    position:absolute;
+
+    left:4px;
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:
+        var(--theme);
+
+    box-shadow:
+        0 0 8px
+        rgba(118,234,167,.4);
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.msa-bottom{
+    display:grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap:60px;
+
+    align-items:end;
+
+    padding-top:45px;
+
+    border-top:
+        1px solid rgba(255,255,255,.09);
+}
+
+
+.msa-small-label{
+    color:
+        var(--theme);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1.7px;
+}
+
+
+.msa-bottom h3{
+    margin:
+        10px 0 10px;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    letter-spacing:-.7px;
+}
+
+
+.msa-bottom p{
+    max-width:700px;
+
+    margin:0;
+
+    color:#808c98;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+.msa-actions{
+    display:flex;
+
+    gap:10px;
+}
